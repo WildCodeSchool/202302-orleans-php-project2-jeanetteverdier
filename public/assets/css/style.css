@@ -1,19 +1,15 @@
-@import url('https://fonts.googleapis.com/css2?family=Caveat&family=Eater&display=swap');
-
-*{
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
-}
+@import url('https://fonts.googleapis.com/css2?family=Akshar:wght@400;500;600&family=Cinzel+Decorative:wght@400;700&family=Roboto&display=swap');
 
 :root{
 
-    --primaryColor: #2E71C0;
-    --secondaryColor: #FFAD33;
-    --darkColor: #020f1e;
-    --lightColor: #f2f3f5;
+    --primary: #2E71C0;
+    --secondary: #FFAD33;
+    --dark: #020f1e;
+    --light: #f2f3f5;
     
-    --fontTitle: 'Caveat', cursive;
+    --fontTitle: 'Akshar', sans-serif;
+    --fontText: 'Roboto', sans-serif;
+    --fontLogo:'Cinzel Decorative', cursive;
 
     --spacing: 0.5rem;
     --spacing1: 1rem;
@@ -22,8 +18,20 @@
     --spacing4: 4rem;
     --spacing5: 5rem;
     --spacing6: 6rem;
+
+    --firstPlan: 10;
+    --secondPlan: 5;
+    --thirdPlan: 2;
+
+
 }
 
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: var(--fontText);
+}
 
 body {
     color: var(--primaryColor);
