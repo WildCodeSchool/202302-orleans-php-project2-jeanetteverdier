@@ -1,3 +1,30 @@
+@import url('https://fonts.googleapis.com/css2?family=Caveat&family=Eater&display=swap');
+
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+:root{
+
+    --primaryColor: #2E71C0;
+    --secondaryColor: #FFAD33;
+    --darkColor: #020f1e;
+    --lightColor: #f2f3f5;
+    
+    --fontTitle: 'Caveat', cursive;
+
+    --spacing: 0.5rem;
+    --spacing1: 1rem;
+    --spacing2: 2rem;
+    --spacing3: 3rem;
+    --spacing4: 4rem;
+    --spacing5: 5rem;
+    --spacing6: 6rem;
+}
+
+
 body {
-    color: #f76c6c;
+    color: var(--primaryColor);
 }
