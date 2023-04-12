@@ -1,15 +1,15 @@
 @import url('https://fonts.googleapis.com/css2?family=Akshar:wght@400;500;600&family=Cinzel+Decorative:wght@400;700&family=Roboto&display=swap');
 
-:root{
-
+[data-theme="light"],
+:root:not([data-theme="dark"]) {
     --primary: #2E71C0;
     --secondary: #FFAD33;
-    --dark: #020f1e;
-    --light: #f2f3f5;
-    
+}
+
+:root {
     --fontTitle: 'Akshar', sans-serif;
     --fontText: 'Roboto', sans-serif;
-    --fontLogo:'Cinzel Decorative', cursive;
+    --fontLogo: 'Cinzel Decorative', cursive;
 
     --spacing: 0.5rem;
     --spacing1: 1rem;
@@ -26,7 +26,7 @@
 
 }
 
-*{
+* {
     box-sizing: border-box;
     margin: 0;
     padding: 0;
