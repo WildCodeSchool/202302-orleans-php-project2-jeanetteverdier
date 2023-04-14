@@ -5,12 +5,12 @@ namespace App\Controller;
 class ContactController extends AbstractController
 {
     private array $options = [
-        'opt1',
-        'opt2',
-        'opt3',
-        'opt4',
-        'opt5',
-        'opt6',
+        'Admission',
+        'RDV avec le chef d\'établissement',
+        'RDV avec la vie scolaire',
+        'Questions sur le parascolaire',
+        'Questions sur les frais de scolarité',
+        'autre',
     ];
     private array $errors = [];
 
