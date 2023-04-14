@@ -1,0 +1,91 @@
+{% extends 'layout.html.twig' %}
+
+{% block title %}
+    {{ parent() }} - formulaire de contact
+{% endblock %}
+
+{% block stylesheet %}
+     <link rel="stylesheet" href="/assets/css/contactForm.css">
+{% endblock %}
+
+{% block content %}
+
+    <main>
+        <div class="container">
+            <div class="titleContact">
+                <div>
+                    <div class="mainTitle">
+                        <h1 class="mainTitle1">Nous</h1>
+                        <h1 class="mainTitle2">contacter</h1>
+                    </div>
+                    <img src="../assets/images/imagesContact/traitGris.png" alt="" class="traitGris">
+                    <h2>Besoin d'un renseignement ?</h2>
+                </div>
+            </div>
+
+            <div class="formPage">
+
+                <div class="logoContact">
+                    <img src="../assets/images/imagesContact/logoContact.png" alt="">
+                </div>
+
+                <form action="" method="post">
+                    <div class="form">
+                        <div class="nameFlex">
+                            <div>
+                                <label for="lastname">Nom</label>
+                                <input type="text" name="lastname" id="lastname" value="{{ post.lastname }}"/>
+                                    {% if errors.lastname is not empty %}
+                                    {{ errors.lastname }}
+                                    {% endif %}
+                            </div>
+                            <div>
+                                <label for="firstname">Prénom</label>
+                                <input type="text" name="firstname" id="firstname" value="{{ post.firstname }}"/>
+                                {% if errors.firstname is not empty %}
+                                    {{ errors.firstname }}
+                                    {% endif %}
+                            </div>
+                        </div>
+                        <div>
+                            <label for="email">E-mail</label>
+                            <input type="text" name="email" id="email" value="{{ post.email }}"/>
+                            {% if errors.email is not empty %}
+                            {{ errors.email }}
+                            {% endif %}
+                        </div>
+                        <div>
+                            <label for="phone">Téléphone (facultatif)</label>
+                            <input type="number" name="phone" id="phone" value="{{ post.phone }}"/>
+                        </div>
+                        <br>
+                        <div>
+                            <label for="about">Sujet</label>
+                            <select name="about" id="about">
+                                <option>Type de demande</option>
+                                {% for option in options %}
+                                <option value="{{ option }}">{{ option }}</option>
+                                {% endfor %}
+                            </select>
+                            {% if errors.about is not empty %}
+                             {{ errors.about }}
+                             {% endif %}
+                        </div>
+                        <br>
+                        <div>
+                            <label for="message">Votre Message</label>
+                            <textarea id="message" name="message" id="message">{{ post.message }}</textarea>
+                            {% if errors.message is not empty %}
+                            {{ errors.message }}
+                            {% endif %}
+                        </div>
+                        <div class="button">
+                            <button type="submit">Contactez-nous</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </main>
+
+{% endblock %}
