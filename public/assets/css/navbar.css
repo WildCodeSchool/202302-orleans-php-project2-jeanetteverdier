@@ -23,13 +23,13 @@ body > header {
 
 .title {
     display: flex;
+    flex-direction: column;
     justify-content: center;
-    align-items: center;
 
     margin-left: var(--spacing2);
 }
 
-h1 {
+h1, h2 > span {
     font-family: var(--fontLogo);
     font-size: var(--sizeTitleLogo);
     font-weight: bolder;
@@ -39,7 +39,6 @@ h1 {
 
 h2, h3, h4, h5, h6 {
     font-family: var(--fontTitle);
-    text-transform: uppercase;
     margin-bottom: 0;
 }
 
@@ -47,17 +46,17 @@ h2, h3, h4, h5, h6 {
     font-family: var(--fontLogo);
 }
 
-h1 > span {
+h2 > span {
     font-size: clamp(34px, 3vw, 40px);
     font-weight: bold;
 }
 
-h1 > .string1 {
+h2 > .string1 {
     --secondary: #FFAD33;
     color: var(--secondary);
 }
 
-h1 > .string2 {
+h2 > .string2 {
     --primary: #2E71C0;
     color: var(--primary); 
 }
@@ -214,7 +213,6 @@ button {
     }
 
     header.container {
-        /* background: red; */
         height: 30vh;
     }
 
@@ -236,7 +234,7 @@ button {
         text-align: center;
     }
 
-    h1 > span {
+    h2 > span {
         font-size: clamp(25px, 7vw, 35px);
     }
 
@@ -255,7 +253,7 @@ button {
 
         background: var(--primary);
         width: 0;
-        height: calc(100vh - 30vh - 68px); /* 100vh - header - (navbar + border) */
+        height: calc(100vh - 30vh - 68px); /* 100vh - header - (navbar + border-bottom) */
         border-bottom: 1px solid var(--primary);
         box-shadow: 0px 10px 10px #0000000d;
         transition: all .3s ease-out; 
@@ -287,12 +285,6 @@ button {
         border-bottom: 3px solid transparent;
     }
 }
-
-/* @media screen and (max-width: 576px) {
-    .btn-login {
-        top: 10px;
-    }
-} */
 
 @media (min-width: 768px) {
     .container {
