@@ -1,13 +1,17 @@
+/** HEADER **/
+
 .container {
-    width: 60vw;
+    width: clamp(700px, 60vw, 830px);
+    height: 30vh;
+    margin: auto;
     padding-right: 0;
     padding-left: 0;
+    max-width: none;
 }
-
-/** HEADER **/
 
 body > header {
     display: flex;
+    padding: var(--spacing2);
 }
 
 .school-logo {
@@ -25,11 +29,10 @@ body > header {
     display: flex;
     flex-direction: column;
     justify-content: center;
-
     margin-left: var(--spacing2);
 }
 
-h1, h2 > span {
+header h1, h2 > span {
     font-family: var(--fontLogo);
     font-size: var(--sizeTitleLogo);
     font-weight: bolder;
@@ -37,26 +40,21 @@ h1, h2 > span {
     margin-bottom: 0;
 }
 
-h2, h3, h4, h5, h6 {
+header h2 {
     font-family: var(--fontTitle);
     margin-bottom: 0;
 }
 
-.title-style {
-    font-family: var(--fontLogo);
+header h2 > span {
+    font-size: clamp(23px, 3vw, 37px);
 }
 
-h2 > span {
-    font-size: clamp(34px, 3vw, 40px);
-    font-weight: bold;
-}
-
-h2 > .string1 {
+header h2 > .string1 {
     --secondary: #FFAD33;
     color: var(--secondary);
 }
 
-h2 > .string2 {
+header h2 > .string2 {
     --primary: #2E71C0;
     color: var(--primary); 
 }
@@ -78,10 +76,6 @@ h2 > .string2 {
 
 .btn-burger {
     display: none;
-}
-
-[role="button"], button, input[type="button"], input[type="reset"], input[type="submit"] {
-    box-shadow: none;
 }
 
 .line {
@@ -131,7 +125,7 @@ h2 > .string2 {
 }
 
 .navbar-ul {
-    gap: clamp(16px, 3vw, 60px);
+    gap: clamp(25px, 3vw, 50px);
 }
 
 nav ol:last-of-type, nav ul:last-of-type {
@@ -147,13 +141,18 @@ nav :where(a, [role="link"]) {
     margin: 0;
 }
 
+nav.container {
+    align-items: end;
+    height: 100%;
+}
+
 nav li {
     padding: 0;
 }
 
 nav ul li a {
     color: var(--dark);
-    padding: calc(var(--spacing1) + 3px) 0 var(--spacing1) 0;
+    line-height: 250%;
     border-bottom: 3px solid transparent;
     border-radius: 0;
 }
@@ -175,12 +174,6 @@ nav ul li a:hover {
     right: 9px;
 }
 
-button {
-    width: 165px;
-    height: 50px;
-    margin-bottom: 0;
-}
-
 .btn-login button {
     display: flex;
     align-items: center;
@@ -199,21 +192,10 @@ button {
 
 /** MEDIA QUERIES **/
 
-/* format tablette */
-@media screen and (min-width: 768px) and (max-width: 1023px) {
-    .container {
-        width: 90vw;
-    }
-}
-
-/* format smartphone */
+/* format mobile */
 @media screen and (max-width: 767px) {
-    .container {
-        width: 90vw;
-    }
-
     header.container {
-        height: 30vh;
+        width: clamp(200px, 90vw, 100vw);
     }
 
     body > header {
@@ -234,7 +216,7 @@ button {
         text-align: center;
     }
 
-    h2 > span {
+    header h2 > span {
         font-size: clamp(25px, 7vw, 35px);
     }
 
@@ -253,7 +235,7 @@ button {
 
         background: var(--primary);
         width: 0;
-        height: calc(100vh - 30vh - 68px); /* 100vh - header - (navbar + border-bottom) */
+        height: calc(100vh - 30vh - 68px);
         border-bottom: 1px solid var(--primary);
         box-shadow: 0px 10px 10px #0000000d;
         transition: all .3s ease-out; 
@@ -268,7 +250,7 @@ button {
 
     .navbar-ul {
         flex-direction: column;
-        gap: var(--spacing2);
+        gap: clamp(5px, 3vh, 10px);
         margin: var(--spacing2) 0;
     }
 
@@ -283,17 +265,5 @@ button {
     .navbar ul li a:hover {
         color: var(--light);
         border-bottom: 3px solid transparent;
-    }
-}
-
-@media (min-width: 768px) {
-    .container {
-        max-width: none;
-    }
-}
-
-@media (min-width: 576px) {
-    .container {
-        max-width: none;
     }
 }

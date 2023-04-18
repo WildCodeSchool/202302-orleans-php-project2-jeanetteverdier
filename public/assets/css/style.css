@@ -43,3 +43,13 @@ img {
     width: 100%;
     object-fit: cover;
 }
+
+button {
+    width: 165px;
+    height: 50px;
+    margin-bottom: 0;
+}
+
+[role="button"], button, input[type="button"], input[type="reset"], input[type="submit"] {
+    box-shadow: none;
+}
