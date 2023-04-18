@@ -10,7 +10,7 @@ class ContactController extends AbstractController
         'RDV avec la vie scolaire',
         'Questions sur le parascolaire',
         'Questions sur les frais de scolarité',
-        'autre',
+        'Autre',
     ];
     private array $errors = [];
 

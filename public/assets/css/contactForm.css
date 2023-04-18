@@ -17,7 +17,7 @@ body {
     background-size: 200px;
 }
 
-.TitleContact{
+.titleContact{
     margin-bottom: 0px;
     margin-top: var(--spacing3);
 }
@@ -73,12 +73,6 @@ select {
     width: 100%;
 }
 
-
-input {
-    background-image: 'logoContact.png';
-}
-
-
 label {
     color: var(--light);
 }
@@ -101,8 +95,13 @@ label {
 .logoContact {
     align-self: center;
     justify-self: center;
-    width: 25%;
     margin-right: var(--spacing2);
+}
+
+.logoContact > svg {
+    height: clamp(100px, 20vw, 300px);
+    width: clamp(100px, 20vw, 300px);
+    color: var(--dark);
 }
 
 textarea {
