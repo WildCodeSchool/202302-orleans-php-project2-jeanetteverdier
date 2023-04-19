@@ -27,7 +27,7 @@
     --secondPlan: 5;
     --thirdPlan: 2;
 
-    --clamp60: clamp(650px, 60vw, 830px);
+    --clamp60: clamp(650px, 60vw, 100vw);
     --clamp90: clamp(200px, 90vw, 100vw);
 }
 
