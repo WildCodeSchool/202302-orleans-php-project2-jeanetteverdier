@@ -1,8 +1,8 @@
 /** HEADER **/
 
 .container {
-    width: clamp(700px, 60vw, 830px);
-    height: 30vh;
+    width: var(--clamp60);
+    height: 20vh;
     margin: auto;
     padding-right: 0;
     padding-left: 0;
@@ -195,7 +195,8 @@ nav ul li a:hover {
 /* format mobile */
 @media screen and (max-width: 767px) {
     header.container {
-        width: clamp(200px, 90vw, 100vw);
+        width: var(--clamp90);
+        height: 30vh;
     }
 
     body > header {
