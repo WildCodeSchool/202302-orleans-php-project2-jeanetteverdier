@@ -46,7 +46,7 @@ header h2 {
 }
 
 header h2 > span {
-    font-size: clamp(23px, 3vw, 37px);
+    font-size: clamp(30px, 3vw, 37px);
 }
 
 header h2 > .string1 {
