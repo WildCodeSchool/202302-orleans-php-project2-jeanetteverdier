@@ -105,3 +105,16 @@ ALTER TABLE
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */
 
 ;
+
+CREATE TABLE
+    `sector` (
+        `id` INT NOT NULL PRIMARY KEY AUTO_INCREMENT,
+        `name` VARCHAR(255) NOT NULL
+    );
+
+INSERT INTO `sector` (name)
+VALUES (
+        'Gestion administrative du transport et de la logistique'
+    ), (
+        'Métier de la relation client'
+    ), ('Mode option vêtement flou');
