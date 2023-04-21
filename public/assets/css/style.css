@@ -1,3 +1,58 @@
-body {
-    color: #f76c6c;
+@import url('https://fonts.googleapis.com/css2?family=Akshar:wght@400;500;600&family=Cinzel+Decorative:wght@400;700&family=Roboto&display=swap');
+@import url('navbar.css');
+
+:root {
+    --primary: #2E71C0;
+    --secondary: #FFAD33;
+    --dark: #020f1e;
+    --light: #f2f3f5;
+    
+    --fontTitle: 'Akshar', sans-serif;
+    --fontText: 'Roboto', sans-serif;
+    --fontLogo:'Cinzel Decorative', cursive;
+
+    --sizeTitle: 2rem;
+    --sizeText: 1rem;
+    --sizeTitleLogo: 1.25rem;
+
+    --spacing: 0.5rem;
+    --spacing1: 1rem;
+    --spacing2: 2rem;
+    --spacing3: 3rem;
+    --spacing4: 4rem;
+    --spacing5: 5rem;
+    --spacing6: 6rem;
+
+    --firstPlan: 10;
+    --secondPlan: 5;
+    --thirdPlan: 2;
+
+    --clamp60: clamp(650px, 60vw, 100vw);
+    --clamp90: clamp(200px, 90vw, 100vw);
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: var(--fontText);
+}
+
+section {
+    margin-bottom: 0;
+}
+
+img {
+    width: 100%;
+    object-fit: cover;
+}
+
+button {
+    width: 165px;
+    height: 50px;
+    margin-bottom: 0;
+}
+
+[role="button"], button, input[type="button"], input[type="reset"], input[type="submit"] {
+    box-shadow: none;
 }
