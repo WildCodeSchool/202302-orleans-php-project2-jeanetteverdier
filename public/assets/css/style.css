@@ -1,5 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Akshar:wght@400;500;600&family=Cinzel+Decorative:wght@400;700&family=Roboto&display=swap');
 @import url('navbar.css');
+@import url('footer.css');
 
 :root {
     --primary: #2E71C0;
@@ -22,6 +23,12 @@
     --spacing4: 4rem;
     --spacing5: 5rem;
     --spacing6: 6rem;
+    --spacing7: 7rem;
+    --spacing8: 8rem;
+
+
+
+
 
     --firstPlan: 10;
     --secondPlan: 5;
