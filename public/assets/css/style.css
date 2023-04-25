@@ -28,7 +28,7 @@
     --secondPlan: 5;
     --thirdPlan: 2;
 
-    --clamp60: clamp(700px, 60vw, 1200px);
+    --clamp60: clamp(650px, 60vw, 1200px);
     --clamp90: clamp(200px, 90vw, 690px);
 
     --shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
