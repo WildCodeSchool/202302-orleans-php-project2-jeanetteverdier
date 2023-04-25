@@ -10,13 +10,6 @@
     --font-size: 1rem;
 }
 
-
-body {
-    background-image: url(../images/imagesContact/backgroungRed.png);
-    background-position: 27%;
-    background-size: 200px;
-}
-
 .titleContact{
     margin-bottom: 0px;
     margin-top: var(--spacing3);
@@ -54,7 +47,6 @@ h2 {
     flex-direction: column;
     justify-content: flex-end;
 
-    background-image: url(../images/imagesContact/fondJaune.png);
     background-size: 180px;
     background-position: top 1%;
 }
@@ -62,6 +54,7 @@ h2 {
 .traitGris {
     height: 5px;
     width: 250px;
+    background-color: grey;
     margin-top: var(--spacing3);
     margin-left: calc(var(--spacing2) + var(--spacing) );
 }
