@@ -22,7 +22,6 @@ class TeamManager extends AbstractManager
     {
         $query = "SELECT name from work_departement";
         $statement = $this->pdo->query($query);
-        
         return $statement->fetchAll();
     }
 }

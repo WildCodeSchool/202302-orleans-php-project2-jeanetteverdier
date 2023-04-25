@@ -12,9 +12,12 @@ class TeamController extends AbstractController
         $teams = $teamManager->mySelectAll();
         $workDepartements = $teamManager->workDepartement();
 
-        return $this->twig->render('Pages/team.html.twig', ['teams' => $teams, 'workDepartements' => $workDepartements]);
+        return $this->twig->render(
+            'Pages/team.html.twig',
+            [
+                'teams' => $teams,
+                'workDepartements' => $workDepartements
+            ]
+        );
     }
-
-    
-
 }
