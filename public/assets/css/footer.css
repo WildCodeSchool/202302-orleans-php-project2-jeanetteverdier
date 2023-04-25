@@ -6,11 +6,10 @@ h1 {
     font-size: 10vmin;
     text-align: center;
     margin-top: 20px;
-    color: #333;
+    color: var(--dark);
 }
 
 .content {
-    /* grow shrink basis */
     flex: 1 0 auto;
 }
 
@@ -22,9 +21,6 @@ h1 {
 /* footer */
 
 footer {
-    --primary: #2E71C0;
-    --dark: #020f1e;
-    --light: #f2f3f5;
     border-top: 1px dashed var(--dark);
     background: var(--primary);
     color: var(--light);
@@ -39,7 +35,6 @@ body>main {
 /* Medias */
 
 .footer-medias {
-    --secondary: #FFAD33;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -71,7 +66,6 @@ footer h4 {
 
 .content-footer h3,
 h4 {
-    --secondary: #FFAD33;
     color: var(--secondary);
     margin-bottom: var(--spacing);
 }
@@ -192,7 +186,6 @@ ul li .footer-image {
 }
 
 .separator {
-    --secondary: #FFAD33;
     background-color: var(--secondary);
     height: 2px;
     margin: auto;

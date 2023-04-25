@@ -2,18 +2,20 @@
 @import url('navbar.css');
 @import url('footer.css');
 
-:root {
+:root[data-theme="light"] {
     --primary: #2E71C0;
     --secondary: #FFAD33;
-    --dark: #020f1e;
-    --light: #f2f3f5;
-    
+    --dark: #020F1E;
+    --light: #F2F3F5;
+    --lowlight: rgba(255, 255, 255, 0.2);
+
     --fontTitle: 'Akshar', sans-serif;
     --fontText: 'Roboto', sans-serif;
     --fontLogo:'Cinzel Decorative', cursive;
 
     --sizeTitle: 2rem;
-    --sizeText: 1rem;
+    --sizeTitle2: 1rem;
+    --sizeText: 0.87rem;
     --sizeTitleLogo: 1.25rem;
 
     --spacing: 0.5rem;
@@ -23,19 +25,15 @@
     --spacing4: 4rem;
     --spacing5: 5rem;
     --spacing6: 6rem;
-    --spacing7: 7rem;
-    --spacing8: 8rem;
-
-
-
-
 
     --firstPlan: 10;
     --secondPlan: 5;
     --thirdPlan: 2;
 
-    --clamp60: clamp(650px, 60vw, 100vw);
-    --clamp90: clamp(200px, 90vw, 100vw);
+    --clamp60: clamp(650px, 60vw, 1200px);
+    --clamp90: clamp(200px, 90vw, 690px);
+
+    --box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
 }
 
 * {
