@@ -51,7 +51,7 @@ article {
 }
 
 .picurePerson img {
-   box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+   box-shadow: var(--shadow);
    width: 360px;
    height: 220px;
 }
@@ -69,8 +69,8 @@ article {
    height: 150px;
    padding: var(--spacing);
    border-radius: 2px;
-   background: rgba(255, 255, 255, 0.2);
-   box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+   background: var(--backgroundCard);
+   box-shadow: var(--shadow);
    z-index: var(--secondPlan);
    position: relative;
 }

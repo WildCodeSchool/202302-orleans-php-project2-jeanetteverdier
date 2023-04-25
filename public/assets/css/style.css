@@ -6,6 +6,7 @@
     --secondary: #FFAD33;
     --dark: #020f1e;
     --light: #f2f3f5;
+    --backgroundCard: rgba(255, 255, 255, 0.2);;
     
     --fontTitle: 'Akshar', sans-serif;
     --fontText: 'Roboto', sans-serif;
@@ -29,6 +30,8 @@
 
     --clamp60: clamp(700px, 60vw, 1200px);
     --clamp90: clamp(200px, 90vw, 690px);
+
+    --shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
 }
 
 * {
