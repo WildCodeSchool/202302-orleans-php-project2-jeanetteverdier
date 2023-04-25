@@ -3,7 +3,7 @@
 .myArticles {
    display: grid;
    grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
-   gap: var(--spacing1);
+   grid-row-gap: var(--spacing1);
    margin: var(--spacing);
    margin-top: var(--spacing3);
    margin-bottom: var(--spacing5);
@@ -104,7 +104,7 @@ article {
 .yellowSqare {
    --secondary: #FFAD33;
    width: 55px;
-   height: 55px;
+   height:55px;
    background-color: var(--secondary);
    border-radius: 2px;
    transform: translate(-27px, -18px);
@@ -149,47 +149,19 @@ article {
 
 @media screen and (max-width: 767px) {
    .myArticle {
-      width: clamp(300px, 3vw, 700px);
+      width: 100%;
       margin-right: 0px;
+      w
    }
 
    .myArticles {
-      width: clamp(300px, 3vw, 700px);
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
    }
 
    .container {
-      width: clamp(300px, 3vw, 700px);
-   }
-
-   article {
-      width: clamp(300px, 5vw, 700px);
-   }
-
-   .picurePerson {
-      width: 150px;
-      height: 100px;
-   }
-
-   .picurePerson img {
-      width: 200px;
-      height: 150px;
-   }
-
-   .textPerson {
-      width: 150px;
-      height: 100px;
-   }
-
-   .title-content {
-      transform: translate(-20px, 0px);
-   }
-
-   .textPerson h2 {
-      transform: translate(-8px, -12px);
-   }
-
-   .yellowSqare {
-      height: 45px;
-      transform: translate(-15px, -3px);
+      width: var(--clamp90);
    }
 }
