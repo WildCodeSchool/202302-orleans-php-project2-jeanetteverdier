@@ -5,8 +5,9 @@
 :root[data-theme="light"] {
     --primary: #2E71C0;
     --secondary: #FFAD33;
-    --dark: #020F1E;
-    --light: #F2F3F5;
+    --dark: #020f1e;
+    --light: #f2f3f5;
+    --backgroundCard: rgba(255, 255, 255, 0.2);; 
     --lowlight: rgba(255, 255, 255, 0.2);
 
     --fontTitle: 'Akshar', sans-serif;
@@ -34,7 +35,7 @@
     --clamp90: clamp(200px, 90vw, 690px);
 
     --box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
-}
+
 
 * {
     box-sizing: border-box;

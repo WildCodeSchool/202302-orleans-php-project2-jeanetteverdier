@@ -1,0 +1,49 @@
+{% extends 'layout.html.twig' %}
+
+{% block title %}
+	Notre équipe - {{ parent() }}
+{% endblock %}
+
+{% block stylesheet %}<link rel="stylesheet" href="/assets/css/team.css">
+{% endblock %}
+
+{% block content %}
+	<main class="container">
+		<div class="background-line"></div>		
+			<div class="main-title">
+				<div class="title-content">
+					<div class="bloc-square"></div>
+					<h3><span>Découvrez</span><br/>notre équipe</h3>
+				</div>
+			</div>
+			{% for workDepartement in workDepartements %}
+				<div class="main-title">
+					<div class="second-title">
+						<div class="bloc-rectangle"></div>
+						<h4>{{ workDepartement.name }}</h4>
+					</div>
+				</div>
+				<div class="myArticles">
+					{% for employee in employees %}
+						{% if employee.name == workDepartement.name %}
+							<article>
+								<div class="myArticle">
+									<div class="picurePerson"><img src= /assets/images/professeursPhotos/{{ team.picture ?? "teacherByDefault.jpg/"}} alt="default"></div>
+									<div class="textPerson">
+										<div class="blueLine"></div>
+										<div class="namePerson">
+											<div class="yellowSqare"></div>
+											<h2>{{ employee.lastname | upper }}
+												{{ employee.firstname | lower }}</h2>
+										</div>
+										<div class="YellowLine"></div>
+										<h3>{{ employee.post | lower }}</h3>
+									</div>
+								</div>
+							</article>
+						{% endif %}
+					{% endfor %}
+				</div>
+			{% endfor %}
+	</main>
+{% endblock %}
