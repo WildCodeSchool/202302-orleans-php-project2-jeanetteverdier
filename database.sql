@@ -104,7 +104,7 @@ ALTER TABLE
 
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */
 
-/********** TABLE TRAINING **********/
+;
 
 CREATE TABLE
     `training` (
@@ -115,11 +115,7 @@ CREATE TABLE
         `program` TEXT,
         `nb_students` INT NOT NULL,
         `success_rate` INT NOT NULL,
-        `stage_duration` INT NOT NULL,
-        `sector_id` INT NOT NULL,
-        `degree_id` INT NOT NULL,
-        FOREIGN KEY (sector_id) REFERENCES sector(`id`),
-        FOREIGN KEY (degree_id) REFERENCES degree(`id`)
+        `stage_duration` INT NOT NULL
     );
 
 INSERT INTO
@@ -127,60 +123,44 @@ INSERT INTO
         name,
         nb_students,
         success_rate,
-        stage_duration,
-        sector_id,
-        degree_id
+        stage_duration
     )
 VALUES (
         "Opérateur logistique",
         24,
         84,
-        4,
-        1,
-        1
+        4
     ), (
         "Equipier polyvalent du commerce",
         15,
         86,
-        4,
-        2,
-        1
+        4
     ), (
         "Mode option vêtement flou",
         15,
         89,
-        4,
-        3,
-        1
+        4
     ), (
         "Assistance à la gestion des organisations et de leurs activités",
         32,
         87,
-        6,
-        1,
-        2
-    ), ("Logistique", 30, 85, 6, 1, 2), (
+        6
+    ), ("Logistique", 30, 85, 6), (
         "Organisation de transport de marchandises",
         15,
         88,
-        6,
-        1,
-        2
+        6
     ), (
         "Commerce et de la Vente option A : animation et gestion de l'espace commercial",
         48,
         89,
-        6,
-        2,
-        2
+        6
     ), (
         "Commerce et de la Vente option B : prospection clientèle et valorisation de l'offre commerciale",
         16,
         82,
-        6,
-        2,
-        2
-    ), ("Accueil", 16, 83, 6, 2, 2);
+        6
+    ), ("Accueil", 16, 83, 6);
 
 UPDATE `training`
 SET
