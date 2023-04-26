@@ -24,25 +24,45 @@
 			</div>
 
 			<div class="training-articles">
-				{% for training in trainings %}
 
+				{% for sector in sectors %}
+					<div class="second-title">
+						<div class="bloc-rectangle"></div>
+						<h4>
+							{{ sector.name }}</h4>
+					</div>
+				{% endfor %}
+
+				{% for training in trainings %}
 					<article class="training-card">
 						<div class="training-content">
 							<div class="blue-rectangle"></div>
-							<h4>{{ training.name }}</h4>
+							<h4>
+								{% for degree in degrees %}
+									{% if degree.id == training.degree_id %}
+										{{ degree.name }}
+									{% endif %}
+								{% endfor %}
+								{{ training.name }}</h4>
 							<div class="orange-rectangle"></div>
 							<p>Durée :
+								{% for degree in degrees %}
+									{% if degree.id == training.degree_id %}
+										{{ degree.duration }}
+										ans /
+									{% endif %}
+								{% endfor %}
 								{{ training.stage_duration }}
 								mois de stage</p>
 							<a href="#" role="button">En savoir plus</a>
-						</div>
-						<div class="training-image">
-							<img src="assets/images/placeholder.jpg" alt="Photo de la formation"/>
-						</div>
-					</article>
+						</p>
+					</div>
+					<div class="training-image">
+						<img src="assets/images/placeholder.jpg" alt="Photo de la formation"/>
+					</div>
+				</article>
 
-				</div>
-			{% endfor %}
-		</section>
-	</main>
-{% endblock %}
+			</div>
+		{% endfor %}
+	</section>
+</main>{% endblock %}

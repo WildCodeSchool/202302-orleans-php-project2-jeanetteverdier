@@ -14,4 +14,20 @@ class TrainingManager extends AbstractManager
 
         return $statement->fetchAll();
     }
+
+    public function selectSector(): array
+    {
+        $query = "SELECT * FROM sector;";
+        $statement = $this->pdo->query($query);
+
+        return $statement->fetchAll();
+    }
+
+    public function selectDegree(): array
+    {
+        $query = 'SELECT * FROM degree;';
+        $statement = $this->pdo->query($query);
+
+        return $statement->fetchAll();
+    }
 }

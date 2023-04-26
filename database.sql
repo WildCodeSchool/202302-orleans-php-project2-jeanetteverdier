@@ -106,6 +106,25 @@ ALTER TABLE
 
 ;
 
+CREATE TABLE
+    `work_departement` (
+        `id` int NOT NULL AUTO_INCREMENT,
+        `name` varchar(255) NOT NULL,
+        PRIMARY KEY (`id`)
+    );
+
+CREATE TABLE
+    `employee` (
+        `id` int NOT NULL PRIMARY KEY AUTO_INCREMENT,
+        `firstname` varchar(255) NOT NULL,
+        `lastname` varchar(255) NOT NULL,
+        `post` text NOT NULL,
+        `biography` text,
+        `picture` varchar(255),
+        `work_departement_id` INT NOT NULL,
+        CONSTRAINT fk_work_departement FOREIGN KEY (work_departement_id) REFERENCES work_departement(id)
+    );
+
 INSERT INTO
     `work_departement` (`name`)
 VALUES ('Direction'), ('Vie scolaire'), ('Service medico-social'), ('Agents techniques'), ('Coordinations Dispositifs'), ('Personnels enseignants');
@@ -469,7 +488,35 @@ VALUES (
         6
     );
 
--- TABLE TRAINING
+-- ********** TABLE DEGREE **********/
+
+CREATE TABLE
+    `degree` (
+        `id` INT NOT NULL PRIMARY KEY AUTO_INCREMENT,
+        `name` VARCHAR(255) NOT NULL,
+        `duration` INT NOT NULL
+    );
+
+INSERT INTO
+    degree (name, duration)
+VALUES ('CAP', 2), ('BAC PRO', 3);
+
+-- ********** TABLE SECTOR **********
+
+CREATE TABLE
+    `sector` (
+        `id` INT NOT NULL PRIMARY KEY AUTO_INCREMENT,
+        `name` VARCHAR(255) NOT NULL
+    );
+
+INSERT INTO `sector` (name)
+VALUES (
+        'Métiers de la Gestion Administrative du Transport et de la Logistique'
+    ), (
+        'Métiers de la Relation Client'
+    ), ('Métiers de la Mode');
+
+-- ********** TABLE TRAINING **********
 
 CREATE TABLE
     `training` (
@@ -480,7 +527,11 @@ CREATE TABLE
         `program` TEXT,
         `nb_students` INT NOT NULL,
         `success_rate` INT NOT NULL,
-        `stage_duration` INT NOT NULL
+        `stage_duration` INT NOT NULL,
+        `sector_id` INT NOT NULL,
+        `degree_id` INT NOT NULL,
+        FOREIGN KEY (sector_id) REFERENCES sector(`id`),
+        FOREIGN KEY (degree_id) REFERENCES degree(`id`)
     );
 
 INSERT INTO
@@ -488,44 +539,60 @@ INSERT INTO
         name,
         nb_students,
         success_rate,
-        stage_duration
+        stage_duration,
+        sector_id,
+        degree_id
     )
 VALUES (
         "Opérateur logistique",
         24,
         84,
-        4
+        4,
+        1,
+        1
     ), (
         "Equipier polyvalent du commerce",
         15,
         86,
-        4
+        4,
+        2,
+        1
     ), (
         "Mode option vêtement flou",
         15,
         89,
-        4
+        4,
+        3,
+        1
     ), (
         "Assistance à la gestion des organisations et de leurs activités",
         32,
         87,
-        6
-    ), ("Logistique", 30, 85, 6), (
+        6,
+        1,
+        2
+    ), ("Logistique", 30, 85, 6, 1, 2), (
         "Organisation de transport de marchandises",
         15,
         88,
-        6
+        6,
+        1,
+        2
     ), (
         "Commerce et de la Vente option A : animation et gestion de l'espace commercial",
         48,
         89,
-        6
+        6,
+        2,
+        2
     ), (
         "Commerce et de la Vente option B : prospection clientèle et valorisation de l'offre commerciale",
         16,
         82,
-        6
-    ), ("Accueil", 16, 83, 6);
+        6,
+        2,
+        2
+    ), ("Accueil", 16, 83, 6, 2, 2);
 
 UPDATE `training`
 SET
@@ -598,22 +665,3 @@ SET
     program = "La formation BAC PRO Accueil comporte des modules qui incluent les techniques d'accueil et de communication, la gestion de la qualité de service, la gestion administrative, la connaissance des produits et services, la vente et le conseil, l'informatique et les outils bureautiques ainsi que la langue moderne (anglais).
 Des stages en entreprise sont également prévus pour permettre aux apprenants de mettre en pratique leurs compétences et de se familiariser avec le milieu professionnel."
 WHERE id = 9;
-
-CREATE TABLE
-    `work_departement` (
-        `id` int NOT NULL AUTO_INCREMENT,
-        `name` varchar(255) NOT NULL,
-        PRIMARY KEY (`id`)
-    );
-
-CREATE TABLE
-    `employee` (
-        `id` int NOT NULL PRIMARY KEY AUTO_INCREMENT,
-        `firstname` varchar(255) NOT NULL,
-        `lastname` varchar(255) NOT NULL,
-        `post` text NOT NULL,
-        `biography` text,
-        `picture` varchar(255),
-        `work_departement_id` INT NOT NULL,
-        CONSTRAINT fk_work_departement FOREIGN KEY (work_departement_id) REFERENCES work_departement(id)
-    );

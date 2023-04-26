@@ -18,6 +18,7 @@
     background: rgba(255, 255, 255, 0.2);
     position: relative;
     height: auto;
+    width: 100%;
     border-radius: 0;
     box-shadow: var(--box-shadow);
     z-index: var(--firstPlan);
