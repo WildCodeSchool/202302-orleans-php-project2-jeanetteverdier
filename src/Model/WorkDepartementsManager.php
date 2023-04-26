@@ -7,7 +7,7 @@ use PDO;
 class WorkDepartementsManager extends AbstractManager
 {
     public const TABLE = 'work_departement';
-    public function SelectAllWorkDepartement()
+    public function selectAllWorkDepartement()
     {
         $query = "SELECT name from work_departement";
         $statement = $this->pdo->query($query);
