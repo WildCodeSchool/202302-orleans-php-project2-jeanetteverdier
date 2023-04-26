@@ -1,8 +1,8 @@
 {% extends 'layout.html.twig' %}
 
 {% block title %}
+	formulaire de contact -
 	{{ parent() }}
-	- formulaire de contact
 {% endblock %}
 
 {% block stylesheet %}
@@ -20,7 +20,7 @@
 					<h3>
 						<span>Nous</span><br/>contacter</h3>
 				</div>
-				<div class="traitGris"></div>
+				<div class="traitYellow"></div>
 				<div class="second-title">
 					<div class="bloc-rectangle"></div>
 					<h4>Besoin d'un renseignement ?</h4>
@@ -65,29 +65,26 @@
 							<select name="about" id="about">
 								<option>Type de demande</option>
 								{% for option in options %}
-									<option value="{{ option }}"></option>
-									{{ option }}
-								</option>
-							{% endfor %}
-						</select>
-						{% if errors.about is not empty %}
-							{{ errors.about }}
-						{% endif %}
-					</div>
-					<br>
-					<div>
-						<label for="message">Votre Message</label>
-						<textarea id="message" name="message" id="message">{{ post.message }}</textarea>
-						{% if errors.message is not empty %}
-							{{ errors.message }}
-						{% endif %}
-					</div>
-					<div class="button">
-						<button type="submit">Contactez-nous</button>
-					</div>
+								<option value="{{ option }}">{{ option }}</option>
+								{% endfor %}
+							</select>
+					{% if errors.about is not empty %}
+						{{ errors.about }}
+					{% endif %}
 				</div>
-			</form>
-		</div>
+				<br>
+				<div>
+					<label for="message">Votre Message</label>
+					<textarea id="message" name="message" id="message">{{ post.message }}</textarea>
+					{% if errors.message is not empty %}
+						{{ errors.message }}
+					{% endif %}
+				</div>
+				<div class="button">
+					<button type="submit">Contactez-nous</button>
+				</div>
+			</div>
+		</form>
+	</div>
 
-	</main>
-{% endblock %}
+</main>{% endblock %}

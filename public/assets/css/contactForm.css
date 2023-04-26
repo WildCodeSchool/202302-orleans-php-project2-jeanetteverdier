@@ -1,10 +1,6 @@
-@import url('https://fonts.googleapis.com/css2?family=Akshar:wght@400;500;600&family=Cinzel+Decorative:wght@400;700&family=Roboto&display=swap');
 @import url(style.css);
 
 :root {
-    --dark: #020f1e;
-    --light: #f2f3f5;
-
     --form-element-spacing-vertical: 0.5rem;
     --form-element-spacing-horizontal: 0.5rem;
     --font-size: 1rem;
@@ -51,12 +47,12 @@ h2 {
     background-position: top 1%;
 }
 
-.traitGris {
+.traitYellow {
     height: 5px;
     width: 250px;
-    background-color: grey;
+    background-color: var(--secondary);
     margin-top: var(--spacing3);
-    margin-left: calc(var(--spacing2) + var(--spacing) );
+    margin-bottom: var(--spacing1);
 }
 
 input,
@@ -101,6 +97,8 @@ textarea {
     height: 150px;
     resize: none;
 }
+
+
 
 .button {
     display: flex;
