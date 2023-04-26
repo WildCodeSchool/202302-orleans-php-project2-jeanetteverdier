@@ -8,7 +8,7 @@ class TrainingManager extends AbstractManager
 
     public function selectAllTraining(): array
     {
-        $query = "SELECT name, stage_duration FROM training";
+        $query = "SELECT * FROM training";
 
         $statement = $this->pdo->query($query);
 
