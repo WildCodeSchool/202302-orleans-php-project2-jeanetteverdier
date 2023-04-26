@@ -10,13 +10,11 @@ class TrainingController extends AbstractController
     {
         $trainingManager = new TrainingManager();
         $trainings = $trainingManager->selectAllTraining();
-        $sectors = $trainingManager->selectSector();
 
         return $this->twig->render(
             'Training/index.html.twig',
             [
                 'trainings' => $trainings,
-                'sectors' => $sectors
             ]
         );
     }

@@ -104,39 +104,7 @@ ALTER TABLE
 
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */
 
-;
-
-/********** TABLE SECTOR **********/
-
-CREATE TABLE
-    `sector` (
-        `id` INT NOT NULL PRIMARY KEY AUTO_INCREMENT,
-        `name` VARCHAR(255) NOT NULL
-    );
-
-INSERT INTO `sector` (name)
-VALUES (
-        'Métiers de la Gestion Administrative du Transport et de la Logistique'
-    ), (
-        'Métiers de la Relation Client'
-    ), ('Métiers de la Mode');
-
-/********** TABLE DEGREE **********/
-
-CREATE TABLE
-    `degree` (
-        `id` INT NOT NULL PRIMARY KEY AUTO_INCREMENT,
-        `name` VARCHAR(255) NOT NULL,
-        `duration` INT NOT NULL
-    );
-
-INSERT INTO
-    degree (name, duration)
-VALUES ('CAP', 2), ('BAC PRO', 3);
-
 /********** TABLE TRAINING **********/
-
-SELECT * FROM sector;
 
 CREATE TABLE
     `training` (

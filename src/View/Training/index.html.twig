@@ -23,37 +23,26 @@
 				</div>
 			</div>
 
-			{% for sector in sectors %}
-				<div class="second-title">
-					<div class="bloc-rectangle"></div>
-					<h4>{{ sector.name }}</h4>
-				</div>
+			<div class="training-articles">
+				{% for training in trainings %}
+
+					<article class="training-card">
+						<div class="training-content">
+							<div class="blue-rectangle"></div>
+							<h4>{{ training.name }}</h4>
+							<div class="orange-rectangle"></div>
+							<p>Durée : X ans / X mois de stage</p>
+							<a href="#" role="button">En savoir plus</a>
+						</div>
+						<div class="training-image">
+							<img src="assets/images/reunion-reflexion.jpg" alt="Photo de la formation"/>
+						</div>
+					</article>
 
 
-				<div class="training-articles">
-					{% for training in trainings %}
-						{% if sector.name == training.sector_name %}
-							<article class="training-card">
-								<div class="training-content">
-									<div class="blue-rectangle"></div>
-									<h4>{{ training.degree_name }}
-										{{ training.training_name }}</h4>
-									<div class="orange-rectangle"></div>
-									<p>Durée :
-										{{ training.duration }}
-										ans /
-										{{ training.stage_duration }}
-										mois de stage</p>
-									<a href="#" role="button">En savoir plus</a>
-								</div>
-								<div class="training-image">
-									<img src="assets/images/reunion-reflexion.jpg" alt="Photo de la formation"/>
-								</div>
-							</article>
-						{% endif %}
-					{% endfor %}
 				</div>
-			</section>
-		{% endfor %}
+			{% endfor %}
+
+		</section>
 	</main>
 {% endblock %}
