@@ -43,7 +43,8 @@
 										{{ degree.name }}
 									{% endif %}
 								{% endfor %}
-								{{ training.name }}</h4>
+								{{ training.name }}
+							</h4>
 							<div class="orange-rectangle"></div>
 							<p>Durée :
 								{% for degree in degrees %}
@@ -53,16 +54,17 @@
 									{% endif %}
 								{% endfor %}
 								{{ training.stage_duration }}
-								mois de stage</p>
+								mois de stage
+							</p>
 							<a href="#" role="button">En savoir plus</a>
-						</p>
-					</div>
-					<div class="training-image">
-						<img src="assets/images/placeholder.jpg" alt="Photo de la formation"/>
-					</div>
-				</article>
+						</div>
+						<div class="training-image">
+							<img src="assets/images/placeholder.jpg" alt="Photo de la formation"/>
+						</div>
+					</article>
 
-			</div>
-		{% endfor %}
-	</section>
-</main>{% endblock %}
+				</div>
+			{% endfor %}
+		</section>
+	</main>
+{% endblock %}
