@@ -12,43 +12,46 @@ class ContactController extends AbstractController
         'Questions sur les frais de scolarité',
         'Autre',
     ];
-    private array $errors = [];
 
     public function index()
     {
-        $this->errors();
+        $errors = $contact = [];
+        if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+            $contact = array_map('trim', $_POST);
+            $errors = $this->errors($contact);
+        }
+
 
         return $this->twig->render('Contact/contactForm.html.twig', [
-            'errors' => $this->errors,
+            'errors' => $errors,
             'options' => $this->options,
-            'post' => $_POST,
+            'contact' => $contact,
         ]);
     }
 
-    public function errors()
+    public function errors($contact)
     {
-        if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-            $form = array_map('trim', $_POST);
-            if (empty($form['lastname'])) {
-                $this->errors['lastname'] = "Le nom est obligatoire";
-            }
-
-            if (empty($form['firstname'])) {
-                $this->errors['firstname'] = "Le prénom est obligatoire";
-            }
-
-            if (empty($form['email']) || (!filter_var($_POST['email'], FILTER_VALIDATE_EMAIL))) {
-                $this->errors['email'] = "Un E-mail correct est obligatoire";
-            }
-
-            if (((empty($form['about']))) || !in_array($form['about'], $this->options)) {
-                $this->errors['about'] = "Un sujet correct est obligatoire";
-            }
-
-            if (empty($form['message'])) {
-                $this->errors['message'] = "Un message est obligatoire";
-            }
+        $errors = [];
+        if (empty($contact['lastname'])) {
+            $errors['lastname'] = "Le nom est obligatoire";
         }
+
+        if (empty($contact['firstname'])) {
+            $errors['firstname'] = "Le prénom est obligatoire";
+        }
+
+        if (empty($contact['email']) || (!filter_var($_POST['email'], FILTER_VALIDATE_EMAIL))) {
+            $errors['email'] = "L' E-mail correct est obligatoire";
+        }
+
+        if (((empty($contact['about']))) || !in_array($contact['about'], $this->options)) {
+            $errors['about'] = "Le sujet correct est obligatoire";
+        }
+
+        if (empty($contact['message'])) {
+            $errors['message'] = "Le message est obligatoire";
+        }
+        return $errors;
     }
 
     public function getOption(): array
@@ -58,14 +61,5 @@ class ContactController extends AbstractController
     public function setOption(array $options): void
     {
         $this->options = $options;
-    }
-
-    public function getErrors(): array
-    {
-        return $this->errors;
-    }
-    public function setErrors(array $errors): void
-    {
-        $this->errors = $errors;
     }
 }

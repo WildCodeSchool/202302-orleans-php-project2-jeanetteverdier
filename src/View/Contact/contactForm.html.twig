@@ -1,7 +1,7 @@
 {% extends 'layout.html.twig' %}
 
 {% block title %}
-	formulaire de contact -
+	Contactez-nous -
 	{{ parent() }}
 {% endblock %}
 
@@ -10,17 +10,14 @@
 {% endblock %}
 
 {% block content %}
-
 	<main>
 		<div class="container">
 			<div class="background-line"></div>
 			<div class="main-title">
 				<div class="title-content">
 					<div class="bloc-square"></div>
-					<h3>
-						<span>Nous</span><br/>contacter</h3>
+					<h3><span>Nous</span><br/>contacter</h3>
 				</div>
-				<div class="traitYellow"></div>
 				<div class="second-title">
 					<div class="bloc-rectangle"></div>
 					<h4>Besoin d'un renseignement ?</h4>
@@ -30,61 +27,68 @@
 				<div class="logoContact">
 					<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-envelope-open" viewbox="0 0 16 16"><path d="M8.47 1.318a1 1 0 0 0-.94 0l-6 3.2A1 1 0 0 0 1 5.4v.817l5.75 3.45L8 8.917l1.25.75L15 6.217V5.4a1 1 0 0 0-.53-.882l-6-3.2ZM15 7.383l-4.778 2.867L15 13.117V7.383Zm-.035 6.88L8 10.082l-6.965 4.18A1 1 0 0 0 2 15h12a1 1 0 0 0 .965-.738ZM1 13.116l4.778-2.867L1 7.383v5.734ZM7.059.435a2 2 0 0 1 1.882 0l6 3.2A2 2 0 0 1 16 5.4V14a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V5.4a2 2 0 0 1 1.059-1.765l6-3.2Z"/></svg>
 				</div>
-				<form action="" method="post">
-					<div class="form">
+				<form action="" method="post" class="form">
 						<div class="nameFlex">
 							<div>
 								<label for="lastname">Nom</label>
-								<input type="text" name="lastname" id="lastname" value="{{ post.lastname }}"/>
+								<input type="text" name="lastname" id="lastname" value="{{ contact.lastname }}"/>
+								<div class="error">
 								{% if errors.lastname is not empty %}
 									{{ errors.lastname }}
 								{% endif %}
+								</div>
 							</div>
 							<div>
 								<label for="firstname">Prénom</label>
-								<input type="text" name="firstname" id="firstname" value="{{ post.firstname }}"/>
+								<input type="text" name="firstname" id="firstname" value="{{ contact.firstname }}"/>
+								<div class="error">
 								{% if errors.firstname is not empty %}
 									{{ errors.firstname }}
 								{% endif %}
+								</div>
 							</div>
 						</div>
 						<div>
 							<label for="email">E-mail</label>
-							<input type="text" name="email" id="email" value="{{ post.email }}"/>
+							<input type="text" name="email" id="email" value="{{ contact.email }}"/>
+							<div class="error">
 							{% if errors.email is not empty %}
 								{{ errors.email }}
 							{% endif %}
+							</div>
 						</div>
 						<div>
 							<label for="phone">Téléphone (facultatif)</label>
-							<input type="number" name="phone" id="phone" value="{{ post.phone }}"/>
+							<input type="number" name="phone" id="phone" value="{{ contact.phone }}"/>
+						</div>
+						<br>	
+						<div>
+							<label for="about">Sujet</label>
+							<select name="about" id="about" placeholder="Type de demande">
+								{% for option in options %}
+									<option>{{ option }}</option>
+								{% endfor %}
+							</select>
+							<div class="error">
+							{% if errors.about is not empty %}
+								{{ errors.about }}
+							{% endif %}
+							</div>
 						</div>
 						<br>
 						<div>
-							<label for="about">Sujet</label>
-							<select name="about" id="about">
-								<option>Type de demande</option>
-								{% for option in options %}
-								<option value="{{ option }}">{{ option }}</option>
-								{% endfor %}
-							</select>
-					{% if errors.about is not empty %}
-						{{ errors.about }}
-					{% endif %}
-				</div>
-				<br>
-				<div>
-					<label for="message">Votre Message</label>
-					<textarea id="message" name="message" id="message">{{ post.message }}</textarea>
-					{% if errors.message is not empty %}
-						{{ errors.message }}
-					{% endif %}
-				</div>
-				<div class="button">
-					<button type="submit">Contactez-nous</button>
-				</div>
+							<label for="message">Votre Message</label>
+							<textarea id="message" name="message" id="message">{{ contact.message }}</textarea>
+							<div class="error">
+							{% if errors.message is not empty %}
+								{{ errors.message }}
+							{% endif %}
+							</div>
+						</div>
+						<button>Contactez-nous</button>
+				</form>
 			</div>
-		</form>
-	</div>
+		</div>
+	</main>
 
-</main>{% endblock %}
+{% endblock %}

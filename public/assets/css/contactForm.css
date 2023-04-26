@@ -6,53 +6,34 @@
     --font-size: 1rem;
 }
 
-.titleContact{
-    margin-bottom: 0px;
-    margin-top: var(--spacing3);
-}
-
-img {
-    width: 100%;
-    object-fit: cover;
-}
 
 .container {
-    width: 60vw;
+    width: var(--clamp60);
 }
 
 main {
     display: flex;
     flex-direction: column;
     align-items: center;
+    z-index: var(--firstPlan);
 }
 
-
-h1 {
-    font-size: clamp(2rem, 5vw, 3rem);
-    margin-left: calc(var(--spacing2) + var(--spacing) );
+.error{
+    color: var(--errorColor);
 }
 
-h2 {
-    font-size: clamp(1.1rem, 3.9vw, 1.9rem);
-    margin-left: calc(var(--spacing2) + var(--spacing) );
-    margin-top: var(--spacing1);
-}
-
-.mainTitle {
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-end;
-
-    background-size: 180px;
-    background-position: top 1%;
-}
-
-.traitYellow {
+.yellowLine {
     height: 5px;
     width: 250px;
     background-color: var(--secondary);
     margin-top: var(--spacing3);
     margin-bottom: var(--spacing1);
+}
+
+.form
+{
+    display: flex;
+    flex-direction: column;
 }
 
 input,
@@ -71,14 +52,14 @@ label {
     justify-content: space-around;
     background-color: var(--primary);
     color: var(--light);
-    padding: calc(var(--spacing1) + var(--spacing) );
-    box-shadow: var(--shadow);
+    padding: var(--spacing3);
+    box-shadow: var(--box-shadow);
     border-radius: var(--spacing);
 }
 
 .nameFlex {
     display: flex;
-    gap: calc(var(--spacing1) + var(--spacing) );
+    gap: var(--spacing3);
 }
 
 .logoContact {
@@ -98,22 +79,16 @@ textarea {
     resize: none;
 }
 
-
-
-.button {
-    display: flex;
-    justify-content: flex-end;
-}
-
 button {
+    align-self: flex-end;
     margin-top: var(--spacing1);
-    background-color: #FFAD33;
+    background-color: var(--secondary);
     color: var(--light);
     width: 150px;
 
 }
 
-@media screen and (max-width: 1100px) {
+@media screen and (max-width: 1023px) {
     .formPage {
         flex-direction: column;
         padding: var(--spacing3);
@@ -123,35 +98,11 @@ button {
     .nameFlex {
         display: block;
     }
-    .mainTitle{
-        background-size: 190x;
-    }
-    .logoContact{
-        margin-right: 0px;
-    }
 }
 
-@media screen and (max-width: 900px){
-    .mainTitle{
-        background-size: 170px;
-    }
-} 
-
-@media screen and (max-width: 700px) {
-    body{
-        background-size: 150px;
-    }
-    .formPage {
-        padding: var(--spacing2);
-    }
-
+@media screen and (max-width: 767px) {
     .container {
-        width: 90vw;
+       width: var(--clamp90);
     }
-     .mainTitle{
-        background-size: 140px;
-    }
-    .traitGris{
-        width: 150px;
-    }
+
 }
