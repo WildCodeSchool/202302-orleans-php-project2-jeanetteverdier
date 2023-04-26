@@ -112,7 +112,8 @@ CREATE TABLE `work_departement` (
   PRIMARY KEY (`id`)
   );
 
-CREATE TABLE `team` (
+
+CREATE TABLE `employee` (
   `id` int NOT NULL PRIMARY KEY AUTO_INCREMENT,
   `firstname` varchar(255) NOT NULL,
   `lastname` varchar(255) NOT NULL,
@@ -133,7 +134,7 @@ INSERT INTO `work_departement` (`name`) VALUES
 ('Coordinations Dispositifs'),
 ('Personnels enseignants');
 
-INSERT INTO `team` (`firstname`, `lastname`, `post`, `work_departement_id`) VALUES
+INSERT INTO `employee` (`firstname`, `lastname`, `post`, `work_departement_id`) VALUES
 ('Matthias', 'CYPRIEN', 'PROVISEUR', 1),
 ('Oliver', 'DREYFUS', 'Proviseur-adjoint', 1),
 ('Miréla', 'DENYS', 'Adjointe-gestionnaire', 1),

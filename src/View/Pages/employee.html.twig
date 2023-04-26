@@ -24,8 +24,8 @@
 					</div>
 				</div>
 				<div class="myArticles">
-					{% for team in teams %}
-						{% if team.name == workDepartement.name %}
+					{% for employee in employees %}
+						{% if employee.name == workDepartement.name %}
 							<article>
 								<div class="myArticle">
 									<div class="picurePerson"><img src= /assets/images/professeursPhotos/{{ team.picture ?? "teacherByDefault.jpg/"}} alt="default"></div>
@@ -33,11 +33,11 @@
 										<div class="blueLine"></div>
 										<div class="namePerson">
 											<div class="yellowSqare"></div>
-											<h2>{{ team.lastname | upper }}
-												{{ team.firstname | lower }}</h2>
+											<h2>{{ employee.lastname | upper }}
+												{{ employee.firstname | lower }}</h2>
 										</div>
 										<div class="YellowLine"></div>
-										<h3>{{ team.post | lower }}</h3>
+										<h3>{{ employee.post | lower }}</h3>
 									</div>
 								</div>
 							</article>

@@ -77,7 +77,7 @@ article {
 
 .textPerson h2 {
    font-size: 0.9rem;
-   color: black;
+   color: var(--dark);
    transition: .3s ease-in-out;
    transform: translate(-7px, 0px);
 }
@@ -85,7 +85,7 @@ article {
 .textPerson h3 {
    font-size: 0.7rem;
    margin: 0px;
-   color: black;
+   color: var(--dark);
    position: relative;
    transition: .3s ease-in-out;
    margin-left: var(--spacing);
@@ -139,7 +139,7 @@ article {
 
 .myArticle:hover h2,
 .myArticle:hover h3 {
-   color: white;
+   color: var(--light);
 }
 
 .myArticle:hover {
