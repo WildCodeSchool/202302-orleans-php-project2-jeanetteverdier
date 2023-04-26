@@ -14,4 +14,5 @@ return [
     'items/add' => ['ItemController', 'add',],
     'items/delete' => ['ItemController', 'delete',],
     'formations' => ['TrainingController', 'index',],
+    'notre-equipe' => ['EmployeeController', 'index',],
 ];

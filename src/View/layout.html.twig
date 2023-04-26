@@ -22,11 +22,12 @@
 
 			{% block content %}{% endblock %}
 
-			{% block footer %}{% endblock %}
+			{% block footer %}
+				{% include 'Components/_footer.html.twig' %}
+			{% endblock %}
 
 			{% block javascript %}
 				<script src="assets/javascript/navbar.js"></script>
 			{% endblock %}
 		</body>
 	</html>
-</p></body></html>

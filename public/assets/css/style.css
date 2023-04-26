@@ -1,5 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Akshar:wght@400;500;600&family=Cinzel+Decorative:wght@400;700&family=Roboto&display=swap');
 @import url('navbar.css');
+@import url('footer.css');
 
 :root[data-theme="light"] {
     --primary: #2E71C0;
@@ -8,7 +9,9 @@
     --dark: #020f1e;
     --light: #f2f3f5;
     --lowlight: rgba(255, 255, 255, 0.2);
-    
+    --backgroundCard: rgba(255, 255, 255, 0.2);; 
+
+
     --fontTitle: 'Akshar', sans-serif;
     --fontText: 'Roboto', sans-serif;
     --fontLogo:'Cinzel Decorative', cursive;
