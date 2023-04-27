@@ -488,19 +488,6 @@ VALUES (
         6
     );
 
--- ********** TABLE DEGREE **********/
-
-CREATE TABLE
-    `degree` (
-        `id` INT NOT NULL PRIMARY KEY AUTO_INCREMENT,
-        `name` VARCHAR(255) NOT NULL,
-        `duration` INT NOT NULL
-    );
-
-INSERT INTO
-    degree (name, duration)
-VALUES ('CAP', 2), ('BAC PRO', 3);
-
 -- ********** TABLE SECTOR **********
 
 CREATE TABLE
@@ -529,9 +516,7 @@ CREATE TABLE
         `success_rate` INT NOT NULL,
         `stage_duration` INT NOT NULL,
         `sector_id` INT NOT NULL,
-        `degree_id` INT NOT NULL,
-        FOREIGN KEY (sector_id) REFERENCES sector(`id`),
-        FOREIGN KEY (degree_id) REFERENCES degree(`id`)
+        FOREIGN KEY (sector_id) REFERENCES sector(`id`)
     );
 
 INSERT INTO
@@ -540,59 +525,51 @@ INSERT INTO
         nb_students,
         success_rate,
         stage_duration,
-        sector_id,
-        degree_id
+        sector_id
     )
 VALUES (
         "Opérateur logistique",
         24,
         84,
         4,
-        1,
         1
     ), (
         "Equipier polyvalent du commerce",
         15,
         86,
         4,
-        2,
-        1
+        2
     ), (
         "Mode option vêtement flou",
         15,
         89,
         4,
-        3,
-        1
+        3
     ), (
         "Assistance à la gestion des organisations et de leurs activités",
         32,
         87,
         6,
-        1,
-        2
-    ), ("Logistique", 30, 85, 6, 1, 2), (
+        1
+    ), ("Logistique", 30, 85, 6, 1), (
         "Organisation de transport de marchandises",
         15,
         88,
         6,
-        1,
-        2
+        1
     ), (
         "Commerce et de la Vente option A : animation et gestion de l'espace commercial",
         48,
         89,
         6,
-        2,
         2
     ), (
         "Commerce et de la Vente option B : prospection clientèle et valorisation de l'offre commerciale",
         16,
         82,
         6,
-        2,
         2
-    ), ("Accueil", 16, 83, 6, 2, 2);
+    ), ("Accueil", 16, 83, 6, 2);
 
 UPDATE `training`
 SET

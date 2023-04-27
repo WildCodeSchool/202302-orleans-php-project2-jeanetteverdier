@@ -8,24 +8,11 @@ class TrainingManager extends AbstractManager
 
     public function selectAllTraining(): array
     {
-        $query = "SELECT * FROM training";
+        $query = "SELECT t.name training_name, t.stage_duration, s.name sector_name
+        FROM training t
+        JOIN sector s ON s.id = t.sector_id
+        ORDER BY t.name ASC;";
 
-        $statement = $this->pdo->query($query);
-
-        return $statement->fetchAll();
-    }
-
-    public function selectSector(): array
-    {
-        $query = "SELECT * FROM sector;";
-        $statement = $this->pdo->query($query);
-
-        return $statement->fetchAll();
-    }
-
-    public function selectDegree(): array
-    {
-        $query = 'SELECT * FROM degree;';
         $statement = $this->pdo->query($query);
 
         return $statement->fetchAll();
