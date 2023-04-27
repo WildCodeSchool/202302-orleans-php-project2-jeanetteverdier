@@ -9,6 +9,7 @@
 
 .container {
     width: var(--clamp60);
+    position: relative;
 }
 
 main {
@@ -20,14 +21,6 @@ main {
 
 .error{
     color: var(--errorColor);
-}
-
-.yellowLine {
-    height: 5px;
-    width: 250px;
-    background-color: var(--secondary);
-    margin-top: var(--spacing3);
-    margin-bottom: var(--spacing1);
 }
 
 .form
@@ -55,6 +48,8 @@ label {
     padding: var(--spacing3);
     box-shadow: var(--box-shadow);
     border-radius: var(--spacing);
+    position: relative;
+    z-index: var(--firstPlan);
 }
 
 .nameFlex {
