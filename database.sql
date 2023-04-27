@@ -503,6 +503,19 @@ VALUES (
         'Métiers de la Relation Client'
     ), ('Métiers de la Mode');
 
+-- ********** TABLE DEGREE **********
+
+CREATE TABLE
+    `degree` (
+        `id` INT NOT NULL PRIMARY KEY AUTO_INCREMENT,
+        `name` VARCHAR(255) NOT NULL,
+        `duration` INT NOT NULL
+    );
+
+INSERT INTO
+    degree (name, duration)
+VALUES ('CAP', 2), ('BAC PRO', 3);
+
 -- ********** TABLE TRAINING **********
 
 CREATE TABLE
@@ -516,7 +529,9 @@ CREATE TABLE
         `success_rate` INT NOT NULL,
         `stage_duration` INT NOT NULL,
         `sector_id` INT NOT NULL,
-        FOREIGN KEY (sector_id) REFERENCES sector(`id`)
+        `degree_id` INT NOT NULL,
+        FOREIGN KEY (sector_id) REFERENCES sector(`id`),
+        FOREIGN KEY (degree_id) REFERENCES degree(`id`)
     );
 
 INSERT INTO
@@ -525,51 +540,59 @@ INSERT INTO
         nb_students,
         success_rate,
         stage_duration,
-        sector_id
+        sector_id,
+        degree_id
     )
 VALUES (
         "Opérateur logistique",
         24,
         84,
         4,
+        1,
         1
     ), (
         "Equipier polyvalent du commerce",
         15,
         86,
         4,
-        2
+        2,
+        1
     ), (
         "Mode option vêtement flou",
         15,
         89,
         4,
-        3
+        3,
+        1
     ), (
         "Assistance à la gestion des organisations et de leurs activités",
         32,
         87,
         6,
-        1
-    ), ("Logistique", 30, 85, 6, 1), (
+        1,
+        2
+    ), ("Logistique", 30, 85, 6, 1, 2), (
         "Organisation de transport de marchandises",
         15,
         88,
         6,
-        1
+        1,
+        2
     ), (
         "Commerce et de la Vente option A : animation et gestion de l'espace commercial",
         48,
         89,
         6,
+        2,
         2
     ), (
         "Commerce et de la Vente option B : prospection clientèle et valorisation de l'offre commerciale",
         16,
         82,
         6,
+        2,
         2
-    ), ("Accueil", 16, 83, 6, 2);
+    ), ("Accueil", 16, 83, 6, 2, 2);
 
 UPDATE `training`
 SET
@@ -633,7 +656,7 @@ SET
 À l'issue de la formation, les apprenants peuvent accéder à différents métiers tels que commercial sédentaire, commercial itinérant, télévendeur, conseiller commercial , ou encore responsable commercial.",
     program = "La formation BAC PRO Commerce et de la Vente option B : prospection clientèle et valorisation de l'offre commerciale comporte des modules qui incluent les techniques de prospection commerciale, de vente et de négociation commerciale, le marketing de la vente au détail, la gestion de l'offre commerciale, la gestion de la relation client, la communication professionnelle et les outils bureautiques, ainsi que la langue étrangère des affaires.
 Des stages en entreprise sont également prévus pour permettre aux apprenants de mettre en pratique leurs compétences et de se familiariser avec le milieu professionnel."
-WHERE id = "8";
+WHERE id = 8;
 
 UPDATE `training`
 SET
