@@ -1,0 +1,166 @@
+@import url(style.css);
+
+.myArticles {
+   display: grid;
+   grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+   grid-row-gap: var(--spacing1);
+   margin: var(--spacing);
+   margin-top: var(--spacing3);
+   margin-bottom: var(--spacing5);
+   position: relative;
+   z-index: var(--firstPlan);
+}
+
+article {
+   margin: 0px;
+   padding: 0px;
+   border-radius: 0px;
+   background: transparent;
+   box-shadow: 0px 0px 0px var(--light);
+   margin-bottom: var(--spacing3);
+}
+
+.myArticles h2 {
+   margin: 0px;
+}
+
+.myArticles h3 {
+   margin: 0px;
+}
+
+.container h1 {
+   margin-top: var(--spacing2);
+}
+
+.container {
+   width: var(--clamp60);
+}
+
+.myArticle {
+   display: flex;
+   flex-direction: column;
+   transition: .3s ease-in-out;
+}
+
+.picurePerson {
+   align-self: flex-start;
+   width: 270px;
+   height: 170px;
+   transform: rotate(-2deg);
+   z-index: var(--secondPlan);
+}
+
+.picurePerson img {
+   box-shadow: var(--shadow);
+   width: 360px;
+   height: 220px;
+}
+
+.textPerson {
+   display: flex;
+   flex-direction: column;
+   justify-content: center;
+
+   gap: var(--spacing);
+
+   backdrop-filter: blur(15px);
+   transform: translate(62px, 9px);
+   width: 250px;
+   height: 150px;
+   padding: var(--spacing);
+   border-radius: 2px;
+   background: var(--backgroundCard);
+   box-shadow: var(--shadow);
+   z-index: var(--secondPlan);
+   position: relative;
+}
+
+.textPerson h2 {
+   font-size: 0.9rem;
+   color: var(--dark);
+   transition: .3s ease-in-out;
+   transform: translate(-7px, 0px);
+}
+
+.textPerson h3 {
+   font-size: 0.7rem;
+   margin: 0px;
+   color: var(--dark);
+   position: relative;
+   transition: .3s ease-in-out;
+   margin-left: var(--spacing);
+}
+
+.YellowLine {
+   --secondary: #FFAD33;
+   width: 25px;
+   height: 3px;
+   background-color: var(--secondary);
+   position: relative;
+   transition: .5s ease-in-out;
+   margin-left: var(--spacing);
+}
+
+.yellowSqare {
+   --secondary: #FFAD33;
+   width: 55px;
+   height:55px;
+   background-color: var(--secondary);
+   border-radius: 2px;
+   transform: translate(-27px, -18px);
+}
+
+.namePerson {
+   display: flex;
+}
+
+.namePerson h2 {
+   position: relative;
+   right: 19%;
+   top: 25%;
+}
+
+.blueLine {
+   width: 5px;
+   height: 100%;
+   background-color: var(--primary);
+   position: absolute;
+   left: 0;
+   transition: .3s ease-in-out;
+}
+
+.myArticle:hover .blueLine {
+   width: 100%;
+}
+
+.myArticle:hover .YellowLine {
+   width: 40%;
+}
+
+.myArticle:hover h2,
+.myArticle:hover h3 {
+   color: var(--light);
+}
+
+.myArticle:hover {
+   transform: scale(1.05);
+}
+
+
+@media screen and (max-width: 767px) {
+   .myArticle {
+      width: 100%;
+      margin-right: 0px;
+   }
+
+   .myArticles {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+   }
+
+   .container {
+      width: var(--clamp90);
+   }
+}
