@@ -21,6 +21,7 @@
     width: 100%;
     border-radius: 0;
     box-shadow: var(--box-shadow);
+    backdrop-filter: blur(15px);
     z-index: var(--firstPlan);
     transition: all .3s ease-in-out; 
 }
@@ -54,7 +55,6 @@
     width: 55%;
     padding: var(--spacing3) var(--spacing2);
     z-index: var(--secondPlan);
-    backdrop-filter: blur(15px);
 }
 
 .training-content > h4 {
