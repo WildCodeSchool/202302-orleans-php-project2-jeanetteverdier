@@ -21,7 +21,6 @@ h1 {
 /* footer */
 
 footer {
-    border-top: 1px dashed var(--dark);
     background: var(--primary);
     color: var(--light);
 }
