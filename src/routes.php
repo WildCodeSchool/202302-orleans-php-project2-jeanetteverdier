@@ -15,4 +15,5 @@ return [
     'items/delete' => ['ItemController', 'delete',],
     'formations' => ['TrainingController', 'index',],
     'notre-equipe' => ['EmployeeController', 'index',],
+    'admin/notre-equipe' => ['AdminEmployeeController', 'index',],
 ];

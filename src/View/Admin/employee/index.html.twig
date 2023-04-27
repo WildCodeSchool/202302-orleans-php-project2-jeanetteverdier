@@ -1,0 +1,57 @@
+{% extends 'layout.html.twig' %}
+
+{% block title %}
+	Admin - Notre équipe -
+	{{ parent() }}
+{% endblock %}
+
+{% block stylesheet %}<link rel="stylesheet" href="/assets/css/Admin/employee/employeeIndex.css">
+{% endblock %}
+
+{% block content %}
+	<main class="container">
+		<div class="background-line"></div>
+		<div class="main-title">
+			<div class="title-content">
+				<div class="bloc-square"></div>
+				<h3>
+					<span>Découvrez</span><br/>notre équipe</h3>
+			</div>
+		</div>
+		<button>
+			<a href="addEmployee">Ajouter</a>
+		</button>
+		{% for workDepartement in workDepartements %}
+			<div class="main-title">
+				<div class="second-title">
+					<div class="bloc-rectangle"></div>
+					<h4>{{ workDepartement.name }}</h4>
+				</div>
+			</div>
+			<div class="myArticles">
+				{% for employee in employees %}
+					{% if employee.name == workDepartement.name %}
+						<article>
+							<div class="myArticle">
+								<div class="textPerson">
+									<div class="namePerson">
+										<h2>{{ employee.lastname | upper }}
+											{{ employee.firstname | lower }}</h2>
+									</div>
+									<div class="YellowLine"></div>
+									<h3>{{ employee.post | lower }}</h3>
+									<button>
+										<a href="updateEmployee?id=">Modifier</a>
+									</button>
+									<button>
+										<a href="deleteEmployee?id=">Supprimer</a>
+									</button>
+								</div>
+							</div>
+						</article>
+					{% endif %}
+				{% endfor %}
+			</div>
+		{% endfor %}
+	</main>
+{% endblock %}
