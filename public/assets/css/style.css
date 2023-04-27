@@ -35,7 +35,7 @@
     --clamp90: clamp(200px, 90vw, 690px);
 
     --box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
-
+}
 
 * {
     box-sizing: border-box;
