@@ -14,8 +14,8 @@ class TrainingManager extends AbstractManager
         s.name sector_name,
         d.name degree_name,
         d.duration degree_duration
-        FROM training t
-        JOIN sector s ON s.id = t.sector_id
+        FROM " . static::TABLE . " t
+        JOIN " . SectorManager::TABLE . " s ON s.id = t.sector_id
         JOIN " . DegreeManager::TABLE . " d ON d.id = t.degree_id
         ORDER BY d.name DESC, t.name ASC;";
 
