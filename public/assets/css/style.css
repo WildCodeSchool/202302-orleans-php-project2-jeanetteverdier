@@ -150,37 +150,3 @@ article {
     height: 30px;
     background-color: var(--secondary);
 }
-
-/*     --primary: #2E71C0;
-    --secondary: #FFAD33;
-    --dark: #020F1E;
-    --light: #F2F3F5;
-    --lowlight: rgba(255, 255, 255, 0.2);
-    --errorColor:  rgb(120, 24, 24);
-
-    --fontTitle: 'Akshar', sans-serif;
-    --fontText: 'Roboto', sans-serif;
-    --fontLogo:'Cinzel Decorative', cursive;
-
-    --sizeTitle: 2rem;
-    --sizeTitle2: 1rem;
-    --sizeText: 0.87rem;
-    --sizeTitleLogo: 1.25rem;
-
-    --spacing: 0.5rem;
-    --spacing1: 1rem;
-    --spacing2: 2rem;
-    --spacing3: 3rem;
-    --spacing4: 4rem;
-    --spacing5: 5rem;
-    --spacing6: 6rem;
-
-    --firstPlan: 10;
-    --secondPlan: 5;
-    --thirdPlan: 2;
-
-    --clamp60: clamp(650px, 60vw, 1200px);
-    --clamp90: clamp(200px, 90vw, 690px);
-
-    --box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
- */
