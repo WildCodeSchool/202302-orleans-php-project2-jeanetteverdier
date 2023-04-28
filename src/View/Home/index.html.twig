@@ -1,3 +1,21 @@
 {% extends 'layout.html.twig' %}
-
-{% block content %}{% endblock %}
+{% block stylesheet %}
+<link rel="stylesheet" href="/assets/css/home.css">
+{% endblock %}
+{% block content %}
+<header class="container event">
+    <div class="event-image">
+        <img src="/assets/images/event_480.jpg" alt="photo de l'événement"></img>
+    </div>
+        <article clas="event-content">
+        <div class="titre">
+            <h3>
+                {{ events.title }}
+            </h3>
+        </div>
+        <p class="event-text"> {{ events.content }}
+        </p>
+    <a href="#" role="button">EN SAVOIR PLUS</a>
+    </article>
+</header>
+{% endblock %}

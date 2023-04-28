@@ -105,3 +105,16 @@ ALTER TABLE
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */
 
 ;
+
+CREATE TABLE event (
+    id INT NOT NULL PRIMARY KEY AUTO_INCREMENT,
+    title VARCHAR(255) NOT NULL,
+    content TEXT,
+    image VARCHAR(255)
+);
+
+
+INSERT INTO 
+`event` (title, content)
+VALUES ("Journée Porte ouverte", "Le samedi 10 mai 2023, le lycée vous ouvre ses portes de 9h à 17h !
+Un accueil central, situé à l'entrée de l'établissement, vous permettra de découvrir les formations et services dédiés à la vie étudiante.");
