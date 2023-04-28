@@ -9,7 +9,8 @@
     --dark: #020f1e;
     --light: #f2f3f5;
     --lowlight: rgba(255, 255, 255, 0.2);
-    --backgroundCard: rgba(255, 255, 255, 0.2);; 
+    --backgroundCard: rgba(255, 255, 255, 0.2);
+    --errorColor:  rgb(120, 24, 24); 
 
 
     --fontTitle: 'Akshar', sans-serif;
