@@ -1,0 +1,65 @@
+{% extends 'layout.html.twig' %}
+
+{% block stylesheet %}
+	<link rel="stylesheet" href="/assets/css/training.css">
+{% endblock %}
+
+{% block title %}Formations -
+	{{ parent() }}
+{% endblock %}
+
+{% block content %}
+	<main class="container">
+
+		<div class="background-line"></div>
+
+		<section class="training">
+			<div class="main-title">
+				<div class="title-content">
+					<div class="bloc-square"></div>
+					<h3>
+						<span>Découvrez</span><br/>nos formations
+					</h3>
+				</div>
+			</div>
+
+			<div class="training-articles">
+				{% for sector in sectors %}
+
+					<div class="second-title">
+						<div class="bloc-rectangle"></div>
+						<h4>
+							{{ sector.name }}
+						</h4>
+					</div>
+
+					{% for training in trainings %}
+						{% if sector.name == training.sector_name %}
+							<article class="training-card">
+								<div class="training-content">
+									<div class="blue-rectangle"></div>
+									<h4>
+										{{ training.degree_name }}
+										{{ training.training_name }}
+									</h4>
+									<div class="orange-rectangle"></div>
+									<p>Durée :
+										{{ training.degree_duration }}
+										ans /
+										{{ training.stage_duration }}
+										mois de stage
+									</p>
+									<a href="#" role="button">En savoir plus</a>
+								</div>
+								<div class="training-image">
+									<img src="assets/images/placeholder.jpg" alt="Photo de la formation"/>
+								</div>
+							</article>
+						{% endif %}
+					{% endfor %}
+
+				{% endfor %}
+			</div>
+		</section>
+	</main>
+{% endblock %}
