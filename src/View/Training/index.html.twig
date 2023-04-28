@@ -39,17 +39,21 @@
 								<div class="training-content">
 									<div class="blue-rectangle"></div>
 									<h4>
+										{{ training.degree_name }}
 										{{ training.training_name }}
 									</h4>
 									<div class="orange-rectangle"></div>
 									<p>Durée :
+										{{ training.degree_duration }}
+										ans /
 										{{ training.stage_duration }}
 										mois de stage
 									</p>
 									<a href="#" role="button">En savoir plus</a>
 								</div>
+
 								<div class="training-image">
-									<img src="assets/images/placeholder.jpg" alt="Photo de la formation"/>
+									<img src="{{ training.image ? 'uploads/training/' ~ training.image : 'assets/images/default_placeholder.jpg'}}" alt="Photo de la formation"/>
 								</div>
 							</article>
 						{% endif %}
