@@ -1,103 +1,166 @@
 @import url(style.css);
 
-.myArticles {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
-    gap: var(--spacing1);
-    margin: var(--spacing);
-    margin-top: var(--spacing3);
-    margin-bottom: var(--spacing5);
-}
-
-article {
-    width: 200px;
-    margin: 0px;
-    padding: 0px;
-    border-radius: 0px;
-    margin-bottom: var(--spacing3);
-}
-
-.myArticles h2 {
-    margin: 0px;
-}
-
-.myArticles h3 {
-    margin: 0px;
-}
-
-.container h1 {
-    margin-top: var(--spacing2);
-}
-
 .container {
     width: var(--clamp60);
-}
-
-.myArticle {
     display: flex;
     flex-direction: column;
 }
 
-.picurePerson {
-    align-self: flex-start;
-    z-index: var(--secondPlan);
+.myArticles {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--spacing2);
+    position: relative;
+    align-self: center;
+    z-index: var(--firstPlan);
 }
 
-.picurePerson img {
-    box-shadow: var(--shadow);
-    width: 200px;
-    height: 150x;
-}
-
-[role=link], a{
-    color: var(--light);
+article {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 250px;
+    height: 425px;
+    padding: 0;
 }
 
 .textPerson {
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    align-items: center;
+    justify-content: space-around;
+}
 
-    padding: var(--spacing);
-    border-radius: 2px;
-    background: var(--backgroundCard);
-    box-shadow: var(--shadow);
-    z-index: var(--secondPlan);
+button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom:0.5rem;
+    width: 120px;
+    height: 40px;
+}
+
+a {
+    color: var(--light);
 }
 
 .textPerson h2 {
     font-size: 0.9rem;
     color: var(--dark);
+    margin: 0;
+    margin-top: 0.5rem;
 }
 
 .textPerson h3 {
     font-size: 0.7rem;
-    margin: 0px;
+    margin-bottom: 0.5rem;
     color: var(--dark);
-    margin-left: var(--spacing);
 }
 
-.namePerson {
-    display: flex;
-}
-
-button{
-    color:var(--light);
-}
-@media screen and (max-width: 767px) {
-    .myArticle {
-        width: 100%;
-        margin-right: 0px;
-    }
-
+@media screen and (min-width: 768px) and (max-width: 1023px) {
     .myArticles {
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media screen and (max-width: 767px) {
+    .myArticles {
+        grid-template-columns: repeat(1, 1fr);
     }
 
     .container {
         width: var(--clamp90);
     }
 }
+
+/* .myArticles {
+   display: grid;
+   grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+   grid-row-gap: var(--spacing1);
+   margin: var(--spacing);
+   margin-top: var(--spacing3);
+   margin-bottom: var(--spacing5);
+   position: relative;
+   z-index: var(--firstPlan);
+}
+
+article {
+   margin: 0px;
+   padding: 0px;
+   border-radius: 0px;
+   margin-bottom: var(--spacing3);
+}
+
+.myArticles h2 {
+   margin: 0px;
+}
+
+.myArticles h3 {
+   margin: 0px;
+}
+
+.container h1 {
+   margin-top: var(--spacing2);
+}
+
+.container {
+   width: var(--clamp60);
+}
+
+.myArticle {
+   display: flex;
+   flex-direction: column;
+}
+
+.picurePerson {
+   align-self: center;
+   position: relative;
+   z-index: var(--secondPlan);
+}
+
+.textPerson {
+   display: flex;
+   flex-direction: column;
+   justify-content: center;
+
+   gap: var(--spacing);
+   padding: var(--spacing);
+   background: var(--light);
+   z-index: var(--secondPlan);
+   position: relative;
+}
+
+.textPerson h2 {
+   font-size: 0.9rem;
+   color: var(--dark);
+}
+
+.textPerson h3 {
+   font-size: 0.7rem;
+   margin: 0px;
+   color: var(--dark);
+   position: relative;
+   margin-left: var(--spacing);
+}
+
+.namePerson {
+   display: flex;
+}
+
+@media screen and (max-width: 767px) {
+   .myArticle {
+      width: 100%;
+      margin-right: 0px;
+   }
+
+   .myArticles {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+   }
+
+   .container {
+      width: var(--clamp90);
+   }
+} */
