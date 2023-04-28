@@ -116,5 +116,6 @@ CREATE TABLE event (
 
 INSERT INTO 
 `event` (title, content)
-VALUES ("Journée Porte ouverte", "Le samedi 10 mai 2023, le lycée vous ouvre ses portes de 9h à 17h !
+VALUES ("Rentrée des classes prévue le 4 Septembre 2023", "Rentrée internat prévue le 3 Septembre 2023"),
+("Journée Porte ouverte", "Le samedi 10 mai 2023, le lycée vous ouvre ses portes de 9h à 17h !
 Un accueil central, situé à l'entrée de l'établissement, vous permettra de découvrir les formations et services dédiés à la vie étudiante.");
