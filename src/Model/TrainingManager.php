@@ -11,6 +11,7 @@ class TrainingManager extends AbstractManager
         $query = "SELECT
         t.name training_name,
         t.stage_duration,
+        t.image,
         s.name sector_name,
         d.name degree_name,
         d.duration degree_duration

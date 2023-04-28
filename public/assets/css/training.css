@@ -53,8 +53,8 @@
     position: relative;
     width: 55%;
     padding: var(--spacing3) var(--spacing2);
-    z-index: var(--firstPlan);
     backdrop-filter: blur(15px);
+    z-index: var(--secondPlan);
 }
 
 .training-content > h4 {
@@ -103,6 +103,7 @@
 .training-image {
     width: 45%;
     max-height: auto;
+    z-index: var(--firstPlan);
 }
 
 .training-image img {
@@ -120,7 +121,6 @@
 
     .training-card {
         flex-direction: column;
-        order: 1;
     }
 
     .training-image {

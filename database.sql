@@ -537,6 +537,7 @@ CREATE TABLE
 INSERT INTO
     `training` (
         name,
+        image,
         nb_students,
         success_rate,
         stage_duration,
@@ -545,6 +546,7 @@ INSERT INTO
     )
 VALUES (
         "Opérateur logistique",
+        "operateur-logistique.webp",
         24,
         84,
         4,
@@ -552,6 +554,7 @@ VALUES (
         1
     ), (
         "Equipier polyvalent du commerce",
+        "commerce.webp",
         15,
         86,
         4,
@@ -559,6 +562,7 @@ VALUES (
         1
     ), (
         "Mode option vêtement flou",
+        "mode.webp",
         15,
         89,
         4,
@@ -566,13 +570,23 @@ VALUES (
         1
     ), (
         "Assistance à la gestion des organisations et de leurs activités",
+        "gestion.webp",
         32,
         87,
         6,
         1,
         2
-    ), ("Logistique", 30, 85, 6, 1, 2), (
+    ), (
+        "Logistique",
+        "logistique.webp",
+        30,
+        85,
+        6,
+        1,
+        2
+    ), (
         "Organisation de transport de marchandises",
+        "transport.webp",
         15,
         88,
         6,
@@ -580,6 +594,7 @@ VALUES (
         2
     ), (
         "Commerce et de la Vente option A : animation et gestion de l'espace commercial",
+        "vente-a.webp",
         48,
         89,
         6,
@@ -587,12 +602,21 @@ VALUES (
         2
     ), (
         "Commerce et de la Vente option B : prospection clientèle et valorisation de l'offre commerciale",
+        "vente-b.webp",
         16,
         82,
         6,
         2,
         2
-    ), ("Accueil", 16, 83, 6, 2, 2);
+    ), (
+        "Accueil",
+        "accueil.webp",
+        16,
+        83,
+        6,
+        2,
+        2
+    );
 
 UPDATE `training`
 SET
