@@ -546,7 +546,7 @@ INSERT INTO
     )
 VALUES (
         "Opérateur logistique",
-        "operateur_logistique.jpg",
+        "operateur-logistique.webp",
         24,
         84,
         4,
@@ -554,7 +554,7 @@ VALUES (
         1
     ), (
         "Equipier polyvalent du commerce",
-        "commerce.jpg",
+        "commerce.webp",
         15,
         86,
         4,
@@ -562,7 +562,7 @@ VALUES (
         1
     ), (
         "Mode option vêtement flou",
-        "mode.jpg",
+        "mode.webp",
         15,
         89,
         4,
@@ -570,7 +570,7 @@ VALUES (
         1
     ), (
         "Assistance à la gestion des organisations et de leurs activités",
-        "gestion.jpg",
+        "gestion.webp",
         32,
         87,
         6,
@@ -578,7 +578,7 @@ VALUES (
         2
     ), (
         "Logistique",
-        "logistique.jpg",
+        "logistique.webp",
         30,
         85,
         6,
@@ -586,7 +586,7 @@ VALUES (
         2
     ), (
         "Organisation de transport de marchandises",
-        "transport.jpg",
+        "transport.webp",
         15,
         88,
         6,
@@ -594,7 +594,7 @@ VALUES (
         2
     ), (
         "Commerce et de la Vente option A : animation et gestion de l'espace commercial",
-        "vente_a.jpg",
+        "vente-a.webp",
         48,
         89,
         6,
@@ -602,7 +602,7 @@ VALUES (
         2
     ), (
         "Commerce et de la Vente option B : prospection clientèle et valorisation de l'offre commerciale",
-        "vente_b.jpg",
+        "vente-b.webp",
         16,
         82,
         6,
@@ -610,7 +610,7 @@ VALUES (
         2
     ), (
         "Accueil",
-        "accueil.jpg",
+        "accueil.webp",
         16,
         83,
         6,

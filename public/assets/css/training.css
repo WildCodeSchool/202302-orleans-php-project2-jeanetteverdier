@@ -21,7 +21,6 @@
     width: 100%;
     border-radius: 0;
     box-shadow: var(--box-shadow);
-    backdrop-filter: blur(15px);
     z-index: var(--firstPlan);
     transition: all .3s ease-in-out; 
 }
@@ -54,6 +53,7 @@
     position: relative;
     width: 55%;
     padding: var(--spacing3) var(--spacing2);
+    backdrop-filter: blur(15px);
     z-index: var(--secondPlan);
 }
 
