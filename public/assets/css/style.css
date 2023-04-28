@@ -99,7 +99,6 @@ article {
 
 .main-title {
     position: relative;
-    /* margin-top: var(--spacing3); */
     z-index: var(--secondPlan);
 }
 

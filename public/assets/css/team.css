@@ -12,7 +12,6 @@ article {
    border-radius: 0px;
    background: transparent;
    box-shadow: 0px 0px 0px var(--light);
-   /* margin-bottom: var(--spacing3); */
 }
 
 .myArticles h2 {
