@@ -9,7 +9,6 @@ body>footer,
 body>header,
 body>main {
     --block-spacing-vertical: 0;
-    margin-top: var(--spacing4);
 }
 
 /* Medias */
