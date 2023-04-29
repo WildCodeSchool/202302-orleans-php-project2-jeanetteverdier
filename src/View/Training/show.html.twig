@@ -18,21 +18,24 @@
 			<div class="title-content">
 				<div class="bloc-square"></div>
 				<h3>
-					<span>Découvez</span><br/>notre formation</h3>
+					<span>Présentation</span><br/>{{ training.sector_name }}</h3>
 			</div>
 		</div>
 		<!-- Présentation -->
 		<section>
 			<div class="second-title">
 				<div class="bloc-rectangle"></div>
-				<h4>{{ training.sector_name }}</h4>
+				<h4>{{ training.degree_name ~ ' ' ~ training.name }}</h4>
 			</div>
 
 			<div class="presentation-content">
 				<div class="image-formation">
-					<img src="{{ training.image ? 'uploads/training/' ~ training.image : 'assets/images/default_placeholder.jpg'}}" alt="Photo de la formation"/>
+					<img src="{{ training.image ? '/uploads/training/' ~ training.image : 'assets/images/default_placeholder.jpg'}}" alt="Photo de la formation"/>
 				</div>
-				<p>{{ training.description }}</p>
+				<div class="training-content">
+					<div class="blue-rectangle"></div>
+					<p>{{ training.description }}</p>
+				</div>
 			</div>
 		</section>
 	</main>
