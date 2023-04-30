@@ -1,0 +1,53 @@
+@import url(style.css);
+
+.container{
+    width: var(--clamp60);
+}
+
+div.section {
+    background-color: var(--backgroundCard);
+    box-shadow: var(--box-shadow);
+    color: var(--dark);
+    position: relative;
+    z-index: var(--firstPlan);
+}
+
+.text{
+    padding: var(--spacing2);
+    margin-bottom: var(--spacing2);
+    transition: .3s ease-in-out;
+    position: relative;
+    z-index: var(--firstPlan);
+}
+
+.blueSection {
+    width: 5px;
+    height: 100%;
+    background-color: var(--primary);
+    position: absolute;
+    left: 0;
+    transition: .3s ease-in-out;
+}
+
+.button{
+    transition: .3s ease-in-out;
+}
+
+.section:hover .blueSection {
+    width: 100%;
+}
+
+.section:hover .text>p, .section:hover .text>h6{
+    color: var(--light);
+}
+
+.section:hover .button {
+    background-color: var(--light);
+    color: var(--primary);
+}
+
+@media screen and (max-width: 767px) {
+    .container{
+        width: var(--clamp90);
+    }
+}
