@@ -1,0 +1,42 @@
+{% extends 'layout.html.twig' %}
+
+{% block stylesheet %}
+	<link rel="stylesheet" href="/assets/css/index-training.css">
+	<link rel="stylesheet" href="/assets/css/training.css">
+{% endblock %}
+
+{% block title %}Formations -
+	{{ training.name }}
+	{{ parent() }}
+{% endblock %}
+
+{% block content %}
+	<main class="container">
+		<div class="background-line"></div>
+
+		<div class="main-title">
+			<div class="title-content">
+				<div class="bloc-square"></div>
+				<h3>
+					<span>Présentation</span><br/>{{ training.sector_name }}</h3>
+			</div>
+		</div>
+		<!-- Présentation -->
+		<section>
+			<div class="second-title">
+				<div class="bloc-rectangle"></div>
+				<h4>{{ training.degree_name ~ ' ' ~ training.name }}</h4>
+			</div>
+
+			<div class="presentation-content">
+				<div class="image-formation">
+					<img src="{{ training.image ? '/uploads/training/' ~ training.image : 'assets/images/default_placeholder.jpg'}}" alt="Photo de la formation"/>
+				</div>
+				<div class="training-content">
+					<div class="blue-rectangle"></div>
+					<p>{{ training.description }}</p>
+				</div>
+			</div>
+		</section>
+	</main>
+{% endblock %}
