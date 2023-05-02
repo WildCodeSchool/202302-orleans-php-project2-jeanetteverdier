@@ -1,0 +1,83 @@
+@import url(style.css);
+
+.container {
+    width: var(--clamp60);
+}
+
+main .myArticles {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--spacing2);
+    position: relative;
+    align-self: center;
+    z-index: var(--firstPlan);
+}
+
+main article {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 250px;
+    height: 425px;
+    padding: 0;
+}
+
+main .textPerson {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+}
+
+main a {
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    margin-bottom: var(--spacing);
+    width: 120px;
+    height: 40px;
+    color: var(--light);
+}
+
+
+main .textPerson h2 {
+    font-size: 0.9rem;
+    color: var(--dark);
+    margin: 0;
+    margin-top:  var(--spacing);
+}
+
+main .textPerson h3 {
+    font-size: 0.7rem;
+    margin-bottom:  var(--spacing);
+    color: var(--dark);
+}
+
+main .buttonModifier{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+main .buttonSupprimer, .buttonModifier{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 125px;
+    height: 35px;
+}
+
+@media screen and (min-width: 768px) and (max-width: 1023px) {
+    main .myArticles {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media screen and (max-width: 767px) {
+    main .myArticles {
+        grid-template-columns:  1fr;
+    }
+    .container {
+        width: var(--clamp90);
+     }
+}
