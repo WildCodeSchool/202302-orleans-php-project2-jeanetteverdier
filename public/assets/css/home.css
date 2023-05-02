@@ -83,4 +83,12 @@ article {
         position: relative;
         width: 100%;
     }
+
+    .titre {
+        width: clamp(240px, 60vw, 350px);
+    }
+
+    .titre > h3 {
+        font-size: clamp(16px, 5vw, 65px);
+    }
 }
