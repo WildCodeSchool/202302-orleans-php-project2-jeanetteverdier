@@ -1,0 +1,19 @@
+<?php
+
+namespace App\Controller;
+
+use App\Model\ActualityManager;
+
+class ActualityController extends AbstractController
+{
+    /**
+     * List Actualities
+     */
+    public function index(): string
+    {
+        $actualityManager = new ActualityManager();
+        $actualities = $actualityManager->selectAll();
+
+        return $this->twig->render('Actuality/index.html.twig', ['Actualities' => $actualities]);
+    }
+}
