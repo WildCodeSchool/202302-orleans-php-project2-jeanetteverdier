@@ -224,12 +224,12 @@ VALUES (
     ), (
         'Romain',
         'DEMILLY',
-        'resp.restauration',
+        'Resp.restauration',
         4
     ), (
         'Frédéric',
         'THEO',
-        'resp.maintenance',
+        'Resp.maintenance',
         4
     ), (
         'Gaëlle',
@@ -244,127 +244,127 @@ VALUES (
     ), ('Caroline', 'CABON', 'CDI', 5), (
         'Aurore',
         'MADOUX',
-        'COORDONNATEUR ULIS',
+        'Coordonnateur ULIS',
         5
     ), (
         'Dejan',
         'PETROVIC',
-        'COORDONNATEUR ARTP',
+        'Coordonateur ARTP',
         5
     ), (
         'Christine',
         'MALINGE',
-        'interlocutrice',
+        'Interlocutrice',
         5
     ), (
         'Mathilde',
         'RICHER',
-        'veille numérique',
+        'Veille numérique',
         5
     ), (
         'José',
         'HEDDE',
-        'animation du site Web',
+        'Animation du site Web',
         5
     ), (
         'Jean',
         'RINGUET',
-        'réseau informatique',
+        'Réseau informatique',
         5
     ), (
         'Astrid',
         'BERNARD',
-        'LETTRES HISTOIRE GEOGRAPHIE',
+        'Lettres histoire géographie',
         6
     ), (
         'Héléna',
         'JOUJOUX',
-        'LETTRES HISTOIRE GEOGRAPHIE',
+        'Lettres histoire géographie',
         6
     ), (
         'Céline',
         'GERARD',
-        'LETTRES HISTOIRE GEOGRAPHIE',
+        'Lettres histoire géographie',
         6
     ), (
         'Julie',
         'LE CORRE',
-        'LETTRES HISTOIRE GEOGRAPHIE',
+        'Lettres histoire géographie',
         6
     ), (
         'Sandrine',
         'SCHWOEHRER',
-        'LETTRES HISTOIRE GEOGRAPHIE',
+        'Lettres histoire géographie',
         6
     ), (
         'Dilgoudry',
         'THIAM',
-        'LETTRES HISTOIRE GEOGRAPHIE',
+        'Lettres histoire géographie',
         6
     ), (
         'Eric',
         'PAZOLA',
-        'LETTRES HISTOIRE GEOGRAPHIE',
+        'Lettres histoire géographie',
         6
     ), (
         'Priscillia',
         'SERRE',
-        'LETTRES HISTOIRE GEOGRAPHIE',
+        'Lettres histoire géographie',
         6
     ), (
         'Stéphanie',
         'ARAUZO',
-        'MATHS-SCIENCES',
+        'Maths-Sciences',
         6
     ), (
         'Mélanie',
         'HEDDE',
-        'MATHS-SCIENCES',
+        'Maths-Sciences',
         6
     ), (
         'Julie',
         'PUBELLIER',
-        'MATHS-SCIENCES',
+        'Maths-Sciences',
         6
     ), (
         'Joseph',
         'MOUKOLO',
-        'MATHS-SCIENCES',
+        'Maths-Sciences',
         6
-    ), ('Gilles', 'ALIN', 'ANGLAIS', 6), (
+    ), ('Gilles', 'ALIN', 'Anglais', 6), (
         'Sandrine',
         'DIOP',
-        'ANGLAIS',
+        'Anglais',
         6
     ), (
         'Carine',
         'NICOLAS',
-        'ANGLAIS',
+        'Anglais',
         6
     ), (
         'Romain',
         'NELLEE',
-        'ANGLAIS',
+        'Anglais',
         6
     ), (
         'Emilie',
         'GUIRAUDON',
-        'ESPAGNOL',
+        'Espagnol',
         6
     ), (
         'Alexandre',
         'BRIMONT',
-        'ESPAGNOL',
+        'Espagnol',
         6
-    ), ('Mandy', 'MILON', 'ALLEMAND', 6), ('Caroline', 'CABON', 'CDI', 6), ('Florian', 'RINGUET', 'PSE', 6), (
+    ), ('Mandy', 'MILON', 'Allemand', 6), ('Caroline', 'CABON', 'CDI', 6), ('Florian', 'RINGUET', 'PSE', 6), (
         'Claire',
         'CAVEREAU',
-        'ARTS APPLIQUES',
+        'Arts Appliqués',
         6
     ), (
         'Laura',
         'LAVAUD',
-        'ARTS APPLIQUES',
+        'Arts Appliqués',
         6
     ), ('Valentin', 'GAUDRY', 'EPS', 6), (
         'Catherine',
@@ -374,87 +374,87 @@ VALUES (
     ), ('Kévin', 'OCULI', 'CDI', 6), (
         'Mélanie',
         'ABRAHAM',
-        'VENTE',
+        'Vente',
         6
     ), ('Laurent', 'ADAMI', 'VENTE', 6), (
         'Alexandre',
         'BOSRAMIER',
-        'VENTE',
+        'Vente',
         6
     ), (
         'Bastien',
         'DUCREST',
-        'VENTE',
+        'Vente',
         6
-    ), ('Isabelle', 'FABRO', 'VENTE', 6), (
+    ), ('Isabelle', 'FABRO', 'Vente', 6), (
         'Mylène',
         'DECHAMBRE',
-        'VENTE',
+        'Vente',
         6
-    ), ('Magali', 'TOUPIN', 'VENTE', 6), (
+    ), ('Magali', 'TOUPIN', 'Vente', 6), (
         'Fabrice',
         'LAURENT',
-        'VENTE',
+        'Vente',
         6
-    ), ('Gaëlle', 'MALINGE', 'VENTE', 6), ('Valérie', 'NEVE', 'VENTE', 6), (
+    ), ('Gaëlle', 'MALINGE', 'Vente', 6), ('Valérie', 'NEVE', 'Vente', 6), (
         'Marie-Hélène',
         'RAUCH',
-        'VENTE',
+        'Vente',
         6
-    ), ('Nadine', 'DAVID', 'VENTE', 6), (
+    ), ('Nadine', 'DAVID', 'Vente', 6), (
         'Vanessa',
         'TEMPLIER',
-        'VENTE',
+        'Vente',
         6
     ), (
         'Magali',
         'GAUTHIER',
-        'LOGISTIQUE - TRANSPORT',
+        'Logistique - Transport',
         6
     ), (
         'Aline',
         'RAINGEVAL',
-        'LOGISTIQUE - TRANSPORT',
+        'Logistique - Transport',
         6
     ), (
         'Jennifer',
         'CUVILLON',
-        'LOGISTIQUE - TRANSPORT',
+        'Logistique - Transport',
         6
     ), (
         'Christian',
         'JEPHOS',
-        'LOGISTIQUE - TRANSPORT',
+        'Logistique - Transport',
         6
     ), (
         'Yannick',
         'LE GOFF',
-        'LOGISTIQUE - TRANSPORT',
+        'Logistique - Transport',
         6
     ), (
         'Katia',
         'GUERIN',
-        'LOGISTIQUE - TRANSPORT',
+        'Logistique - Transport',
         6
     ), (
         'Alexandra',
         'MENJIKOFF',
-        'LOGISTIQUE - TRANSPORT',
+        'Logistique - Transport',
         6
     ), (
         'Isabelle',
         'MIELZARCK',
-        'LOGISTIQUE - TRANSPORT',
+        'Logistique - Transport',
         6
     ), (
         'Abel',
         'FATTAHI',
-        'LOGISTIQUE - TRANSPORT',
+        'Logistique - Transport',
         6
     ), (
         'Alexandre',
         'RICHER',
-        'LOGISTIQUE - TRANSPORT',
+        'Logistique - Transport',
         6
     ), ('Magali', 'DESLAIS', 'AGORA', 6), ('Kubra', 'DINDAR', 'AGORA', 6), (
         'Véronique',
@@ -469,22 +469,22 @@ VALUES (
     ), (
         'Stéphanie',
         'BALUSSAUD',
-        'GENIE INDUS. TEXTILE ET CUIRS',
+        'Génie indus. textile et cuirs',
         6
     ), (
         'Aurore',
         'BRETEAU',
-        'GENIE INDUS. TEXTILE ET CUIRS',
+        'Génie indus. textile et cuirs',
         6
     ), (
         'Béatrice',
         'VAPPEREAU',
-        'RÉFÈRENTS ÉCOLE - ENTREPRISE',
+        'Réfèrents école - Entreprise',
         6
     ), (
         'Laurent',
         'ADAMI',
-        'RÉFÈRENTS ÉCOLE - ENTREPRISE',
+        'Réfèrents école - Entreprise',
         6
     );
 
@@ -686,6 +686,6 @@ UPDATE `training`
 SET
     description = "Le BAC PRO Accueil est une formation professionnalisante qui vise à former des professionnels capables d'accueillir, d'orienter et de renseigner les clients ou les visiteurs, dans différents types d'établissements tels que les hôtels, les musées, les centres culturels, les entreprises, les administrations, etc. La formation est accessible aux élèves ayant obtenu un diplôme de niveau 3 (CAP/BEP) ou ayant suivi une classe de seconde générale ou professionnelle.
 À l'issue de la formation, les apprenants  peuvent travailler dans différents secteurs tels que l'hôtellerie, la restauration, le tourisme, la culture, les entreprises, les administrations, etc. Ils peuvent occuper des postes tels que réceptionniste, chargé d'accueil, hôte d'accueil, conseiller clientèle, etc.",
-    program = "La formation BAC PRO Accueil comporte des modules qui incluent les techniques d'accueil et de communication, la gestion de la qualité de service, la gestion administrative, la connaissance des produits et services, la vente et le conseil, l'informatique et les outils bureautiques ainsi que la langue moderne (anglais).
+    program = "La formation BAC PRO Accueil comporte des modules qui incluent les techniques d'accueil et de communication, la gestion de la qualité de service, la gestion administrative, la connaissance des produits et services, la vente et le conseil, l'informatique et les outils bureautiques ainsi que la langue moderne (Anglais).
 Des stages en entreprise sont également prévus pour permettre aux apprenants de mettre en pratique leurs compétences et de se familiariser avec le milieu professionnel."
 WHERE id = 9;
