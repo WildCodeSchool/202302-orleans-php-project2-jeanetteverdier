@@ -36,7 +36,7 @@ article {
     border: 2px solid var(--light);
     line-height: 150%;
     padding: var(--spacing);
-    font-size: clamp(14px, 3vw, 50px);
+    font-size: clamp(16px, 3vw, 50px);
     font-family: var(--fontTitle);
 }
 
