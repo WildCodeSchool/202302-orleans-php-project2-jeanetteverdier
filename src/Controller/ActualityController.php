@@ -6,9 +6,6 @@ use App\Model\ActualityManager;
 
 class ActualityController extends AbstractController
 {
-    /**
-     * List Actualities
-     */
     public function index(): string
     {
         $actualityManager = new ActualityManager();
