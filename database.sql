@@ -689,3 +689,16 @@ SET
     program = "La formation BAC PRO Accueil comporte des modules qui incluent les techniques d'accueil et de communication, la gestion de la qualité de service, la gestion administrative, la connaissance des produits et services, la vente et le conseil, l'informatique et les outils bureautiques ainsi que la langue moderne (Anglais).
 Des stages en entreprise sont également prévus pour permettre aux apprenants de mettre en pratique leurs compétences et de se familiariser avec le milieu professionnel."
 WHERE id = 9;
+
+CREATE TABLE event (
+    id INT NOT NULL PRIMARY KEY AUTO_INCREMENT,
+    title VARCHAR(255) NOT NULL,
+    content TEXT,
+    image VARCHAR(255)
+);
+
+INSERT INTO 
+`event` (title, content)
+VALUES ("Rentrée des classes prévue le 4 Septembre 2023", "Rentrée internat prévue le 3 Septembre 2023"),
+("Journée Porte ouverte", "Le samedi 10 mai 2023, le lycée vous ouvre ses portes de 9h à 17h !
+Un accueil central, situé à l'entrée de l'établissement, vous permettra de découvrir les formations et services dédiés à la vie étudiante.");
