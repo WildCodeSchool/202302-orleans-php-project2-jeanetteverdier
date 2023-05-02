@@ -15,7 +15,8 @@
 			<div class="title-content">
 				<div class="bloc-square"></div>
 				<h3>
-					<span>Administration</span><br/> de notre équipe</h3>
+					<span>Administration</span><br/>
+					de notre équipe</h3>
 			</div>
 		</div>
 		{% for workDepartement in workDepartements %}
@@ -30,17 +31,18 @@
 					{% if employee.name == workDepartement.name %}
 						<article>
 							<div class="myArticle">
-								<div class="picurePerson"><img src="/assets/images/professeursPhotos/{{ team.picture ?? "teacherByDefault.jpg/"}}" alt="default"></div>
+								<div class="picurePerson"><img src="/assets/images/professeursPhotos/{{ team.picture ?? "teacherbydefault.jpg"}}" alt="default"></div>
 								<div class="textPerson">
 									<div class="namePerson">
 										<h2>{{ employee.lastname | upper }}
 											{{ employee.firstname | lower }}</h2>
 									</div>
 									<h3>{{ employee.post | lower }}</h3>
-			
-										<a href="updateEmployee?id=" role="button">Modifier</a>
-										<a href="deleteEmployee?id=" role="button">Supprimer</a>
-									</button>
+									<a href="notre-equipe/modifieEmployee?id={{ employee.id }}" role="button">Modifier</a>
+									<form action="notre-equipe/supprimerEmployee?id={{ employee.id }}">
+									<button>Supprimer</button>
+									</form>
+									
 								</div>
 							</div>
 						</article>
