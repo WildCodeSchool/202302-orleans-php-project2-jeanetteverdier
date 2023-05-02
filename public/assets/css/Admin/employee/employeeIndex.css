@@ -2,11 +2,9 @@
 
 .container {
     width: var(--clamp60);
-    display: flex;
-    flex-direction: column;
 }
 
-.myArticles {
+main .myArticles {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: var(--spacing2);
@@ -15,7 +13,7 @@
     z-index: var(--firstPlan);
 }
 
-article {
+main article {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -24,7 +22,7 @@ article {
     padding: 0;
 }
 
-.textPerson {
+main .textPerson {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -42,31 +40,44 @@ main a {
 }
 
 
-.textPerson h2 {
+main .textPerson h2 {
     font-size: 0.9rem;
     color: var(--dark);
     margin: 0;
     margin-top: 0.5rem;
 }
 
-.textPerson h3 {
+main .textPerson h3 {
     font-size: 0.7rem;
     margin-bottom: 0.5rem;
     color: var(--dark);
 }
 
+main .buttonModifier{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+main .buttonSupprimer, .buttonModifier{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 125px;
+    height: 35px;
+}
+
 @media screen and (min-width: 768px) and (max-width: 1023px) {
-    .myArticles {
+    main .myArticles {
         grid-template-columns: repeat(2, 1fr);
     }
 }
 
 @media screen and (max-width: 767px) {
-    .myArticles {
-        grid-template-columns: repeat(1, 1fr);
+    main .myArticles {
+        grid-template-columns:  1fr;
     }
-
     .container {
         width: var(--clamp90);
-    }
+     }
 }
