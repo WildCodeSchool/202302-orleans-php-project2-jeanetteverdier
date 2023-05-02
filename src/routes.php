@@ -13,7 +13,9 @@ return [
     'items/show' => ['ItemController', 'show', ['id']],
     'items/add' => ['ItemController', 'add',],
     'items/delete' => ['ItemController', 'delete',],
+    'contact' => ['ContactController', 'index',],
     'formations' => ['TrainingController', 'index',],
+    'formations/show' => ['TrainingController', 'show', ['id']],
     'notre-equipe' => ['EmployeeController', 'index',],
     'admin/notre-equipe' => ['AdminEmployeeController', 'index',],
 ];

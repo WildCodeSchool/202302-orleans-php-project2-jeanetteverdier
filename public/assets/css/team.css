@@ -79,7 +79,6 @@ article {
    font-size: 0.9rem;
    color: var(--dark);
    transition: .3s ease-in-out;
-   transform: translate(-7px, 0px);
 }
 
 .textPerson h3 {
