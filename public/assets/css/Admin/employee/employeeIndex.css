@@ -33,7 +33,7 @@ main a {
     display: flex;
     justify-content: flex-start;
     align-items: flex-start;
-    margin-bottom: 0.5rem;
+    margin-bottom: var(--spacing);
     width: 120px;
     height: 40px;
     color: var(--light);
@@ -44,12 +44,12 @@ main .textPerson h2 {
     font-size: 0.9rem;
     color: var(--dark);
     margin: 0;
-    margin-top: 0.5rem;
+    margin-top:  var(--spacing);
 }
 
 main .textPerson h3 {
     font-size: 0.7rem;
-    margin-bottom: 0.5rem;
+    margin-bottom:  var(--spacing);
     color: var(--dark);
 }
 
