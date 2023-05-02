@@ -1,4 +1,4 @@
-.presentation-content {
+.program-content {
     background: var(--lowlight);
     box-shadow: var(--box-shadow);
     backdrop-filter: blur(15px);
@@ -7,9 +7,10 @@
 .training-content {
     width: 100%;
     padding: 0;
+    backdrop-filter: none;
 }
 
-.presentation-content p {
+.program-content p {
     color: var(--dark);
     font-size: var(--sizeText);
     padding: var(--spacing1) var(--spacing2);
@@ -23,6 +24,10 @@
 
 .image-formation img {
     height: 100%;
+}
+
+.training-content p {
+    padding: var(--spacing1) var(--spacing2);
 }
 
 @media screen and (max-width: 767px) {

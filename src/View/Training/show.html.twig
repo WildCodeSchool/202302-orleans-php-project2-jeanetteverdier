@@ -28,13 +28,28 @@
 				<h4>{{ training.degree_name ~ ' ' ~ training.name }}</h4>
 			</div>
 
-			<div class="presentation-content">
+			<div class="program-content">
 				<div class="image-formation">
 					<img src="{{ training.image ? '/uploads/training/' ~ training.image : 'assets/images/default_placeholder.jpg'}}" alt="Photo de la formation"/>
 				</div>
 				<div class="training-content">
 					<div class="blue-rectangle"></div>
 					<p>{{ training.description }}</p>
+				</div>
+			</div>
+		</section>
+
+		{# Programme #}
+		<section>
+			<div class="second-title">
+				<div class="bloc-rectangle"></div>
+				<h4>Le programme</h4>
+			</div>
+
+			<div class="program-content">
+				<div class="training-content">
+					<div class="blue-rectangle"></div>
+					<p>{{ training.program}}</p>
 				</div>
 			</div>
 		</section>
