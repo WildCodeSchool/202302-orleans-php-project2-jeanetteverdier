@@ -1,0 +1,32 @@
+.presentation-content {
+    background: var(--lowlight);
+    box-shadow: var(--box-shadow);
+    backdrop-filter: blur(15px);
+}
+
+.training-content {
+    width: 100%;
+    padding: 0;
+}
+
+.presentation-content p {
+    color: var(--dark);
+    font-size: var(--sizeText);
+    padding: var(--spacing1) var(--spacing2);
+    line-height: 170%;
+}
+
+.image-formation {
+    height: clamp(300px, 30vw, 500px);
+    width: 100%;
+}
+
+.image-formation img {
+    height: 100%;
+}
+
+@media screen and (max-width: 767px) {
+    .blue-rectangle {
+        width: 3px;
+    }
+}

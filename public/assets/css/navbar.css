@@ -2,7 +2,7 @@
 
 .container {
     width: var(--clamp60);
-    height: 20vh;
+    height: 10rem;
     margin: auto;
     padding-right: 0;
     padding-left: 0;
@@ -50,12 +50,10 @@ header h2 > span {
 }
 
 header h2 > .string1 {
-    --secondary: #FFAD33;
     color: var(--secondary);
 }
 
 header h2 > .string2 {
-    --primary: #2E71C0;
     color: var(--primary); 
 }
 
@@ -156,6 +154,7 @@ nav ul li a {
     line-height: 250%;
     border-bottom: 3px solid transparent;
     border-radius: 0;
+    padding-bottom: 5px;
 }
 
 nav ul li a:hover {
@@ -197,7 +196,7 @@ nav ul li a:hover {
 @media screen and (max-width: 767px) {
     header.container {
         width: var(--clamp90);
-        height: 30vh;
+        height: 15rem;
     }
 
     body > header {
@@ -237,7 +236,7 @@ nav ul li a:hover {
 
         background: var(--primary);
         width: 0;
-        height: calc(100vh - 30vh - 68px);
+        height: calc(100vh - 15rem - 68px);
         border-bottom: 1px solid var(--primary);
         box-shadow: 0px 10px 10px #0000000d;
         transition: all .3s ease-out; 

@@ -5,9 +5,13 @@
 :root[data-theme="light"] {
     --primary: #2E71C0;
     --secondary: #FFAD33;
-    --dark: #020F1E;
-    --light: #F2F3F5;
+    --tertiary: #ffad331c;
+    --dark: #020f1e;
+    --light: #f2f3f5;
     --lowlight: rgba(255, 255, 255, 0.2);
+    --backgroundCard: rgba(255, 255, 255, 0.2);
+    --errorColor:  rgb(120, 24, 24); 
+
 
     --fontTitle: 'Akshar', sans-serif;
     --fontText: 'Roboto', sans-serif;
@@ -60,4 +64,90 @@ button {
 
 [role="button"], button, input[type="button"], input[type="reset"], input[type="submit"] {
     box-shadow: none;
+}
+
+main.container {
+    position: relative;
+    height: auto;
+    z-index: var(--secondPlan);
+    padding-top: var(--spacing3);
+    padding-bottom: var(--spacing6);
+}
+
+main > section {
+    position: relative;
+    z-index: var(--secondPlan);
+}
+
+article {
+    padding: 0;
+    margin: 0;
+}
+
+.background-line {
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: var(--tertiary);
+    height: 100%;
+    width: 200px;
+    transform: translateX(30px);
+    z-index: var(--thirdPlan);
+}
+
+/** STYLE TITLE **/
+
+.main-title {
+    position: relative;
+    z-index: var(--secondPlan);
+}
+
+.title-content {
+    display: flex;
+    flex-direction: column;
+}
+
+.bloc-square {
+    width: 6.25rem;
+    height: 6.25rem;
+    background-color: var(--secondary);
+}
+
+.main-title h3, .second-title h4 {
+    font-size: clamp(20px, 5vw, 30px);
+    margin-bottom: 0;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+
+.main-title h3 {
+    position: relative;
+    left: 30px;
+    bottom: clamp(40px, 5vw, 50px);
+    width: calc(100% - 60px);
+}
+
+.main-title h3 span {
+    font-family: var(--titleFond);
+    font-size: var(--sizeTitle);
+}
+
+/** STYLE SOUS TITLE **/
+
+.second-title {
+    margin: calc(var(--spacing4) * 2) 0 var(--spacing1) 0;
+    width: 100%;
+}
+
+.second-title h4 {
+    position: relative;
+    bottom: clamp(15px, 4vw, 23px);
+    left: 30px;
+    width: calc(100% - 60px);
+}
+
+.bloc-rectangle {
+    width: 6.25rem;
+    height: 30px;
+    background-color: var(--secondary);
 }
