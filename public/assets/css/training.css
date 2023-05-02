@@ -10,6 +10,14 @@
     backdrop-filter: none;
 }
 
+.training-content::before {
+    content: " ";
+    background: var(--primary);
+    width: 4px;
+    height: 100%;
+    position: absolute;
+}
+
 .program-content p {
     color: var(--dark);
     font-size: var(--sizeText);
