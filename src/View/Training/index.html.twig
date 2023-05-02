@@ -49,17 +49,18 @@
 										{{ training.stage_duration }}
 										mois de stage
 									</p>
-									<a href="/formations/show?id={{ training.id }}" role="button">En savoir plus</a>En savoir plus</a>
-							</div>
+									<a href="/formations/show?id={{ training.id }}" role="button">En savoir plus</a>
+								</div>
 
-							<div class="training-image">
-								<img src="{{ training.image ? 'uploads/training/' ~ training.image : 'assets/images/default_placeholder.jpg'}}" alt="Photo de la formation"/>
-							</div>
-						</article>
-					{% endif %}
+								<div class="training-image">
+									<img src="{{ training.image ? 'uploads/training/' ~ training.image : 'assets/images/default_placeholder.jpg'}}" alt="Photo de la formation"/>
+								</div>
+							</article>
+						{% endif %}
+					{% endfor %}
+
 				{% endfor %}
-
-			{% endfor %}
-		</div>
-	</section>
-</main>{% endblock %}
+			</div>
+		</section>
+	</main>
+{% endblock %}
