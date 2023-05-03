@@ -21,7 +21,7 @@
 					<span>Présentation</span><br/>{{ training.sector_name }}</h3>
 			</div>
 		</div>
-		<!-- Présentation -->
+		{# Présentation #}
 		<section>
 			<div class="second-title">
 				<div class="bloc-rectangle"></div>
@@ -41,14 +41,47 @@
 		{# Programme #}
 		<section>
 			<div class="second-title">
+				<div class="bloc-rectangle"></div>
 				<h4>Le programme</h4>
 			</div>
 
 			<div class="program-content">
 				<div class="training-content">
 					<p>{{ training.program }}</p>
+
+					{# CARD #}
+					<div class="grid card-program">
+						<div class="card">
+							<h4>Durée<br>formation</h4>
+							<div class="picto-program">
+								<img src="/assets/images/picto-time.svg" alt="Pictogramme compétence"/>
+							</div>
+							<p>
+								<span>{{ training.degree_duration }}</span>ans
+							</p>
+						</div>
+						<div class="card">
+							<h4>Durée<br>stage</h4>
+							<div class="picto-program">
+								<img src="/assets/images/picto-time.svg" alt="Pictogramme compétence"/>
+							</div>
+							<p>
+								<span>{{ training.stage_duration }}</span>mois
+							</p>
+						</div>
+						<div class="card">
+							<h4>Taux<br>de réussite</h4>
+							<div class="picto-program">
+								<img src="/assets/images/picto-success.svg" alt="Pictogramme compétence"/>
+							</div>
+							<p>
+								<span>{{ training.success_rate }}</span>%
+							</p>
+						</div>
+					</div>
 				</div>
 			</div>
+
 		</section>
 	</main>
 {% endblock %}

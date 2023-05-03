@@ -38,8 +38,56 @@
     padding: var(--spacing1) var(--spacing2);
 }
 
+/* CARDS */
+.grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: .5px;
+    position: relative;
+    z-index: var(--firstplan);
+}
+
+.card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--primary);
+}
+
+.picto-program {
+    min-width: 100px;
+    min-height: 100px;
+}
+
+.card h4 {
+    --typography-spacing-vertical: 1rem;
+    color: var(--light);
+    font-size: var(--fontTitle);
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    text-align: center;
+    padding-top: var(--spacing1);
+}
+
+.card p {
+    --typography-spacing-vertical: 0;
+    color: var(--light);
+}
+
+.card span {
+    font-size: 2.5rem;
+    padding-right: 3px;
+}
+
 @media screen and (max-width: 767px) {
     .blue-rectangle {
         width: 3px;
+    }
+}
+
+@media screen and (max-width: 576px) {
+    .grid {
+        grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
     }
 }
