@@ -1,3 +1,21 @@
-body {
-    
+.grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--spacing1);
+}
+
+.admin-card {
+    background-color: var(--light);
+    box-shadow: var(--box-shadow);
+}
+
+.content {
+    position: relative;
+}
+
+.content::before {
+    content: " ";
+    background: var(--primary);
+    width: 4px;
+    height: 100%;
+    position: absolute;
 }
