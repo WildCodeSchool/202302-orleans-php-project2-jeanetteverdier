@@ -19,7 +19,6 @@ abstract class AbstractManager
         $connection = new Connection();
         $this->pdo = $connection->getConnection();
     }
-
     /**
      * Get all row from database.
      */
@@ -32,7 +31,6 @@ abstract class AbstractManager
 
         return $this->pdo->query($query)->fetchAll();
     }
-
     /**
      * Get one row from database by ID.
      */
@@ -45,7 +43,6 @@ abstract class AbstractManager
 
         return $statement->fetch();
     }
-
     /**
      * Delete row form an ID
      */
