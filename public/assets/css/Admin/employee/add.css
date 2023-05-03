@@ -1,0 +1,48 @@
+@import url(style.css);
+
+.container{
+    width: var(--clamp60);
+}
+
+main .formPage{
+    background-color: var(--primary);
+    padding: var(--spacing2);
+    position: relative;
+    z-index: var(--secondPlan);
+    border-radius: 4px;
+    box-shadow: var(--box-shadow);
+}
+
+main form{
+    display: flex;
+    flex-direction: column;
+}
+
+main input{
+    background-color: var(--light);
+}
+
+main .error{
+    color:var(--errorColor)
+}
+
+main select{
+    background-color: var(--light);
+}
+
+.return{
+    font-size: 1.3rem;
+    margin-top: var(--spacing1);
+}
+
+main button{
+    align-self: flex-end;
+    background-color: var(--light);
+    color: var(--primary);
+}
+
+@media screen and (max-width: 767px) {
+    .container {
+        width: var(--clamp90);
+     }
+}

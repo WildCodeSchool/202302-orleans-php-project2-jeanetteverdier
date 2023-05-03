@@ -17,4 +17,20 @@ class EmployeeManager extends AbstractManager
 
         return  $statement->fetchAll();
     }
+
+    public function insertEmploye(array $employe)
+    {
+        $query = "INSERT INTO "
+        . self::TABLE .
+        " (`firstname`, `lastname`, `post`, `work_departement_id`) VALUES 
+        (:firstname, :lastname, :post, :work_departement_id);";
+        $statement = $this->pdo->prepare($query);
+
+        $statement->bindValue('firstname', $employe['firstname']);
+        $statement->bindValue('lastname', $employe['lastname']);
+        $statement->bindValue('post', $employe['post']);
+        $statement->bindValue('work_departement_id', $employe['about']);
+
+        return $statement->execute();
+    }
 }

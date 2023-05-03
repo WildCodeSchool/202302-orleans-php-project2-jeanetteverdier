@@ -39,6 +39,15 @@ main a {
     color: var(--light);
 }
 
+main .buttonAdd{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    z-index: var(--firstPlan);
+    width: 100px;
+    height: 50px;
+}
 
 main .textPerson h2 {
     font-size: 0.9rem;
