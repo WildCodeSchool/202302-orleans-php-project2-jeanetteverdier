@@ -22,7 +22,7 @@ article {
 }
 
 .titre {
-    width: clamp(315px, 30vw, 400px);
+    width: 70%;
     margin: auto;
 }
 
@@ -41,6 +41,7 @@ article {
 }
 
 .event-text {
+    --typography-spacing-vertical: .5rem;
     font-size: var(--sizeText);
     color: var(--light);
     padding: 0 var(--spacing1);
@@ -57,10 +58,6 @@ article {
 @media screen and (max-width: 767px) {
     header.container.event {
         align-items: start;
-    }
-
-    .titre {
-        width: clamp(240px, 40vw, 300px);
     }
 
     .event-text {
@@ -82,13 +79,5 @@ article {
     header > article {
         position: relative;
         width: 100%;
-    }
-
-    .titre {
-        width: clamp(240px, 60vw, 350px);
-    }
-
-    .titre > h3 {
-        font-size: clamp(16px, 5vw, 65px);
     }
 }
