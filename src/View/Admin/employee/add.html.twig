@@ -24,10 +24,10 @@
 			</div>
 		</div>
 		<div class="formPage">
-			<form {# action="/admin/notre-equipe" #} method="post" class="form">
+			<form method="post" class="form">
 				<div>
 					<label for="lastname">Nom</label>
-					<input type="text" name="lastname" id="lastname" value="{{ employe.lastname }}"/>
+					<input type="text" name="lastname" id="lastname" value="{{ employee.lastname }}"/>
 					<div class="error">
 						{% if errors.lastname is not empty %}
 							{{ errors.lastname }}
@@ -36,7 +36,7 @@
 				</div>
 				<div>
 					<label for="firstname">Prénom</label>
-					<input type="text" name="firstname" id="firstname" value="{{ employe.firstname }}"/>
+					<input type="text" name="firstname" id="firstname" value="{{ employee.firstname }}"/>
 					<div class="error">
 						{% if errors.firstname is not empty %}
 							{{ errors.firstname }}
@@ -44,8 +44,8 @@
 					</div>
 				</div>
 				<div>
-					<label for="post">poste</label>
-					<input type="text" name="post" id="post" value="{{ employe.post }}"/>
+					<label for="post">Poste</label>
+					<input type="text" name="post" id="post" value="{{ employee.post }}"/>
 					<div class="error">
 						{% if errors.post is not empty %}
 							{{ errors.post }}
@@ -55,9 +55,9 @@
 				<div>
 					<label for="about">Sujet</label>
 					<select name="about" id="about" placeholder="Type de demande">
-						<option value="">département</option>
-						{% for workDepartement in workDepartements %}
-							<option value="{{ workDepartement.id }}">{{ workDepartement.name }}</option>
+						<option value="">Service</option>
+						{% for departement in departements %}
+							<option value="{{ departement.id }}">{{ departement.name }}</option>
 						{% endfor %}
 					</select>
 					<div class="error">
@@ -66,11 +66,11 @@
 						{% endif %}
 					</div>
 				</div>
-				<button>Enregistré</button>
+				<button>Enregistrer</button>
 			</form>
 		</div>
 		<div class="return">
-			<a href="/admin/notre-equipe">retour</a>
+			<a href="/admin/notre-equipe">Retour</a>
 		</div>
 	</main>
 {% endblock %}

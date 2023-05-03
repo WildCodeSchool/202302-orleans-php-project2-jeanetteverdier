@@ -25,18 +25,18 @@ class AdminEmployeeController extends AbstractController
 
     public function add()
     {
-        $errors = $employe = [];
+        $errors = $employee = [];
 
         $workDepartements = new WorkDepartementsManager();
-        $workDepartements = $workDepartements->SelectAllWorkDepartement();
+        $departements = $workDepartements->SelectAllWorkDepartement();
 
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-            $employe = array_map('trim', $_POST);
-            $errors = $this->errors($employe, $workDepartements);
+            $employee = array_map('trim', $_POST);
+            $errors = $this->errors($employee, $departements);
 
             if (empty($errors)) {
-                $employeManager = new EmployeeManager();
-                $employe = $employeManager->insertEmploye($employe);
+                $employeeManager = new EmployeeManager();
+                $employee = $employeeManager->insertEmploye($employee);
 
                 header('Location:/admin/notre-equipe');
                 return null;
@@ -46,14 +46,14 @@ class AdminEmployeeController extends AbstractController
         return $this->twig->render(
             'Admin/employee/add.html.twig',
             [
-                'employe' => $employe,
+                'employee' => $employee,
                 'errors' => $errors,
-                'workDepartements' => $workDepartements
+                'departements' => $departements
             ]
         );
     }
 
-    public function errors($employe, $workDepartements)
+    public function errors($employe, $departements)
     {
         $errors = [];
         if (empty($employe['lastname'])) {
@@ -68,11 +68,16 @@ class AdminEmployeeController extends AbstractController
             $errors['post'] = "Le post est obligatoire";
         }
 
-        foreach ($workDepartements as $workDepartement) {
-            if (empty($employe['about']) || $employe['about'] === $workDepartement['id']) {
-                $errors['about'] = "Le sujet correct est obligatoire";
+        $departementExist = false;
+        foreach ($departements as $departement) {
+            if ($employe['about'] == $departement['id']) {
+                $departementExist = true;
             }
         }
+        if ($departementExist === false) {
+            $errors['about'] = "Le sujet correct est obligatoire";
+        }
+
         return $errors;
     }
 }

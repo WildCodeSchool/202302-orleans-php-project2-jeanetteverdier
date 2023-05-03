@@ -1,5 +1,3 @@
-@import url(style.css);
-
 .container{
     width: var(--clamp60);
 }
