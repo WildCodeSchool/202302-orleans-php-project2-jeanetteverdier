@@ -1,0 +1,29 @@
+{% extends 'layout.html.twig' %}
+
+{% block title %}
+	Admin - Nos Formations -
+	{{ parent() }}
+{% endblock %}
+
+{% block stylesheet %}
+	<link rel="stylesheet" href="/assets/css/training/admin-training.css">
+{% endblock %}
+
+{% block content %}
+	<main class="container">
+		<div class="background-line"></div>
+		<div class="main-title">
+			<div class="title-content">
+				<div class="bloc-square"></div>
+				<h3>
+					<span>Administration</span><br/>
+					nos formations</h3>
+			</div>
+		</div>
+
+		<section>
+			<div class="admin-card"></div>
+		</section>
+
+	</main>
+{% endblock %}
