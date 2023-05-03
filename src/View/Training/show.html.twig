@@ -49,6 +49,17 @@
 				<div class="training-content">
 					<p>{{ training.program }}</p>
 
+					{# Compétences #}
+					<h5>Compétences</h5>
+					<ul>
+						{% for skill in skills %}
+							{% if skill.training_skill_name == training.name  %}
+								<li>{{ skill.skill_name }}</li>
+							{% endif %}
+						{% endfor %}
+					</ul>
+
+
 					{# CARD #}
 					<div class="grid card-program">
 						<div class="card">
