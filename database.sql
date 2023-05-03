@@ -690,15 +690,72 @@ SET
 Des stages en entreprise sont également prévus pour permettre aux apprenants de mettre en pratique leurs compétences et de se familiariser avec le milieu professionnel."
 WHERE id = 9;
 
-CREATE TABLE event (
-    id INT NOT NULL PRIMARY KEY AUTO_INCREMENT,
-    title VARCHAR(255) NOT NULL,
-    content TEXT,
-    image VARCHAR(255)
-);
-
-INSERT INTO 
-`event` (title, content)
-VALUES ("Rentrée des classes prévue le 4 Septembre 2023", "Rentrée internat prévue le 3 Septembre 2023"),
-("Journée Porte ouverte", "Le samedi 10 mai 2023, le lycée vous ouvre ses portes de 9h à 17h !
-Un accueil central, situé à l'entrée de l'établissement, vous permettra de découvrir les formations et services dédiés à la vie étudiante.");
+CREATE TABLE EVENT(ID 
+	INT NOT NULL PRIMARY KEY AUTO_INCREMENT,
+	title VARCHAR(255) NOT NULL,
+	content TEXT,
+	image VARCHAR(255)
+	);
+	INSERT INTO
+	    `event` (title, content)
+	VALUES (
+	        "Rentrée des classes prévue le 4 Septembre 2023",
+	        "Rentrée internat prévue le 3 Septembre 2023"
+	    ), (
+	        "Journée Porte ouverte",
+	        "Le samedi 10 mai 2023, le lycée vous ouvre ses portes de 9h à 17h !
+	Un accueil central, situé à l'entrée de l'établissement, vous permettra de découvrir les formations et services dédiés à la vie étudiante."
+	    );
+	-- ********** TABLE SKILL **********
+	CREATE TABLE
+	    `skill` (
+	        `id` INT NOT NULL PRIMARY KEY AUTO_INCREMENT,
+	        `name` VARCHAR(255) NOT NULL
+	    );
+	INSERT INTO `skill` (name)
+	VALUES ("Autonomie"), ("Accueil"), ("Adaptabilité"), ("Disponibilité"), ("Rigueur"), ("Sens de l'organisation"), ("Travail en équipe"), ("Sens de l'organisation"), ("Relationnel"), ("Dynamisme"), ("Communication"), ("Négociation"), ("Ouverture d'esprit"), ("Amabilité"), ("Organisation"), ("Créativité"), ("Patience"), ("Minutie"), ("Précision");
+	-- ********** TABLE INTER TRAINING_SKILL **********
+	CREATE TABLE
+	    `training_skill` (
+	        `id` INT NOT NULL PRIMARY KEY AUTO_INCREMENT,
+	        `training_id` INT NOT NULL,
+	        `skill_id` INT NOT NULL,
+	        FOREIGN KEY (training_id) REFERENCES training(`id`),
+	        FOREIGN KEY (skill_id) REFERENCES skill(`id`)
+	    );
+	-- COMPETENCE BAC AGORA
+	INSERT INTO
+	    `training_skill` (skill_id, training_id)
+	VALUES (1, 4), (2, 4), (3, 4), (4, 4);
+	-- COMPETENCE BAC LOGISTIQUE
+	INSERT INTO
+	    `training_skill` (skill_id, training_id)
+	VALUES (1, 5), (5, 5), (6, 5), (7, 5);
+	-- COMPETENCE BAC OTM
+	INSERT INTO
+	    `training_skill` (skill_id, training_id)
+	VALUES (1, 6), (5, 6), (6, 6), (7, 6);
+	-- COMPETENCE BAC COMMERCE OPT A
+	INSERT INTO
+	    `training_skill` (skill_id, training_id)
+	VALUES (9, 7), (10, 7), (1, 7), (4, 7), (3, 7);
+	-- COMPETENCE BAC COMMERCE OPT B
+	INSERT INTO
+	    `training_skill` (skill_id, training_id)
+	VALUES (11, 8), (9, 8), (12, 8), (4, 8);
+	-- COMPETENCE BAC ACCUEIL
+	INSERT INTO
+	    `training_skill` (skill_id, training_id)
+	VALUES (9, 9), (13, 9), (14, 9), (4, 9), (3, 9);
+	-- COMPETENCE CAP EPC
+	INSERT INTO
+	    `training_skill` (skill_id, training_id)
+	VALUES (9, 2), (10, 2), (1, 2), (4, 2), (3, 2);
+	-- COMPETENCE CAP OPERATEUR
+	INSERT INTO
+	    `training_skill` (skill_id, training_id)
+	VALUES (1, 1), (5, 1), (15, 1), (7, 1);
+	-- COMPETENCE CAP COUTURE
+	INSERT INTO
+	    `training_skill` (skill_id, training_id)
+	VALUES (16, 3), (5, 3), (17, 3), (18, 3), (19, 3);
