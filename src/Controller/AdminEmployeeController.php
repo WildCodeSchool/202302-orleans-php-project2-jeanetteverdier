@@ -12,7 +12,7 @@ class AdminEmployeeController extends AbstractController
         $employeeManager = new EmployeeManager();
         $employees = $employeeManager->selectEmployeeWithDepartment();
         $workDepartements = new WorkDepartementsManager();
-        $workDepartements = $workDepartements->SelectAllWorkDepartement();
+        $workDepartements = $workDepartements->selectAll();
 
         return $this->twig->render(
             'Admin/employee/index.html.twig',
@@ -21,5 +21,59 @@ class AdminEmployeeController extends AbstractController
                 'workDepartements' => $workDepartements
             ]
         );
+    }
+
+    public function add()
+    {
+        $errors = $employee = [];
+
+        $workDepartement = new WorkDepartementsManager();
+        $departements = $workDepartement->selectAll();
+
+        if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+            $employee = array_map('trim', $_POST);
+            $errors = $this->errors($employee, $departements);
+
+            if (empty($errors)) {
+                $employeeManager = new EmployeeManager();
+                $employee = $employeeManager->insertEmploye($employee);
+
+                header('Location:/admin/notre-equipe');
+                return null;
+            }
+        }
+
+        return $this->twig->render(
+            'Admin/employee/add.html.twig',
+            [
+                'employee' => $employee,
+                'errors' => $errors,
+                'departements' => $departements
+            ]
+        );
+    }
+
+    public function errors($employee, $departements)
+    {
+        $errors = [];
+        if (empty($employee['lastname'])) {
+            $errors['lastname'] = "Le nom est obligatoire";
+        }
+
+        if (empty($employee['firstname'])) {
+            $errors['firstname'] = "Le prénom est obligatoire";
+        }
+
+        if (empty($employee['post'])) {
+            $errors['post'] = "Le poste est obligatoire";
+        }
+
+        $departementsId = array_column($departements, 'id');
+
+        if (!in_array($employee['departementId'], $departementsId)) {
+            $errors['departementId'] = 'Le département est invalide';
+        }
+
+        return $errors;
     }
 }
