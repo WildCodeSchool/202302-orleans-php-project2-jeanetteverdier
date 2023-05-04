@@ -2,15 +2,15 @@
 
 namespace App\Controller;
 
-use App\Model\EventManager;
+use App\Model\ActualityManager;
 
 class HomeController extends AbstractController
 {
     public function index(): string
     {
-        $eventManager = new EventManager();
-        $events = $eventManager->selectLastEvent();
+        $actualitytManager = new ActualityManager();
+        $actualities = $actualitytManager->selectLastEvent();
 
-        return $this->twig->render('Home/index.html.twig', ['events' => $events]);
+        return $this->twig->render('Home/index.html.twig', ['actualities' => $actualities]);
     }
 }
