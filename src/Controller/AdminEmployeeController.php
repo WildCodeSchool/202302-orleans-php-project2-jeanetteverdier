@@ -32,7 +32,8 @@ class AdminEmployeeController extends AbstractController
 
             header('Location:/admin/notre-equipe');
         }
-        
+    }
+
     public function add()
     {
         $errors = $employee = [];
