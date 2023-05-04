@@ -33,11 +33,20 @@ class EmployeeManager extends AbstractManager
 
         return $statement->execute();
     }
-    public function update(array $item): bool
+    public function updateEmployee(array $employee, $id): bool
     {
-        $statement = $this->pdo->prepare("UPDATE " . self::TABLE . " SET `title` = :title WHERE id=:id");
-        $statement->bindValue('id', $item['id'], PDO::PARAM_INT);
-        $statement->bindValue('title', $item['title'], PDO::PARAM_STR);
+        $statement = $this->pdo->prepare("UPDATE "
+        . self::TABLE .
+        " SET `firstname` = :firstname,
+        `lastname` = :lastname,
+        `post` = :post,
+        `work_departement_id` = :work_departement_id 
+        WHERE id=:id;");
+        $statement->bindValue('id', $id);
+        $statement->bindValue('firstname', $employee['firstname']);
+        $statement->bindValue('lastname', $employee['lastname']);
+        $statement->bindValue('post', $employee['post']);
+        $statement->bindValue('work_departement_id', $employee['departementId']);
 
         return $statement->execute();
     }

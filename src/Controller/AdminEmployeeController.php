@@ -32,13 +32,7 @@ class AdminEmployeeController extends AbstractController
 
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             $employee = array_map('trim', $_POST);
-            $errors = $this->errors($employee);
-
-            $departementsId = array_column($departements, 'id');
-
-            if (!in_array($employee['departementId'], $departementsId)) {
-                $errors['departementId'] = 'Le département est invalide';
-            }
+            $errors = $this->errors($employee, $departements);
 
             if (empty($errors)) {
                 $employeeManager = new EmployeeManager();
@@ -59,7 +53,7 @@ class AdminEmployeeController extends AbstractController
         );
     }
 
-    public function errors($employee)
+    public function errors($employee, $departements)
     {
         $errors = [];
         if (empty($employee['lastname'])) {
@@ -74,41 +68,43 @@ class AdminEmployeeController extends AbstractController
             $errors['post'] = "Le poste est obligatoire";
         }
 
+        $departementsId = array_column($departements, 'id');
+
+        if (!in_array($employee['departementId'], $departementsId)) {
+            $errors['departementId'] = 'Le département est invalide';
+        }
+
         return $errors;
     }
-    public function edit(int $id): ?string
+    public function edit(int $id)
     {
         $errors = [];
+
+        $workDepartement = new WorkDepartementsManager();
+        $departements = $workDepartement->selectAll();
 
         $employeeManager = new EmployeeManager();
         $employee = $employeeManager->selectOneById($id);
 
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-            // clean $_POST data
             $employee = array_map('trim', $_POST);
-            $errors = $this->errors($employee);
-
-            // TODO validations (length, format...)
+            $errors = $this->errors($employee, $departements);
+            $id = $_GET['id'];
 
             if (empty($errors)) {
-                $employeeManager = new EmployeeManager();
-                $employee = $employeeManager->insertEmploye($employee);
-
-                header('Location:/admin/notre-equipe');
+                $employeeManager->updateEmployee($employee, $id);
+                header('Location: /admin/notre-equipe');
                 return null;
             }
-            // if validation is ok, update and redirection
-            $employeeManager->update($employee);
-
-
-            header('Location: /items/show?id=' . $id);
-
-            // we are redirecting so we don't want any content rendered
-            return null;
         }
 
-        return $this->twig->render('Item/edit.html.twig', [
-            'employee' => $employee,
-        ]);
+        return $this->twig->render(
+            'Admin/employee/edit.html.twig',
+            [
+                'employee' => $employee,
+                'errors' => $errors,
+                'departements' => $departements
+            ]
+        );
     }
 }
