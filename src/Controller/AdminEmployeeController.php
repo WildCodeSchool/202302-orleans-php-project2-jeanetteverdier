@@ -12,7 +12,7 @@ class AdminEmployeeController extends AbstractController
         $employeeManager = new EmployeeManager();
         $employees = $employeeManager->selectEmployeeWithDepartment();
         $workDepartements = new WorkDepartementsManager();
-        $workDepartements = $workDepartements->SelectAllWorkDepartement();
+        $workDepartements = $workDepartements->SelectAll();
 
         return $this->twig->render(
             'Admin/employee/index.html.twig',
@@ -27,8 +27,8 @@ class AdminEmployeeController extends AbstractController
     {
         $errors = $employee = [];
 
-        $workDepartements = new WorkDepartementsManager();
-        $departements = $workDepartements->SelectAllWorkDepartement();
+        $workDepartement = new WorkDepartementsManager();
+        $departements = $workDepartement->selectAll();
 
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             $employee = array_map('trim', $_POST);
@@ -53,29 +53,29 @@ class AdminEmployeeController extends AbstractController
         );
     }
 
-    public function errors($employe, $departements)
+    public function errors($employee, $departements)
     {
         $errors = [];
-        if (empty($employe['lastname'])) {
+        if (empty($employee['lastname'])) {
             $errors['lastname'] = "Le nom est obligatoire";
         }
 
-        if (empty($employe['firstname'])) {
+        if (empty($employee['firstname'])) {
             $errors['firstname'] = "Le prénom est obligatoire";
         }
 
-        if (empty($employe['post'])) {
-            $errors['post'] = "Le post est obligatoire";
+        if (empty($employee['post'])) {
+            $errors['post'] = "Le poste est obligatoire";
         }
 
         $departementExist = false;
         foreach ($departements as $departement) {
-            if ($employe['about'] == $departement['id']) {
+            if ($employee['about'] == $departement['id']) {
                 $departementExist = true;
             }
         }
         if ($departementExist === false) {
-            $errors['about'] = "Le sujet correct est obligatoire";
+            $errors['about'] = "Le sujet est incorrect";
         }
 
         return $errors;
