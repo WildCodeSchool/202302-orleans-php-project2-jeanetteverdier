@@ -61,35 +61,14 @@
 										{{ training.description }}
 									</p>
 								</div>
-								<h6>Compétences</h6>
-								<div>
-									<ul>
-										<li>
-											<p>La liste</p>
-										</li>
-										<li>
-											<p>La liste</p>
-										</li>
-										<li>
-											<p>La liste</p>
-										</li>
-										<li>
-											<p>La liste</p>
-										</li>
-										<li>
-											<p>La liste</p>
-										</li>
-										<li>
-											<p>La liste</p>
-										</li>
-										<li>
-											<p>La liste</p>
-										</li>
-										<li>
-											<p>La liste</p>
-										</li>
-									</ul>
-								</div>
+								<h6>Compétences</h5>
+								<ul>
+									{% for skill in skills %}
+										{% if skill.training_skill_name == training.name  %}
+											<li>{{ skill.skill_name }}</li>
+										{% endif %}
+									{% endfor %}
+								</ul>
 
 								<a href="#" role="button">Modifier</a>
 								<a href="#" role="button">Supprimer</a>
