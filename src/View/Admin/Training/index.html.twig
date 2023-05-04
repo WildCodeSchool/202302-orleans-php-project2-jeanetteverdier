@@ -70,8 +70,12 @@
 									{% endfor %}
 								</ul>
 
-								<a href="#" role="button">Modifier</a>
-								<a href="#" role="button">Supprimer</a>
+								<div class="btn-card">
+									<a href="#" role="button">Modifier</a>
+									<form action="admin/formations/supprimer?id={{ training.id }}">
+										<a href="#" role="button">Supprimer</a>
+									</form>
+								</div>
 							</div>
 						</div>
 					</div>

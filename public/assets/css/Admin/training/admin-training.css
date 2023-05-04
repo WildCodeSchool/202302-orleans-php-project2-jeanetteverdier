@@ -106,6 +106,10 @@
     color: var(--light);
     font-size: .7rem;
 }
+.btn-card {
+    display: flex;
+    gap: var(--spacing1);
+}
 
 [role="button"] {
     margin-top: var(--spacing2);
