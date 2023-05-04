@@ -73,8 +73,8 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
     background-color: var(--primary);
+    box-shadow: var(--box-shadow);
 }
 
 .picto-program {
@@ -103,9 +103,87 @@
     padding-right: 3px;
 }
 
+/* POURSUITE DETUDE */
+
+.next-formation {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: var(--spacing1);
+}
+
+.next-formation .picto-program {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--secondary);
+}
+
+.next-formation .picto-program img {
+    width: 70%;
+}
+
+.next-formation .card {
+    width: clamp(320px, 90vw, 450px);
+}
+
+.card header {
+    display: flex;
+    align-self: flex-start;
+}
+
+.title-nextformation {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    max-height: 100px;
+}
+
+.title-nextformation h4 {
+    --typography-spacing-vertical: 0;
+    padding: 3px var(--spacing1);
+    text-align: start;
+    overflow: auto;
+}
+
+.orange-rectangle {
+    width: 100px;
+}
+
+.card .training-content {
+    align-items: center;
+    margin-top: var(--spacing1);
+}
+
+.card .training-content::before {
+    display: none;
+}
+
+/* .training-content > div:first-child {
+    border: 2px solid var(--secondary);
+    width: 80%;
+    height: 200px;
+} */
+
+.card > .training-content p {
+    font-size: var(--sizeText);
+    padding: var(--spacing1) var(--spacing2);
+    border: 2px solid rgb(118, 160, 231);
+    height: 250px;
+    width: 80%;
+    margin: auto;
+    overflow: auto;
+}
+
+.training-content [role="button"] {
+    align-self: start;
+    margin: var(--spacing1) 10%;
+}
+
 @media screen and (max-width: 767px) {
-    .blue-rectangle {
-        width: 3px;
+    .next-formation {
+        flex-direction: column;
+        align-items: center;
     }
 }
 

@@ -2,9 +2,10 @@
 
 namespace App\Controller;
 
-use App\Model\TrainingSkillManager;
 use App\Model\SectorManager;
 use App\Model\TrainingManager;
+use App\Model\TrainingNextTrainingManager;
+use App\Model\TrainingSkillManager;
 
 class TrainingController extends AbstractController
 {
@@ -30,13 +31,16 @@ class TrainingController extends AbstractController
     {
         $trainingManager = new TrainingManager();
         $skillManager = new TrainingSkillManager();
+        $nextTrainingManager = new TrainingNextTrainingManager();
 
         $training = $trainingManager->selectOneTraining($id);
         $skills = $skillManager->selectAllSkills();
+        $nextTrainings = $nextTrainingManager->selectAllNextTraining();
 
         return $this->twig->render('Training/show.html.twig', [
             'training' => $training,
             'skills' => $skills,
+            'nextTrainings' => $nextTrainings,
         ]);
     }
 }
