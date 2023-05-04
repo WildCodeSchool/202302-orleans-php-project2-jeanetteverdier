@@ -20,5 +20,6 @@ return [
     'actualites' => ['ActualityController', 'index',],
     'notre-lycee' => ['HighSchoolController', 'index',],
     'admin/notre-equipe' => ['AdminEmployeeController', 'index',],
+    'admin/notre-equipe/delete' => ['AdminEmployeeController', 'delete',],
     'admin/notre-equipe/ajouter' => ['AdminEmployeeController', 'add',],
 ];
