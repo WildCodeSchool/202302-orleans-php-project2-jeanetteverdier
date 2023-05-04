@@ -17,7 +17,7 @@
 
 .admin-img {
     width: 100%;
-    max-height: 340px;
+    max-height: 370px;
 }
 
 .content {
@@ -117,17 +117,6 @@
 .content [role="button"]:last-child {
     color: var(--primary);
     background-color: transparent;
-}
-
-.content th {
-    color: var(--dark);
-    font-size: var(--sizeText);
-    font-weight: bold;
-    border-bottom: 3px solid var(--secondary);
-}
-
-.content tr:nth-child(even) {
-    background-color: var(--tertiary);
 }
 
 @media screen and (max-width: 767px) {

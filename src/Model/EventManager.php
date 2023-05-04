@@ -6,7 +6,7 @@ use PDO;
 
 class EventManager extends AbstractManager
 {
-    public const TABLE = 'event';
+    public const TABLE = 'actuality';
 
     public function selectLastEvent()
     {
