@@ -12,7 +12,7 @@ class EmployeeController extends AbstractController
         $employeeManager = new EmployeeManager();
         $employees = $employeeManager->selectEmployeeWithDepartment();
         $workDepartements = new WorkDepartementsManager();
-        $workDepartements = $workDepartements->SelectAll();
+        $workDepartements = $workDepartements->selectAll();
 
         return $this->twig->render(
             'Pages/employee.html.twig',

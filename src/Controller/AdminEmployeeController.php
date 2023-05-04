@@ -12,7 +12,7 @@ class AdminEmployeeController extends AbstractController
         $employeeManager = new EmployeeManager();
         $employees = $employeeManager->selectEmployeeWithDepartment();
         $workDepartements = new WorkDepartementsManager();
-        $workDepartements = $workDepartements->SelectAll();
+        $workDepartements = $workDepartements->selectAll();
 
         return $this->twig->render(
             'Admin/employee/index.html.twig',
@@ -68,14 +68,10 @@ class AdminEmployeeController extends AbstractController
             $errors['post'] = "Le poste est obligatoire";
         }
 
-        $departementExist = false;
-        foreach ($departements as $departement) {
-            if ($employee['departementId'] == $departement['id']) {
-                $departementExist = true;
-            }
-        }
-        if ($departementExist === false) {
-            $errors['departementId'] = "Le sujet est incorrect";
+        $departementsId = array_column($departements, 'id');
+
+        if (!in_array($employee['departementId'], $departementsId)) {
+            $errors['departementId'] = 'Le département est invalide';
         }
 
         return $errors;
