@@ -1,11 +1,7 @@
-@import url(style.css);
-
 :root {
     --form-element-spacing-vertical: 0.5rem;
     --form-element-spacing-horizontal: 0.5rem;
-    --font-size: 1rem;
 }
-
 
 .container {
     width: var(--clamp60);
@@ -19,12 +15,11 @@ main {
     z-index: var(--firstPlan);
 }
 
-.error{
+.error {
     color: var(--errorColor);
 }
 
-.form
-{
+.form {
     display: flex;
     flex-direction: column;
 }
@@ -37,7 +32,12 @@ select {
 }
 
 label {
+    font-size: var(--sizeText);
     color: var(--light);
+}
+
+input, select {
+    font-size: var(--sizeText);
 }
 
 .formPage {
@@ -54,7 +54,7 @@ label {
 
 .nameFlex {
     display: flex;
-    gap: var(--spacing3);
+    gap: var(--spacing1);
 }
 
 .logoContact {
@@ -74,13 +74,13 @@ textarea {
     resize: none;
 }
 
-button {
+form button {
     align-self: flex-end;
     margin-top: var(--spacing1);
     background-color: var(--secondary);
     color: var(--light);
     width: 150px;
-
+    font-size: var(--sizeText);
 }
 
 @media screen and (max-width: 1023px) {
