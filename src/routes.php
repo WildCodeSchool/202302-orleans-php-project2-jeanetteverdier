@@ -21,4 +21,5 @@ return [
     'notre-lycee' => ['HighSchoolController', 'index',],
     'admin/notre-equipe' => ['AdminEmployeeController', 'index',],
     'admin/notre-equipe/ajouter' => ['AdminEmployeeController', 'add',],
+    'admin/notre-equipe/modifier' => ['AdminEmployeeController', 'edit', ['id']],
 ];

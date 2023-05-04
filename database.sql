@@ -801,7 +801,7 @@ WHERE id = 2;
 
 UPDATE actuality
 SET image = "calendrier.webp"
-WHERE id = 3;
+WHERE id = 3;e
 
 UPDATE actuality
 SET image = "internat.webp"
