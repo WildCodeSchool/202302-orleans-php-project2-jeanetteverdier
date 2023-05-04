@@ -1,3 +1,5 @@
+/* HEADER */
+
 header.container.event {
     height: auto;
     display: flex;
@@ -8,22 +10,21 @@ header.container.event {
 
 .event-image {
     background-color: red;
-    width: 450px;
-    height: 500px;
+    width: 48%;
 }
 
 article {
     background-color: var(--primary);
-    padding: var(--spacing2);
-    width: 563px;
-    height: auto;
+    padding: var(--spacing1);
+    width: 60%;
+    min-height: 200px;
     border-radius: 0;
     position: absolute;
-    right: -10%;
+    right: 0;
 }
 
 .titre {
-    width: 20rem;
+    width: 70%;
     margin: auto;
 }
 
@@ -34,19 +35,51 @@ article {
     text-transform: uppercase;
     color: var(--light);
     text-align: center;
-    border-style: solid;
+    border: 2px solid var(--light);
     line-height: 150%;
-    padding: var(--spacing) 0;
-    font-size: 50px;
+    padding: var(--spacing);
+    font-size: clamp(16px, 3vw, 50px);
     font-family: var(--fontTitle);
 }
 
 .event-text {
-    font-size: 16px;
+    --typography-spacing-vertical: .5rem;
+    font-size: var(--sizeText);
+    color: var(--light);
+    padding: 0 var(--spacing1);
+    height: 99px;
+    overflow: auto;
 }
 
 [role="button"] {
     background-color: var(--secondary);
     font-size: .7rem;
-    margin-top: var(--spacing);
+    margin-left: var(--spacing1);
+}
+
+@media screen and (max-width: 767px) {
+    header.container.event {
+        align-items: start;
+    }
+
+    .event-text {
+        height: 85px;
+    }
+}
+
+@media screen and (max-width: 576px) {
+    header.container.event {
+        width: 100vw;
+        flex-direction: column;
+    }
+
+    .event-image {
+        width: 100vw;
+        height: 80vw;
+    }
+
+    header > article {
+        position: relative;
+        width: 100%;
+    }
 }
