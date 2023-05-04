@@ -38,6 +38,29 @@
     padding: var(--spacing1) var(--spacing2);
 }
 
+/* SKILLS */
+
+.program-skills h5 {
+    --typography-spacing-vertical: .5rem;
+    margin-left: var(--spacing2);
+    font-size: 1rem;
+}
+
+.program-skills ul {
+    display: flex;
+    gap: .2rem;
+    margin-left: var(--spacing2);
+}
+
+.program-skills ul li {
+    list-style: none;
+    background: var(--secondary);
+    padding: 5px 20px;
+    border-radius: 30px;
+    font-size: .6rem;
+    margin-bottom: var(--spacing1);
+}
+
 /* CARDS */
 .grid {
     grid-template-columns: repeat(3, 1fr);
