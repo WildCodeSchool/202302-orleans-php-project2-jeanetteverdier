@@ -19,71 +19,108 @@
 				<div class="title-content">
 					<div class="bloc-square"></div>
 					<h3>
-						<span>Administration</span><br/>de nos formations
+						<span>Admin</span><br/>nos formations
 					</h3>
 				</div>
+			</div>
+
+			<div class="add-bar">
+				<a href="#" role="button">Ajouter</a>
 			</div>
 
 			<div class="grid">
 				{% for training in trainings %}
 					<div class="admin-card">
-						<div>
+						<div class="admin-img">
 							<img src="{{ training.image ? '/uploads/training/' ~ training.image : 'assets/images/default_placeholder.jpg'}}" alt="Photo de la formation"/>
 						</div>
 						<div class="content">
-							<h5>{{ training.degree_name ~ " " ~ training.training_name }}</h5>
-							{% for sector in sectors %}
-								{% if sector.name == training.sector_name %}
-									<p>{{ sector.name }}</p>
-								{% endif %}
-							{% endfor %}
-							<p>Durée de la formation :
-								{{ training.degree_duration }}
-								ans</p>
-							<p>Durée du stage :
-								{{ training.stage_duration }}
-								mois
-							</p>
-							<h6>Description</h6>
-							<div class="content-overflow">
-								<p>
-									{{ training.description }}
-								</p>
-							</div>
-							<h6>Programme</h6>
-							<div class="content-overflow">
-								<p>
-									{{ training.description }}
-								</p>
-							</div>
-							<h6>Compétences</h6>
 							<div>
-								<ul>
-									<li>La liste</li>
-								</ul>
+								<h5>{{ training.degree_name ~ " " ~ training.training_name }}</h5>
+								{% for sector in sectors %}
+									{% if sector.name == training.sector_name %}
+										<h6>{{ sector.name }}</h6>
+									{% endif %}
+								{% endfor %}
+								<p>Durée de la formation :
+									{{ training.degree_duration }}
+									ans</p>
+								<p>Durée du stage :
+									{{ training.stage_duration }}
+									mois
+								</p>
+								<h6>Description</h6>
+								<div class="content-overflow">
+									<p>
+										{{ training.description }}
+									</p>
+								</div>
+								<h6>Programme</h6>
+								<div class="content-overflow">
+									<p>
+										{{ training.description }}
+									</p>
+								</div>
+								<h6>Compétences</h6>
+								<div>
+									<ul>
+										<li>
+											<p>La liste</p>
+										</li>
+										<li>
+											<p>La liste</p>
+										</li>
+										<li>
+											<p>La liste</p>
+										</li>
+										<li>
+											<p>La liste</p>
+										</li>
+										<li>
+											<p>La liste</p>
+										</li>
+										<li>
+											<p>La liste</p>
+										</li>
+										<li>
+											<p>La liste</p>
+										</li>
+										<li>
+											<p>La liste</p>
+										</li>
+									</ul>
+								</div>
+								<h6>Poursuite d'étude</h6>
+								<table>
+									<thead>
+										<tr>
+											<th>Niveau</th>
+											<th>Formation</th>
+											<th>Durée</th>
+										</tr>
+									</thead>
+									<tbody>
+										<tr>
+											<td>BTS</td>
+											<td>Manager Logistique</td>
+											<td>3 ans</td>
+										</tr>
+										<tr>
+											<td>BTS</td>
+											<td>Manager Logistique</td>
+											<td>3 ans</td>
+										</tr>
+										<tr>
+											<td>BTS</td>
+											<td>Manager Logistique</td>
+											<td>3 ans</td>
+										</tr>
+									</tbody>
+								</table>
+
+								<a href="#" role="button">Modifier</a>
+								<a href="#" role="button">Supprimer</a>
 							</div>
-							{# <ul>
-																																																																																																																															<li>
-																																																																																																																																<p>Secteur</p>
-																																																																																																																															</li>
-																																																																																																																															<li>
-																																																																																																																																<p>Durée de la formation : X ans</p>
-																																																																																																																															</li>
-																																																																																																																															<li>
-																																																																																																																																<p>Durée du stage : X mois</p>
-																																																																																																																															</li>
-																																																																																																																															<li>
-																																																																																																																																<p>{{ training.description }}</p>
-																																																																																																																															</li>
-																																																																																																																															<li>
-																																																																																																																																<p>Programme</p>
-																																																																																																																															</li>
-																																																																																																																															<li>
-																																																																																																																																<p>Compétences</p>
-																																																																																																																															</li>
-																																																																																																																														</ul> #}
-							<a href="#" role="button">Modifier</a>
-							<a href="#" role="button">Supprimer</a>
 						</div>
 					</div>
 				{% endfor %}
