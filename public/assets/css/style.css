@@ -9,7 +9,8 @@
     --dark: #020f1e;
     --light: #f2f3f5;
     --lowlight: rgba(255, 255, 255, 0.2);
-    --backgroundCard: rgba(255, 255, 255, 0.2);; 
+    --backgroundCard: rgba(255, 255, 255, 0.2);
+    --errorColor:  rgb(120, 24, 24); 
 
 
     --fontTitle: 'Akshar', sans-serif;
@@ -69,6 +70,8 @@ main.container {
     position: relative;
     height: auto;
     z-index: var(--secondPlan);
+    padding-top: var(--spacing3);
+    padding-bottom: var(--spacing6);
 }
 
 main > section {
@@ -96,7 +99,6 @@ article {
 
 .main-title {
     position: relative;
-    margin-top: var(--spacing3);
     z-index: var(--secondPlan);
 }
 

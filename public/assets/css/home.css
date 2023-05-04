@@ -1,0 +1,52 @@
+header.container.event {
+    height: auto;
+    display: flex;
+    align-items: center;
+    position: relative;
+    padding: 0;
+}
+
+.event-image {
+    background-color: red;
+    width: 450px;
+    height: 500px;
+}
+
+article {
+    background-color: var(--primary);
+    padding: var(--spacing2);
+    width: 563px;
+    height: auto;
+    border-radius: 0;
+    position: absolute;
+    right: -10%;
+}
+
+.titre {
+    width: 20rem;
+    margin: auto;
+}
+
+.titre h3 {
+    --typography-spacing-vertical: 1rem;
+    font-family: var(--fontTitle);
+    font-weight: 200;
+    text-transform: uppercase;
+    color: var(--light);
+    text-align: center;
+    border-style: solid;
+    line-height: 150%;
+    padding: var(--spacing) 0;
+    font-size: 50px;
+    font-family: var(--fontTitle);
+}
+
+.event-text {
+    font-size: 16px;
+}
+
+[role="button"] {
+    background-color: var(--secondary);
+    font-size: .7rem;
+    margin-top: var(--spacing);
+}

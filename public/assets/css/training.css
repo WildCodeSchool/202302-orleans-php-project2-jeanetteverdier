@@ -1,158 +1,93 @@
-.training {
-    display: flex;
-    flex-direction: column;
-}
-
-.training .second-title:nth-child(2) {
-    margin: var(--spacing4) 0 var(--spacing1) 0;;
-}
-
-.training-articles {
-    display: flex;
-    flex-wrap: wrap;
-    gap: var(--spacing1);
-}
-
-.training-card {
-    display: flex;
-    background: rgba(255, 255, 255, 0.2);
-    position: relative;
-    height: auto;
-    width: 100%;
-    border-radius: 0;
+.program-content {
+    background: var(--lowlight);
     box-shadow: var(--box-shadow);
-    z-index: var(--firstPlan);
-    transition: all .3s ease-in-out; 
+    backdrop-filter: blur(15px);
 }
 
-.training-card:hover {
-    transform:
-    scale(1.02);
+.training-content {
+    width: 100%;
+    padding: 0;
+    backdrop-filter: none;
 }
 
-.blue-rectangle {
+.training-content::before {
+    content: " ";
     background: var(--primary);
     width: 4px;
     height: 100%;
     position: absolute;
-    top: 0;
-    left: 0;
-    transition: all .3s ease-in-out; 
-    z-index: var(--thirdPlan);
 }
 
-.training-card:hover .blue-rectangle {
+.program-content p {
+    color: var(--dark);
+    font-size: var(--sizeText);
+    padding: var(--spacing1) var(--spacing2);
+    line-height: 170%;
+}
+
+.image-formation {
+    height: clamp(300px, 30vw, 500px);
     width: 100%;
 }
 
-.training-content {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-around;
-
-    position: relative;
-    width: 55%;
-    padding: var(--spacing3) var(--spacing2);
-    z-index: var(--firstPlan);
-    backdrop-filter: blur(15px);
-}
-
-.training-content > h4 {
-    font-size: var(--sizeTitle2);
-    z-index: var(--firstPlan);
-}
-
-.training-content > p {
-    font-size: var(--sizeText);
-    margin: var(--spacing1) 0;
-    z-index: var(--firstPlan);
-}
-
-.training-content > h4, .training-content > p {
-    transition: .2s ease-in-out;
-}
-
-.training-card:hover h4, .training-card:hover p {
-    color: var(--light);
-}
-
-.orange-rectangle {
-    background: var(--secondary);
-    height: 3px;
-    width: 25px;
-    transition: all .2s .1s ease-in-out;
-    z-index: var(--firstPlan);
-}
-
-.training-card:hover .orange-rectangle {
-    width: 100px;
-}
-
-.training-content > a {
-    font-size: var(--sizeText);
-    z-index: var(--firstPlan);
-}
-
-.training-content [role="button"] {
-    background-color: var(--secondary);
-    border-color: var(--secondary);
-    padding: var(--spacing);
-    width: 130px;
-}
-
-.training-image {
-    width: 45%;
-    max-height: auto;
-}
-
-.training-image img {
+.image-formation img {
     height: 100%;
 }
 
-.training-card:nth-child(even) {
-    flex-direction: row-reverse;
+.training-content p {
+    padding: var(--spacing1) var(--spacing2);
+}
+
+/* CARDS */
+.grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: .5px;
+    position: relative;
+    z-index: var(--firstplan);
+}
+
+.card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--primary);
+}
+
+.picto-program {
+    min-width: 100px;
+    min-height: 100px;
+}
+
+.card h4 {
+    --typography-spacing-vertical: 1rem;
+    color: var(--light);
+    font-size: var(--fontTitle);
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    text-align: center;
+    padding-top: var(--spacing1);
+}
+
+.card p {
+    --typography-spacing-vertical: 0;
+    color: var(--light);
+}
+
+.card span {
+    font-size: 2.5rem;
+    padding-right: 3px;
 }
 
 @media screen and (max-width: 767px) {
-    main.container {
-        width: var(--clamp90);
-    }
-
-    .training-card {
-        flex-direction: column;
-        order: 1;
-    }
-
-    .training-image {
-        width: 100%;
-    }
-
-    .training-content {
-        width: 100%;
-        order: 2;
-        padding: var(--spacing1) var(--spacing2);
-    }
-
-    .training-card:nth-child(even) {
-        flex-direction: column;
-    }
-
-    .training-card:hover {
-        transform: none;
-    }
-
-    .training-content > h4, .training-content > p {
-        color: var(--light);
-    }
-
     .blue-rectangle {
-        background: var(--primary);
-        width: 100%;
+        width: 3px;
     }
+}
 
-    .orange-rectangle {
-        background: var(--secondary);
-        height: 3px;
-        width: 100px;
+@media screen and (max-width: 576px) {
+    .grid {
+        grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
     }
 }
