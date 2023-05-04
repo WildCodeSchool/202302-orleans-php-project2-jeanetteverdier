@@ -11,6 +11,6 @@ class ActualityController extends AbstractController
         $actualityManager = new ActualityManager();
         $actualities = $actualityManager->selectAll();
 
-        return $this->twig->render('Actuality/index.html.twig', ['Actualities' => $actualities]);
+        return $this->twig->render('Actuality/index.html.twig', ['actualities' => $actualities]);
     }
 }
