@@ -53,8 +53,8 @@
 					</div>
 				</div>
 				<div>
-					<label for="about">Sujet</label>
-					<select name="about" id="about" placeholder="Type de demande">
+					<label for="departementId">Sujet</label>
+					<select name="departementId" id="departementId" 
 						<option value="">Service</option>
 						{% for departement in departements %}
 							<option value="{{ departement.id }}">{{ departement.name }}</option>
@@ -62,7 +62,7 @@
 					</select>
 					<div class="error">
 						{% if errors.about is not empty %}
-							{{ errors.about }}
+							{{ errors.departementId }}
 						{% endif %}
 					</div>
 				</div>

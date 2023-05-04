@@ -70,12 +70,12 @@ class AdminEmployeeController extends AbstractController
 
         $departementExist = false;
         foreach ($departements as $departement) {
-            if ($employee['about'] == $departement['id']) {
+            if ($employee['departementId'] == $departement['id']) {
                 $departementExist = true;
             }
         }
         if ($departementExist === false) {
-            $errors['about'] = "Le sujet est incorrect";
+            $errors['departementId'] = "Le sujet est incorrect";
         }
 
         return $errors;
