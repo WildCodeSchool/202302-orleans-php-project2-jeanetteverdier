@@ -17,5 +17,6 @@ return [
     'formations' => ['TrainingController', 'index',],
     'formations/show' => ['TrainingController', 'show', ['id']],
     'notre-equipe' => ['EmployeeController', 'index',],
+    'notre-lycee' => ['HighSchoolController', 'index',],
     'admin/notre-equipe' => ['AdminEmployeeController', 'index',],
 ];
