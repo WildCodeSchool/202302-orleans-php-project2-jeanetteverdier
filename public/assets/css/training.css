@@ -159,12 +159,6 @@
     display: none;
 }
 
-/* .training-content > div:first-child {
-    border: 2px solid var(--secondary);
-    width: 80%;
-    height: 200px;
-} */
-
 .card > .training-content p {
     font-size: var(--sizeText);
     padding: var(--spacing1) var(--spacing2);
