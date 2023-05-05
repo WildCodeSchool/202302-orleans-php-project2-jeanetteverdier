@@ -24,7 +24,7 @@
 			</div>
 		</div>
 <div class="formPage">
-	<form method="post" class="form">
+	<form method="post" class="form" enctype="multipart/form-data">
 		<div>
 			<label for="lastname">Nom</label>
 			<input type="text" name="lastname" id="lastname" value="{{ employee.lastname }}"/>
@@ -66,6 +66,7 @@
 				{% endif %}
 			</div>
 		</div>
+		<input type="file" name="image"/>
 		<button>Enregistrer</button>
 	</form>
 </div>

@@ -36,7 +36,7 @@ class AdminEmployeeController extends AbstractController
 
     public function add()
     {
-        $errors = $employee = [];
+        $errors = $employee = $errorsImage = [];
 
         $workDepartement = new WorkDepartementsManager();
         $departements = $workDepartement->selectAll();
@@ -44,10 +44,20 @@ class AdminEmployeeController extends AbstractController
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             $employee = array_map('trim', $_POST);
             $errors = $this->errors($employee, $departements);
+            $errorsImage = $this->errorsImage();
 
-            if (empty($errors)) {
+            if (empty($errors) && empty($errorsImage)) {
+                $extension = pathinfo($_FILES['image']['name'], PATHINFO_EXTENSION);
+                $baseFilename = pathinfo($_FILES['image']['name'], PATHINFO_FILENAME);
+
+                $imageName = uniqid($baseFilename, more_entropy: true) . '.' . $extension;
+
+                $employee['image'] = $imageName;
+
                 $employeeManager = new EmployeeManager();
                 $employee = $employeeManager->insertEmploye($employee);
+
+                move_uploaded_file($_FILES['image']['tmp_name'], __DIR__ . '/../../public/uploads/' . $imageName);
 
                 header('Location:/admin/notre-equipe');
                 return null;
@@ -59,7 +69,8 @@ class AdminEmployeeController extends AbstractController
             [
                 'employee' => $employee,
                 'errors' => $errors,
-                'departements' => $departements
+                'departements' => $departements,
+                'errorsImage' => $errorsImage
             ]
         );
     }
@@ -87,9 +98,28 @@ class AdminEmployeeController extends AbstractController
 
         return $errors;
     }
+
+    public function errorsImage()
+    {
+        $errorsImage = [];
+        if ($_FILES['image']['error'] !== 0) {
+            $errorsImage[] = 'Problème avec l\'upload, veillez réessayer';
+        } else {
+            $limitFilesSize = 2000000;
+            if ($_FILES['image']['size'] > $limitFilesSize) {
+                $errorsImage[] = 'Le fichier doit faire moins de ' . $limitFilesSize  / 1000000 . 'Mo';
+            }
+
+            $authorizedMimes = ['image/jpeg', 'image/png', 'image/webp'];
+            if (!in_array(mime_content_type($_FILES['image']['tmp_name']), $authorizedMimes)) {
+                $errorsImage[] = 'Le type de fichier est incorrect. il doit ' . implode(',', $authorizedMimes);
+            }
+            return $errorsImage;
+        }
+    }
     public function edit(int $id)
     {
-        $errors = [];
+        $errors = $errorsImage = [];
 
         $workDepartement = new WorkDepartementsManager();
         $departements = $workDepartement->selectAll();
@@ -100,9 +130,10 @@ class AdminEmployeeController extends AbstractController
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             $employee = array_map('trim', $_POST);
             $errors = $this->errors($employee, $departements);
+            $errorsImage = $this->errorsImage();
             $id = $_GET['id'];
 
-            if (empty($errors)) {
+            if (empty($errors) && empty($errorsImage)) {
                 $employeeManager->updateEmployee($employee, $id);
                 header('Location: /admin/notre-equipe');
                 return null;
@@ -114,7 +145,8 @@ class AdminEmployeeController extends AbstractController
             [
                 'employee' => $employee,
                 'errors' => $errors,
-                'departements' => $departements
+                'departements' => $departements,
+                'errorsImage' => $errorsImage
             ]
         );
     }

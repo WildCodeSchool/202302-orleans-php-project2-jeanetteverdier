@@ -23,54 +23,62 @@
 				<h4>à remplir</h4>
 			</div>
 		</div>
-<div class="formPage">
-	<form method="post" class="form">
-		<div>
-			<label for="lastname">Nom</label>
-			<input type="text" name="lastname" id="lastname" value="{{ employee.lastname }}"/>
-			<div class="error">
-				{% if errors.lastname is not empty %}
-					{{ errors.lastname }}
-				{% endif %}
-			</div>
+		<div class="formPage">
+			<form method="post" class="form" enctype="multipart/form-data">
+				<div>
+					<label for="lastname">Nom</label>
+					<input type="text" name="lastname" id="lastname" value="{{ employee.lastname }}"/>
+					<div class="error">
+						{% if errors.lastname is not empty %}
+							{{ errors.lastname }}
+						{% endif %}
+					</div>
+				</div>
+				<div>
+					<label for="firstname">Prénom</label>
+					<input type="text" name="firstname" id="firstname" value="{{ employee.firstname }}"/>
+					<div class="error">
+						{% if errors.firstname is not empty %}
+							{{ errors.firstname }}
+						{% endif %}
+					</div>
+				</div>
+				<div>
+					<label for="post">Poste</label>
+					<input type="text" name="post" id="post" value="{{ employee.post }}"/>
+					<div class="error">
+						{% if errors.post is not empty %}
+							{{ errors.post }}
+						{% endif %}
+					</div>
+				</div>
+				<div>
+					<label for="departementId">Sujet</label>
+					<select name="departementId" id="departementId">
+						<option value="">Service</option>
+						{% for departement in departements %}
+							<option value="{{ departement.id }}">{{ departement.name }}</option>
+						{% endfor %}
+					</select>
+					<div class="error">
+						{% if errors.departementId is not empty %}
+							{{ errors.departementId }}
+						{% endif %}
+					</div>
+				</div>
+				<div>
+					<input type="file" name="image"/>
+					<div class="error">
+						{% for errorsImages in errorsImage %}
+							{{ errorsImages }}
+						{% endfor %}
+					</div>
+				</div>
+				<button>Enregistrer</button>
+			</form>
 		</div>
-		<div>
-			<label for="firstname">Prénom</label>
-			<input type="text" name="firstname" id="firstname" value="{{ employee.firstname }}"/>
-			<div class="error">
-				{% if errors.firstname is not empty %}
-					{{ errors.firstname }}
-				{% endif %}
-			</div>
+		<div class="return">
+			<a href="/admin/notre-equipe">Retour</a>
 		</div>
-		<div>
-			<label for="post">Poste</label>
-			<input type="text" name="post" id="post" value="{{ employee.post }}"/>
-			<div class="error">
-				{% if errors.post is not empty %}
-					{{ errors.post }}
-				{% endif %}
-			</div>
-		</div>
-		<div>
-			<label for="departementId">Sujet</label>
-			<select name="departementId" id="departementId">
-				<option value="">Service</option>
-				{% for departement in departements %}
-					<option value="{{ departement.id }}">{{ departement.name }}</option>
-				{% endfor %}
-			</select>
-			<div class="error">
-				{% if errors.departementId is not empty %}
-					{{ errors.departementId }}
-				{% endif %}
-			</div>
-		</div>
-		<button>Enregistrer</button>
-	</form>
-</div>
-<div class="return">
-	<a href="/admin/notre-equipe">Retour</a>
-</div>
 	</main>
 {% endblock %}
