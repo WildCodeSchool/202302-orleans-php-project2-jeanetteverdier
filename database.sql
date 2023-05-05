@@ -690,21 +690,311 @@ SET
 Des stages en entreprise sont également prévus pour permettre aux apprenants de mettre en pratique leurs compétences et de se familiariser avec le milieu professionnel."
 WHERE id = 9;
 
+-- ********** TABLE SKILL **********
+
 CREATE TABLE
-    `actuality` (
-        id INT NOT NULL PRIMARY KEY AUTO_INCREMENT,
-        title VARCHAR(255) NOT NULL,
-        content TEXT,
-        image VARCHAR(255)
+    `skill` (
+        `id` INT NOT NULL PRIMARY KEY AUTO_INCREMENT,
+        `name` VARCHAR(255) NOT NULL
+    );
+
+INSERT INTO `skill` (name)
+VALUES ("Autonomie"), ("Accueil"), ("Adaptabilité"), ("Disponibilité"), ("Rigueur"), ("Sens de l'organisation"), ("Travail en équipe"), ("Sens de l'organisation"), ("Relationnel"), ("Dynamisme"), ("Communication"), ("Négociation"), ("Ouverture d'esprit"), ("Amabilité"), ("Organisation"), ("Créativité"), ("Patience"), ("Minutie"), ("Précision");
+
+-- ********** TABLE INTER TRAINING_SKILL **********
+
+CREATE TABLE
+    `training_skill` (
+        `id` INT NOT NULL PRIMARY KEY AUTO_INCREMENT,
+        `training_id` INT NOT NULL,
+        `skill_id` INT NOT NULL,
+        FOREIGN KEY (training_id) REFERENCES training(`id`),
+        FOREIGN KEY (skill_id) REFERENCES skill(`id`)
+    );
+
+-- COMPETENCE BAC AGORA
+
+INSERT INTO
+    `training_skill` (skill_id, training_id)
+VALUES (1, 4), (2, 4), (3, 4), (4, 4);
+
+-- COMPETENCE BAC LOGISTIQUE
+
+INSERT INTO
+    `training_skill` (skill_id, training_id)
+VALUES (1, 5), (5, 5), (6, 5), (7, 5);
+
+-- COMPETENCE BAC OTM
+
+INSERT INTO
+    `training_skill` (skill_id, training_id)
+VALUES (1, 6), (5, 6), (6, 6), (7, 6);
+
+-- COMPETENCE BAC COMMERCE OPT A
+
+INSERT INTO
+    `training_skill` (skill_id, training_id)
+VALUES (9, 7), (10, 7), (1, 7), (4, 7), (3, 7);
+
+-- COMPETENCE BAC COMMERCE OPT B
+
+INSERT INTO
+    `training_skill` (skill_id, training_id)
+VALUES (11, 8), (9, 8), (12, 8), (4, 8);
+
+-- COMPETENCE BAC ACCUEIL
+
+INSERT INTO
+    `training_skill` (skill_id, training_id)
+VALUES (9, 9), (13, 9), (14, 9), (4, 9), (3, 9);
+
+-- COMPETENCE CAP EPC
+
+INSERT INTO
+    `training_skill` (skill_id, training_id)
+VALUES (9, 2), (10, 2), (1, 2), (4, 2), (3, 2);
+
+-- COMPETENCE CAP OPERATEUR
+
+INSERT INTO
+    `training_skill` (skill_id, training_id)
+VALUES (1, 1), (5, 1), (15, 1), (7, 1);
+
+-- COMPETENCE CAP COUTURE
+
+INSERT INTO
+    `training_skill` (skill_id, training_id)
+VALUES (16, 3), (5, 3), (17, 3), (18, 3), (19, 3);
+
+-- ********** TABLE NEXT_TRAINING **********
+
+CREATE TABLE
+    `next_training` (
+        `id` INT NOT NULL PRIMARY KEY AUTO_INCREMENT,
+        `degree` VARCHAR(10) NOT NULL,
+        `name` VARCHAR(255) NOT NULL,
+        `duration` INT NOT NULL,
+        `description` TEXT,
+        `link` VARCHAR(255)
+    );
+
+CREATE TABLE
+    `training_next_training` (
+        `id` INT NOT NULL PRIMARY KEY AUTO_INCREMENT,
+        `training_id` INT NOT NULL,
+        `next_training_id` INT NOT NULL,
+        FOREIGN KEY (training_id) REFERENCES training(`id`),
+        FOREIGN KEY (next_training_id) REFERENCES next_training(`id`)
+    );
+
+INSERT INTO
+    `next_training` (degree, name, duration, link)
+VALUES (
+        "BAC PRO",
+        "Logistique",
+        3,
+        "https://www.onisep.fr/ressources/univers-formation/Formations/Lycees/bac-pro-logistique"
+    ), (
+        "BAC PRO",
+        "Commerce et de la vente option A : animation et gestion de l'espace commercial",
+        3,
+        "https://www.onisep.fr/ressources/univers-formation/Formations/Lycees/bac-pro-metiers-du-commerce-et-de-la-vente-option-a-animation-et-gestion-de-l-espace-commercial"
+    ), (
+        "BAC PRO",
+        "Métiers de la mode - Vêtement",
+        3,
+        "https://www.onisep.fr/ressources/univers-formation/Formations/Lycees/bac-pro-metiers-de-la-mode-vetements"
+    ), (
+        "BTS",
+        "Gestion de la PME",
+        2,
+        "https://www.onisep.fr/ressources/univers-formation/Formations/Post-bac/bts-gestion-de-la-pme"
+    ), (
+        "BTS",
+        "Support à l'action managériale",
+        2,
+        "https://www.onisep.fr/ressources/univers-formation/Formations/Post-bac/bts-support-a-l-action-manageriale"
+    ), (
+        "BTS",
+        "Comptabilité et gestion",
+        2,
+        "https://www.onisep.fr/ressources/univers-formation/Formations/Post-bac/bts-comptabilite-et-gestion"
+    ), (
+        "BTS",
+        "Gestion des transports et logistique associée (GTLA)",
+        2,
+        "https://www.onisep.fr/ressources/univers-formation/Formations/Post-bac/bts-gestion-des-transports-et-logistique-associee"
+    ), (
+        "BTS",
+        "Management commercial opérationnel",
+        2,
+        "https://www.onisep.fr/ressources/univers-formation/Formations/Post-bac/bts-management-commercial-operationnel"
+    ), (
+        "BTS",
+        "Négociation et digitalisation de la relation client",
+        2,
+        "https://www.onisep.fr/ressources/univers-formation/Formations/Post-bac/bts-negociation-et-digitalisation-de-la-relation-client"
+    ), (
+        "BTS",
+        "Tourisme",
+        2,
+        "https://www.onisep.fr/ressources/univers-formation/Formations/Post-bac/bts-tourisme"
+    );
+
+UPDATE `next_training`
+SET
+    description = "Ce bac pro se prépare en 3 ans après la classe de 3e. Les élèves entrent en 2de professionnelle Métiers de la gestion administrative, du transport et de la logistique pour préparer cette spécialité du bac pro.
+L'accès est différent pour les élèves en apprentissage qui entrent directement dans cette spécialité de bac pro sans passer par une 2de pro famille de métiers.
+Les élèves titulaires de certains CAP du même secteur peuvent également le préparer en 2 ans sous certaines conditions."
+WHERE id = 1;
+
+UPDATE `next_training`
+SET
+    description = "Ce bac pro se prépare en 3 ans après la classe de 3e. Les élèves entrent en 2de professionnelle métiers de la relation clientpour préparer cette spécialité du bac pro.
+L'accès est différent pour les élèves en apprentissage qui entrent directement dans cette spécialité de bac pro sans passer par une 2de pro famille de métiers.
+Les élèves titulaires de certains CAP du même secteur peuvent également préparer ce bac pro en 2 ans sous certaines conditions."
+WHERE id = 2;
+
+UPDATE `next_training`
+SET
+    description = "Ce bac pro se prépare en trois ans après la classe de troisième. Accès possible après un CAP du domaine des matériaux souples."
+WHERE id = 3;
+
+UPDATE `next_training`
+SET
+    description = "Le BTS gestion de la PME est accessible à tout titulaire d'un baccalauréat : bac pro, bac STMG, bac général. Accès sur dossier, voire tests et/ou entretien."
+WHERE id = 4;
+
+UPDATE `next_training`
+SET
+    description = "Ce bac pro se prépare en 3 ans après la classe de 3e. Les élèves entrent en 2de professionnelle Métiers de la gestion administrative, du transport et de la logistique pour préparer cette spécialité du bac pro.
+L'accès est différent pour les élèves en apprentissage qui entrent directement dans cette spécialité de bac pro sans passer par une 2de pro famille de métiers.
+Les élèves titulaires de certains CAP du même secteur peuvent également le préparer en 2 ans sous certaines conditions."
+WHERE id = 5;
+
+UPDATE `next_training`
+SET
+    description = "Le BTS support à l'action managériale est accessible à tout titulaire d'un baccalauréat : bac STMG, bac pro, bac général. Accès sur dossier, voire tests et/ou entretien."
+WHERE id = 6;
+
+UPDATE `next_training`
+SET
+    description = "Ce BTS est accessible à tout titulaire d'un baccalauréat : bac pro logistique, bac pro transport, bac STMG. Accès sur dossier, voire tests et/ou entretien."
+WHERE id = 7;
+
+UPDATE `next_training`
+SET
+    description = "Le BTS management commercial opérationnel est accessible à tout titulaire d'un baccalauréat : bac STMG, bac pro Métiers du commerce et de la vente, bac général. Accès sur dossier, voire tests et/ou entretien."
+WHERE id = 8;
+
+UPDATE `next_training`
+SET
+    description = "Le BTS négociation et digitalisation de la relation client est accessible à tout titulaire d'un baccalauréat : bac STMG, bac pro Métiers du commerce et de la vente, option A : animation et gestion de l'espace commercial, option B : prospection clientèle et valorisation de l'offre commerciale, bac général. Accès sur dossier, voire tests et/ou entretien."
+WHERE id = 9;
+
+UPDATE `next_training`
+SET
+    description = "Le BTS Tourisme est accessible à tout titulaire d'un baccalauréat : bac général et technologique, bac pro. Accès sur dossier, voire tests et/ou entretien."
+WHERE id = 10;
+
+INSERT INTO
+    `training_next_training` (training_id, next_training_id)
+VALUES (1, 1);
+
+INSERT INTO
+    `training_next_training` (training_id, next_training_id)
+VALUES (2, 2);
+
+INSERT INTO
+    `training_next_training` (training_id, next_training_id)
+VALUES (3, 3);
+
+INSERT INTO
+    `training_next_training` (training_id, next_training_id)
+VALUES (4, 4), (4, 5), (4, 6);
+
+INSERT INTO
+    `training_next_training` (training_id, next_training_id)
+VALUES (5, 7);
+
+INSERT INTO
+    `training_next_training` (training_id, next_training_id)
+VALUES (6, 7);
+
+INSERT INTO
+    `training_next_training` (training_id, next_training_id)
+VALUES (7, 8), (7, 9);
+
+INSERT INTO
+    `training_next_training` (training_id, next_training_id)
+VALUES (8, 8), (8, 9);
+
+INSERT INTO
+    `training_next_training` (training_id, next_training_id)
+VALUES (9, 10);
+
+-- ********** TABLE ACTUALITY **********
+
+CREATE TABLE
+    `actuality`(
+        `id` INT NOT NULL PRIMARY KEY AUTO_INCREMENT,
+        `title` VARCHAR(255) NOT NULL,
+        `content` TEXT,
+        `image` VARCHAR(255)
     );
 
 INSERT INTO
     `actuality` (title, content)
 VALUES (
-        "Rentrée des classes prévue le 4 Septembre 2023",
-        "Rentrée internat prévue le 3 Septembre 2023"
+        "C'est la rentrée !",
+        "Retrouvez toutes les informations concernant la rentrée des classes et de l'internat prévue le 3 Septembre 2023"
     ), (
         "Journée Porte ouverte",
         "Le samedi 10 mai 2023, le lycée vous ouvre ses portes de 9h à 17h !
 Un accueil central, situé à l'entrée de l'établissement, vous permettra de découvrir les formations et services dédiés à la vie étudiante."
+    ), (
+        "Calendrier des sorties scolaires",
+        "Retrouvez toutes les informations concernant les sorties scolaires organisées pour chaque chaque classes. "
+    ), (
+        "L'internat",
+        "Dans cette rubrique retrouvez toutes les informations concernant l'internat."
+    ), (
+        "Meeting entreprise !",
+        "Le  29 mai, de 10h à 11h30, aura lieu dans l'amphithéâtre, une conférence qui portera sur “l'avenir du travail”. Nous auront la chance de recevoir Mr MIZELE Loïc, un jeune entrepreneur Franco-Américain. "
+    ), (
+        "Forum des métiers et de l'orientation !",
+        "Le 24 mai, de 10h à 11h30, dans l'amphithéâtre, sera organisé un forum pour en savoir plus et s'informer sur les métiers, les formations et les secteurs d'activité de sa région."
+    ), (
+        "La couture en folie !",
+        "Le 26 mai, de 14h à 15h, le Méga concours de couture fait son retour.
+Nos élèves de CAP couture auront le plaisir de vous présenter leur créations, à travers un défilé administré par nos jurys Mme BALUSSAUD Stéphanie et Mme BRETEAU Aurore."
+    ), (
+        "Cap à ANVERS !",
+        "Le 14 juin, à 9h00, nos élèves de BAC pro Organisation de transport de marchandises font cap sur la Belgique afin de visiter le deuxième plus grand port d'Europe: le port d'Anvers."
+    ), (
+        "Verdier cup !",
+        "Dans ce tournoi, prévu du juin au juin, chaque équipe devra s'affronter afin de remporter l'ultime coupe “Verdier”. Les vainqueurs auront le privilège d'aller assister à la finale de la coupe de France."
+    ), (
+        "La charité avant tout !",
+        "Chaque 2 ans, c'est de bon coeur que nos élèves du lycée se dévouent afin de réunir un maximum de fournitures scolaires qui seront ensuite distribuer à la WildCodeSchool du Soudan du Sud. "
     );
+
+UPDATE actuality SET image = "rentree-classe.webp" WHERE id = 1;
+
+UPDATE actuality SET image = "Portes-ouverte.webp" WHERE id = 2;
+
+UPDATE actuality SET image = "calendrier.webp" WHERE id = 3;
+
+UPDATE actuality SET image = "internat.webp" WHERE id = 4;
+
+UPDATE actuality SET image = "meeting.webp" WHERE id = 5;
+
+UPDATE actuality SET image = "Forum-metiers.webp" WHERE id = 6;
+
+UPDATE actuality SET image = "concours-couture.webp" WHERE id = 7;
+
+UPDATE actuality SET image = "cap-anvers.webp" WHERE id = 8;
+
+UPDATE actuality SET image = "verdier-cup.webp" WHERE id = 9;
+
+UPDATE actuality SET image = "charité.webp" WHERE id = 10;

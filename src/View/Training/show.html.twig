@@ -21,7 +21,7 @@
 					<span>Présentation</span><br/>{{ training.sector_name }}</h3>
 			</div>
 		</div>
-		<!-- Présentation -->
+		{# Présentation #}
 		<section>
 			<div class="second-title">
 				<div class="bloc-rectangle"></div>
@@ -41,13 +41,92 @@
 		{# Programme #}
 		<section>
 			<div class="second-title">
+				<div class="bloc-rectangle"></div>
 				<h4>Le programme</h4>
 			</div>
 
 			<div class="program-content">
 				<div class="training-content">
 					<p>{{ training.program }}</p>
+					<div
+						class="program-skills">
+
+						{# Compétences #}
+						<h5>Compétences</h5>
+						<ul>
+							{% for skill in skills %}
+								{% if skill.training_skill_name == training.name %}
+									<li>{{ skill.skill_name }}</li>
+								{% endif %}
+							{% endfor %}
+						</ul>
+					</div>
+
+
+					{# CARD #}
+					<div class="grid card-program">
+						<div class="card">
+							<h4>Durée<br>formation</h4>
+							<div class="picto-program">
+								<img src="/assets/images/picto-time.svg" alt="Pictogramme compétence"/>
+							</div>
+							<p>
+								<span>{{ training.degree_duration }}</span>ans
+							</p>
+						</div>
+						<div class="card">
+							<h4>Durée<br>stage</h4>
+							<div class="picto-program">
+								<img src="/assets/images/picto-time.svg" alt="Pictogramme compétence"/>
+							</div>
+							<p>
+								<span>{{ training.stage_duration }}</span>mois
+							</p>
+						</div>
+						<div class="card">
+							<h4>Taux<br>de réussite</h4>
+							<div class="picto-program">
+								<img src="/assets/images/picto-success.svg" alt="Pictogramme compétence"/>
+							</div>
+							<p>
+								<span>{{ training.success_rate }}</span>%
+							</p>
+						</div>
+					</div>
 				</div>
+			</div>
+		</section>
+
+		{# Poursuite d'étude #}
+		<section>
+			<div class="second-title">
+				<div class="bloc-rectangle"></div>
+				<h4>Poursuite d'étude</h4>
+			</div>
+			<div class="next-formation">
+				{% for nextTraining in nextTrainings %}
+					<div class="card">
+						<header>
+							<div class="picto-program">
+								<img src="/assets/images/picto-success.svg" alt="Pictogramme compétence"/>
+							</div>
+							<div class="title-nextformation">
+								<h4>{{ nextTraining.degree ~ ' ' ~ nextTraining.next_training_name }}
+								</h4>
+								<div class="orange-rectangle"></div>
+							</div>
+						</header>
+						<p class="duration-next-training">Durée de la formation :
+							{{ nextTraining.duration }}
+							ans</p>
+						<div class="training-content">
+							<div>
+								<p>{{ nextTraining.next_training_description|nl2br }}</p>
+							</div>
+							<a href="{{ nextTraining.next_training_link }}" role="button" target="_blank">Découvrir</a>
+						</div>
+					</div>
+				{% endfor %}
 			</div>
 		</section>
 	</main>
