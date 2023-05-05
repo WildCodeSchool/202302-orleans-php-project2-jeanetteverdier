@@ -773,6 +773,7 @@ CREATE TABLE
         `id` INT NOT NULL PRIMARY KEY AUTO_INCREMENT,
         `degree` VARCHAR(10) NOT NULL,
         `name` VARCHAR(255) NOT NULL,
+        `duration` INT NOT NULL,
         `description` TEXT,
         `link` VARCHAR(255)
     );
@@ -787,46 +788,56 @@ CREATE TABLE
     );
 
 INSERT INTO
-    `next_training` (degree, name, link)
+    `next_training` (degree, name, duration, link)
 VALUES (
         "BAC PRO",
         "Logistique",
+        3,
         "https://www.onisep.fr/ressources/univers-formation/Formations/Lycees/bac-pro-logistique"
     ), (
         "BAC PRO",
         "Commerce et de la vente option A : animation et gestion de l'espace commercial",
+        3,
         "https://www.onisep.fr/ressources/univers-formation/Formations/Lycees/bac-pro-metiers-du-commerce-et-de-la-vente-option-a-animation-et-gestion-de-l-espace-commercial"
     ), (
         "BAC PRO",
         "Métiers de la mode - Vêtement",
+        3,
         "https://www.onisep.fr/ressources/univers-formation/Formations/Lycees/bac-pro-metiers-de-la-mode-vetements"
     ), (
         "BTS",
         "Gestion de la PME",
+        2,
         "https://www.onisep.fr/ressources/univers-formation/Formations/Post-bac/bts-gestion-de-la-pme"
     ), (
         "BTS",
         "Support à l'action managériale",
+        2,
         "https://www.onisep.fr/ressources/univers-formation/Formations/Post-bac/bts-support-a-l-action-manageriale"
     ), (
         "BTS",
         "Comptabilité et gestion",
+        2,
         "https://www.onisep.fr/ressources/univers-formation/Formations/Post-bac/bts-comptabilite-et-gestion"
     ), (
         "BTS",
         "Gestion des transports et logistique associée (GTLA)",
+        2,
         "https://www.onisep.fr/ressources/univers-formation/Formations/Post-bac/bts-gestion-des-transports-et-logistique-associee"
     ), (
         "BTS",
         "Management commercial opérationnel",
+        2,
         "https://www.onisep.fr/ressources/univers-formation/Formations/Post-bac/bts-management-commercial-operationnel"
     ), (
         "BTS",
         "Négociation et digitalisation de la relation client",
+        2,
         "https://www.onisep.fr/ressources/univers-formation/Formations/Post-bac/bts-negociation-et-digitalisation-de-la-relation-client"
     ), (
         "BTS",
         "Tourisme",
+        2,
         "https://www.onisep.fr/ressources/univers-formation/Formations/Post-bac/bts-tourisme"
     );
 

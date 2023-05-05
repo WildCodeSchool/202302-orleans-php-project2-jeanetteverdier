@@ -150,6 +150,14 @@
     width: 100px;
 }
 
+.duration-next-training {
+    font-size: .7rem;
+    font-style: italic;
+    align-self: flex-start;
+    margin-top: var(--spacing);
+    margin-left: 10%;
+}
+
 .card .training-content {
     align-items: center;
     margin-top: var(--spacing1);
@@ -162,7 +170,7 @@
 .card > .training-content p {
     font-size: var(--sizeText);
     padding: var(--spacing1) var(--spacing2);
-    border: 2px solid rgb(118, 160, 231);
+    border: 2px solid var(--primary-light);
     height: 250px;
     width: 80%;
     margin: auto;

@@ -105,26 +105,27 @@
 			</div>
 			<div class="next-formation">
 				{% for nextTraining in nextTrainings %}
-					{% if nextTraining.training_name == training.name %}
-						<div class="card">
-							<header>
-								<div class="picto-program">
-									<img src="/assets/images/picto-success.svg" alt="Pictogramme compétence"/>
-								</div>
-								<div class="title-nextformation">
-									<h4>{{ nextTraining.degree ~ ' ' ~ nextTraining.next_training_name }}
-									</h4>
-									<div class="orange-rectangle"></div>
-								</div>
-							</header>
-							<div class="training-content">
-								<div>
-									<p>{{ nextTraining.next_training_description }}</p>
-								</div>
-								<a href="{{ nextTraining.next_training_link }}" role="button">Découvrir</a>
+					<div class="card">
+						<header>
+							<div class="picto-program">
+								<img src="/assets/images/picto-success.svg" alt="Pictogramme compétence"/>
 							</div>
+							<div class="title-nextformation">
+								<h4>{{ nextTraining.degree ~ ' ' ~ nextTraining.next_training_name }}
+								</h4>
+								<div class="orange-rectangle"></div>
+							</div>
+						</header>
+						<p class="duration-next-training">Durée de la formation :
+							{{ nextTraining.duration }}
+							ans</p>
+						<div class="training-content">
+							<div>
+								<p>{{ nextTraining.next_training_description|nl2br }}</p>
+							</div>
+							<a href="{{ nextTraining.next_training_link }}" role="button" target="_blank">Découvrir</a>
 						</div>
-					{% endif %}
+					</div>
 				{% endfor %}
 			</div>
 		</section>

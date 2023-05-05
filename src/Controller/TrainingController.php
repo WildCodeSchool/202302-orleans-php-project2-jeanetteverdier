@@ -35,7 +35,7 @@ class TrainingController extends AbstractController
 
         $training = $trainingManager->selectOneTraining($id);
         $skills = $skillManager->selectAllSkills();
-        $nextTrainings = $nextTrainingManager->selectAllNextTraining();
+        $nextTrainings = $nextTrainingManager->selectAllNextTraining($training['id']);
 
         return $this->twig->render('Training/show.html.twig', [
             'training' => $training,
