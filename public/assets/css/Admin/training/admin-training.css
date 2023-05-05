@@ -108,6 +108,7 @@
 }
 .btn-card {
     display: flex;
+    align-items: flex-end;
     gap: var(--spacing1);
 }
 
@@ -116,11 +117,18 @@
     padding: var(--spacing);
     font-size: var(--sizeText);
     width: 6rem;
+    border: 2px solid var(--primary);
 }
 
-.content [role="button"]:last-child {
+.btn-card button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
     color: var(--primary);
     background-color: transparent;
+    font-size: var(--sizeText);
+    width: 6rem;
 }
 
 @media screen and (max-width: 767px) {
