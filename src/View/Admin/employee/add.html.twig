@@ -1,0 +1,76 @@
+{% extends 'layout.html.twig' %}
+
+{% block title %}
+	Admin - Notre équipe -
+	{{ parent() }}
+{% endblock %}
+
+{% block stylesheet %}<link rel="stylesheet" href="/assets/css/Admin/employee/add.css">
+{% endblock %}
+
+{% block content %}
+	<main class="container">
+		<div class="background-line"></div>
+		<div class="main-title">
+			<div class="title-content">
+				<div class="bloc-square"></div>
+				<h3>
+					<span>Ajouter</span><br/>
+					un(e) nouvel(le) employé(e)</h3>
+			</div>
+			<div class="second-title">
+				<div class="bloc-rectangle"></div>
+				<h4>à remplir</h4>
+			</div>
+		</div>
+		<div class="formPage">
+			<form method="post" class="form">
+				<div>
+					<label for="lastname">Nom</label>
+					<input type="text" name="lastname" id="lastname" value="{{ employee.lastname }}"/>
+					<div class="error">
+						{% if errors.lastname is not empty %}
+							{{ errors.lastname }}
+						{% endif %}
+					</div>
+				</div>
+				<div>
+					<label for="firstname">Prénom</label>
+					<input type="text" name="firstname" id="firstname" value="{{ employee.firstname }}"/>
+					<div class="error">
+						{% if errors.firstname is not empty %}
+							{{ errors.firstname }}
+						{% endif %}
+					</div>
+				</div>
+				<div>
+					<label for="post">Poste</label>
+					<input type="text" name="post" id="post" value="{{ employee.post }}"/>
+					<div class="error">
+						{% if errors.post is not empty %}
+							{{ errors.post }}
+						{% endif %}
+					</div>
+				</div>
+				<div>
+					<label for="departementId">Sujet</label>
+					<select name="departementId" id="departementId"> 
+						<option value="">Service</option>
+						{% for departement in departements %}
+							<option value="{{ departement.id }}">{{ departement.name }}</option>
+						{% endfor %}
+					</select>
+					<div class="error">
+						{% if errors.departementId is not empty %}
+							{{ errors.departementId }}
+						{% endif %}
+					</div>
+				</div>
+				<button>Enregistrer</button>
+			</form>
+		</div>
+		<div class="return">
+			<a href="/admin/notre-equipe">Retour</a>
+		</div>
+	</main>
+{% endblock %}

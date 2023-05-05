@@ -1,7 +1,7 @@
 {% extends 'layout.html.twig' %}
 
 {% block stylesheet %}
-	<link rel="stylesheet" href="/assets/css/training.css">
+	<link rel="stylesheet" href="/assets/css/index-training.css">
 {% endblock %}
 
 {% block title %}Formations -
@@ -49,10 +49,11 @@
 										{{ training.stage_duration }}
 										mois de stage
 									</p>
-									<a href="#" role="button">En savoir plus</a>
+									<a href="/formations/show?id={{ training.id }}" role="button">En savoir plus</a>
 								</div>
+
 								<div class="training-image">
-									<img src="assets/images/placeholder.jpg" alt="Photo de la formation"/>
+									<img src="{{ training.image ? 'uploads/training/' ~ training.image : 'assets/images/default_placeholder.jpg'}}" alt="Photo de la formation"/>
 								</div>
 							</article>
 						{% endif %}

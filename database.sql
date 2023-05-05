@@ -224,12 +224,12 @@ VALUES (
     ), (
         'Romain',
         'DEMILLY',
-        'resp.restauration',
+        'Resp.restauration',
         4
     ), (
         'Frédéric',
         'THEO',
-        'resp.maintenance',
+        'Resp.maintenance',
         4
     ), (
         'Gaëlle',
@@ -244,127 +244,127 @@ VALUES (
     ), ('Caroline', 'CABON', 'CDI', 5), (
         'Aurore',
         'MADOUX',
-        'COORDONNATEUR ULIS',
+        'Coordonnateur ULIS',
         5
     ), (
         'Dejan',
         'PETROVIC',
-        'COORDONNATEUR ARTP',
+        'Coordonateur ARTP',
         5
     ), (
         'Christine',
         'MALINGE',
-        'interlocutrice',
+        'Interlocutrice',
         5
     ), (
         'Mathilde',
         'RICHER',
-        'veille numérique',
+        'Veille numérique',
         5
     ), (
         'José',
         'HEDDE',
-        'animation du site Web',
+        'Animation du site Web',
         5
     ), (
         'Jean',
         'RINGUET',
-        'réseau informatique',
+        'Réseau informatique',
         5
     ), (
         'Astrid',
         'BERNARD',
-        'LETTRES HISTOIRE GEOGRAPHIE',
+        'Lettres histoire géographie',
         6
     ), (
         'Héléna',
         'JOUJOUX',
-        'LETTRES HISTOIRE GEOGRAPHIE',
+        'Lettres histoire géographie',
         6
     ), (
         'Céline',
         'GERARD',
-        'LETTRES HISTOIRE GEOGRAPHIE',
+        'Lettres histoire géographie',
         6
     ), (
         'Julie',
         'LE CORRE',
-        'LETTRES HISTOIRE GEOGRAPHIE',
+        'Lettres histoire géographie',
         6
     ), (
         'Sandrine',
         'SCHWOEHRER',
-        'LETTRES HISTOIRE GEOGRAPHIE',
+        'Lettres histoire géographie',
         6
     ), (
         'Dilgoudry',
         'THIAM',
-        'LETTRES HISTOIRE GEOGRAPHIE',
+        'Lettres histoire géographie',
         6
     ), (
         'Eric',
         'PAZOLA',
-        'LETTRES HISTOIRE GEOGRAPHIE',
+        'Lettres histoire géographie',
         6
     ), (
         'Priscillia',
         'SERRE',
-        'LETTRES HISTOIRE GEOGRAPHIE',
+        'Lettres histoire géographie',
         6
     ), (
         'Stéphanie',
         'ARAUZO',
-        'MATHS-SCIENCES',
+        'Maths-Sciences',
         6
     ), (
         'Mélanie',
         'HEDDE',
-        'MATHS-SCIENCES',
+        'Maths-Sciences',
         6
     ), (
         'Julie',
         'PUBELLIER',
-        'MATHS-SCIENCES',
+        'Maths-Sciences',
         6
     ), (
         'Joseph',
         'MOUKOLO',
-        'MATHS-SCIENCES',
+        'Maths-Sciences',
         6
-    ), ('Gilles', 'ALIN', 'ANGLAIS', 6), (
+    ), ('Gilles', 'ALIN', 'Anglais', 6), (
         'Sandrine',
         'DIOP',
-        'ANGLAIS',
+        'Anglais',
         6
     ), (
         'Carine',
         'NICOLAS',
-        'ANGLAIS',
+        'Anglais',
         6
     ), (
         'Romain',
         'NELLEE',
-        'ANGLAIS',
+        'Anglais',
         6
     ), (
         'Emilie',
         'GUIRAUDON',
-        'ESPAGNOL',
+        'Espagnol',
         6
     ), (
         'Alexandre',
         'BRIMONT',
-        'ESPAGNOL',
+        'Espagnol',
         6
-    ), ('Mandy', 'MILON', 'ALLEMAND', 6), ('Caroline', 'CABON', 'CDI', 6), ('Florian', 'RINGUET', 'PSE', 6), (
+    ), ('Mandy', 'MILON', 'Allemand', 6), ('Caroline', 'CABON', 'CDI', 6), ('Florian', 'RINGUET', 'PSE', 6), (
         'Claire',
         'CAVEREAU',
-        'ARTS APPLIQUES',
+        'Arts Appliqués',
         6
     ), (
         'Laura',
         'LAVAUD',
-        'ARTS APPLIQUES',
+        'Arts Appliqués',
         6
     ), ('Valentin', 'GAUDRY', 'EPS', 6), (
         'Catherine',
@@ -374,87 +374,87 @@ VALUES (
     ), ('Kévin', 'OCULI', 'CDI', 6), (
         'Mélanie',
         'ABRAHAM',
-        'VENTE',
+        'Vente',
         6
     ), ('Laurent', 'ADAMI', 'VENTE', 6), (
         'Alexandre',
         'BOSRAMIER',
-        'VENTE',
+        'Vente',
         6
     ), (
         'Bastien',
         'DUCREST',
-        'VENTE',
+        'Vente',
         6
-    ), ('Isabelle', 'FABRO', 'VENTE', 6), (
+    ), ('Isabelle', 'FABRO', 'Vente', 6), (
         'Mylène',
         'DECHAMBRE',
-        'VENTE',
+        'Vente',
         6
-    ), ('Magali', 'TOUPIN', 'VENTE', 6), (
+    ), ('Magali', 'TOUPIN', 'Vente', 6), (
         'Fabrice',
         'LAURENT',
-        'VENTE',
+        'Vente',
         6
-    ), ('Gaëlle', 'MALINGE', 'VENTE', 6), ('Valérie', 'NEVE', 'VENTE', 6), (
+    ), ('Gaëlle', 'MALINGE', 'Vente', 6), ('Valérie', 'NEVE', 'Vente', 6), (
         'Marie-Hélène',
         'RAUCH',
-        'VENTE',
+        'Vente',
         6
-    ), ('Nadine', 'DAVID', 'VENTE', 6), (
+    ), ('Nadine', 'DAVID', 'Vente', 6), (
         'Vanessa',
         'TEMPLIER',
-        'VENTE',
+        'Vente',
         6
     ), (
         'Magali',
         'GAUTHIER',
-        'LOGISTIQUE - TRANSPORT',
+        'Logistique - Transport',
         6
     ), (
         'Aline',
         'RAINGEVAL',
-        'LOGISTIQUE - TRANSPORT',
+        'Logistique - Transport',
         6
     ), (
         'Jennifer',
         'CUVILLON',
-        'LOGISTIQUE - TRANSPORT',
+        'Logistique - Transport',
         6
     ), (
         'Christian',
         'JEPHOS',
-        'LOGISTIQUE - TRANSPORT',
+        'Logistique - Transport',
         6
     ), (
         'Yannick',
         'LE GOFF',
-        'LOGISTIQUE - TRANSPORT',
+        'Logistique - Transport',
         6
     ), (
         'Katia',
         'GUERIN',
-        'LOGISTIQUE - TRANSPORT',
+        'Logistique - Transport',
         6
     ), (
         'Alexandra',
         'MENJIKOFF',
-        'LOGISTIQUE - TRANSPORT',
+        'Logistique - Transport',
         6
     ), (
         'Isabelle',
         'MIELZARCK',
-        'LOGISTIQUE - TRANSPORT',
+        'Logistique - Transport',
         6
     ), (
         'Abel',
         'FATTAHI',
-        'LOGISTIQUE - TRANSPORT',
+        'Logistique - Transport',
         6
     ), (
         'Alexandre',
         'RICHER',
-        'LOGISTIQUE - TRANSPORT',
+        'Logistique - Transport',
         6
     ), ('Magali', 'DESLAIS', 'AGORA', 6), ('Kubra', 'DINDAR', 'AGORA', 6), (
         'Véronique',
@@ -469,22 +469,22 @@ VALUES (
     ), (
         'Stéphanie',
         'BALUSSAUD',
-        'GENIE INDUS. TEXTILE ET CUIRS',
+        'Génie indus. textile et cuirs',
         6
     ), (
         'Aurore',
         'BRETEAU',
-        'GENIE INDUS. TEXTILE ET CUIRS',
+        'Génie indus. textile et cuirs',
         6
     ), (
         'Béatrice',
         'VAPPEREAU',
-        'RÉFÈRENTS ÉCOLE - ENTREPRISE',
+        'Réfèrents école - Entreprise',
         6
     ), (
         'Laurent',
         'ADAMI',
-        'RÉFÈRENTS ÉCOLE - ENTREPRISE',
+        'Réfèrents école - Entreprise',
         6
     );
 
@@ -537,6 +537,7 @@ CREATE TABLE
 INSERT INTO
     `training` (
         name,
+        image,
         nb_students,
         success_rate,
         stage_duration,
@@ -545,6 +546,7 @@ INSERT INTO
     )
 VALUES (
         "Opérateur logistique",
+        "operateur-logistique.webp",
         24,
         84,
         4,
@@ -552,6 +554,7 @@ VALUES (
         1
     ), (
         "Equipier polyvalent du commerce",
+        "commerce.webp",
         15,
         86,
         4,
@@ -559,6 +562,7 @@ VALUES (
         1
     ), (
         "Mode option vêtement flou",
+        "mode.webp",
         15,
         89,
         4,
@@ -566,13 +570,23 @@ VALUES (
         1
     ), (
         "Assistance à la gestion des organisations et de leurs activités",
+        "gestion.webp",
         32,
         87,
         6,
         1,
         2
-    ), ("Logistique", 30, 85, 6, 1, 2), (
+    ), (
+        "Logistique",
+        "logistique.webp",
+        30,
+        85,
+        6,
+        1,
+        2
+    ), (
         "Organisation de transport de marchandises",
+        "transport.webp",
         15,
         88,
         6,
@@ -580,6 +594,7 @@ VALUES (
         2
     ), (
         "Commerce et de la Vente option A : animation et gestion de l'espace commercial",
+        "vente-a.webp",
         48,
         89,
         6,
@@ -587,12 +602,21 @@ VALUES (
         2
     ), (
         "Commerce et de la Vente option B : prospection clientèle et valorisation de l'offre commerciale",
+        "vente-b.webp",
         16,
         82,
         6,
         2,
         2
-    ), ("Accueil", 16, 83, 6, 2, 2);
+    ), (
+        "Accueil",
+        "accueil.webp",
+        16,
+        83,
+        6,
+        2,
+        2
+    );
 
 UPDATE `training`
 SET
@@ -662,6 +686,148 @@ UPDATE `training`
 SET
     description = "Le BAC PRO Accueil est une formation professionnalisante qui vise à former des professionnels capables d'accueillir, d'orienter et de renseigner les clients ou les visiteurs, dans différents types d'établissements tels que les hôtels, les musées, les centres culturels, les entreprises, les administrations, etc. La formation est accessible aux élèves ayant obtenu un diplôme de niveau 3 (CAP/BEP) ou ayant suivi une classe de seconde générale ou professionnelle.
 À l'issue de la formation, les apprenants  peuvent travailler dans différents secteurs tels que l'hôtellerie, la restauration, le tourisme, la culture, les entreprises, les administrations, etc. Ils peuvent occuper des postes tels que réceptionniste, chargé d'accueil, hôte d'accueil, conseiller clientèle, etc.",
-    program = "La formation BAC PRO Accueil comporte des modules qui incluent les techniques d'accueil et de communication, la gestion de la qualité de service, la gestion administrative, la connaissance des produits et services, la vente et le conseil, l'informatique et les outils bureautiques ainsi que la langue moderne (anglais).
+    program = "La formation BAC PRO Accueil comporte des modules qui incluent les techniques d'accueil et de communication, la gestion de la qualité de service, la gestion administrative, la connaissance des produits et services, la vente et le conseil, l'informatique et les outils bureautiques ainsi que la langue moderne (Anglais).
 Des stages en entreprise sont également prévus pour permettre aux apprenants de mettre en pratique leurs compétences et de se familiariser avec le milieu professionnel."
 WHERE id = 9;
+
+-- ********** TABLE SKILL **********
+
+CREATE TABLE
+    `skill` (
+        `id` INT NOT NULL PRIMARY KEY AUTO_INCREMENT,
+        `name` VARCHAR(255) NOT NULL
+    );
+
+INSERT INTO `skill` (name)
+VALUES ("Autonomie"), ("Accueil"), ("Adaptabilité"), ("Disponibilité"), ("Rigueur"), ("Sens de l'organisation"), ("Travail en équipe"), ("Sens de l'organisation"), ("Relationnel"), ("Dynamisme"), ("Communication"), ("Négociation"), ("Ouverture d'esprit"), ("Amabilité"), ("Organisation"), ("Créativité"), ("Patience"), ("Minutie"), ("Précision");
+
+-- ********** TABLE INTER TRAINING_SKILL **********
+
+CREATE TABLE
+    `training_skill` (
+        `id` INT NOT NULL PRIMARY KEY AUTO_INCREMENT,
+        `training_id` INT NOT NULL,
+        `skill_id` INT NOT NULL,
+        FOREIGN KEY (training_id) REFERENCES training(`id`),
+        FOREIGN KEY (skill_id) REFERENCES skill(`id`)
+    );
+
+-- COMPETENCE BAC AGORA
+
+INSERT INTO
+    `training_skill` (skill_id, training_id)
+VALUES (1, 4), (2, 4), (3, 4), (4, 4);
+
+-- COMPETENCE BAC LOGISTIQUE
+
+INSERT INTO
+    `training_skill` (skill_id, training_id)
+VALUES (1, 5), (5, 5), (6, 5), (7, 5);
+
+-- COMPETENCE BAC OTM
+
+INSERT INTO
+    `training_skill` (skill_id, training_id)
+VALUES (1, 6), (5, 6), (6, 6), (7, 6);
+
+-- COMPETENCE BAC COMMERCE OPT A
+
+INSERT INTO
+    `training_skill` (skill_id, training_id)
+VALUES (9, 7), (10, 7), (1, 7), (4, 7), (3, 7);
+
+-- COMPETENCE BAC COMMERCE OPT B
+
+INSERT INTO
+    `training_skill` (skill_id, training_id)
+VALUES (11, 8), (9, 8), (12, 8), (4, 8);
+
+-- COMPETENCE BAC ACCUEIL
+
+INSERT INTO
+    `training_skill` (skill_id, training_id)
+VALUES (9, 9), (13, 9), (14, 9), (4, 9), (3, 9);
+
+-- COMPETENCE CAP EPC
+
+INSERT INTO
+    `training_skill` (skill_id, training_id)
+VALUES (9, 2), (10, 2), (1, 2), (4, 2), (3, 2);
+
+-- COMPETENCE CAP OPERATEUR
+
+INSERT INTO
+    `training_skill` (skill_id, training_id)
+VALUES (1, 1), (5, 1), (15, 1), (7, 1);
+
+-- COMPETENCE CAP COUTURE
+
+INSERT INTO
+    `training_skill` (skill_id, training_id)
+VALUES (16, 3), (5, 3), (17, 3), (18, 3), (19, 3);
+
+-- ********** TABLE ACTUALITY **********
+
+CREATE TABLE
+    `actuality`(
+        `id` INT NOT NULL PRIMARY KEY AUTO_INCREMENT,
+        `title` VARCHAR(255) NOT NULL,
+        `content` TEXT,
+        `image` VARCHAR(255)
+    );
+
+INSERT INTO
+    `actuality` (title, content)
+VALUES (
+        "C'est la rentrée !",
+        "Retrouvez toutes les informations concernant la rentrée des classes et de l'internat prévue le 3 Septembre 2023"
+    ), (
+        "Journée Porte ouverte",
+        "Le samedi 10 mai 2023, le lycée vous ouvre ses portes de 9h à 17h !
+Un accueil central, situé à l'entrée de l'établissement, vous permettra de découvrir les formations et services dédiés à la vie étudiante."
+    ), (
+        "Calendrier des sorties scolaires",
+        "Retrouvez toutes les informations concernant les sorties scolaires organisées pour chaque chaque classes. "
+    ), (
+        "L'internat",
+        "Dans cette rubrique retrouvez toutes les informations concernant l'internat."
+    ), (
+        "Meeting entreprise !",
+        "Le  29 mai, de 10h à 11h30, aura lieu dans l'amphithéâtre, une conférence qui portera sur “l'avenir du travail”. Nous auront la chance de recevoir Mr MIZELE Loïc, un jeune entrepreneur Franco-Américain. "
+    ), (
+        "Forum des métiers et de l'orientation !",
+        "Le 24 mai, de 10h à 11h30, dans l'amphithéâtre, sera organisé un forum pour en savoir plus et s'informer sur les métiers, les formations et les secteurs d'activité de sa région."
+    ), (
+        "La couture en folie !",
+        "Le 26 mai, de 14h à 15h, le Méga concours de couture fait son retour.
+Nos élèves de CAP couture auront le plaisir de vous présenter leur créations, à travers un défilé administré par nos jurys Mme BALUSSAUD Stéphanie et Mme BRETEAU Aurore."
+    ), (
+        "Cap à ANVERS !",
+        "Le 14 juin, à 9h00, nos élèves de BAC pro Organisation de transport de marchandises font cap sur la Belgique afin de visiter le deuxième plus grand port d'Europe: le port d'Anvers."
+    ), (
+        "Verdier cup !",
+        "Dans ce tournoi, prévu du juin au juin, chaque équipe devra s'affronter afin de remporter l'ultime coupe “Verdier”. Les vainqueurs auront le privilège d'aller assister à la finale de la coupe de France."
+    ), (
+        "La charité avant tout !",
+        "Chaque 2 ans, c'est de bon coeur que nos élèves du lycée se dévouent afin de réunir un maximum de fournitures scolaires qui seront ensuite distribuer à la WildCodeSchool du Soudan du Sud. "
+    );
+
+UPDATE actuality SET image = "rentree-classe.webp" WHERE id = 1;
+
+UPDATE actuality SET image = "Portes-ouverte.webp" WHERE id = 2;
+
+UPDATE actuality SET image = "calendrier.webp" WHERE id = 3;
+
+UPDATE actuality SET image = "internat.webp" WHERE id = 4;
+
+UPDATE actuality SET image = "meeting.webp" WHERE id = 5;
+
+UPDATE actuality SET image = "Forum-metiers.webp" WHERE id = 6;
+
+UPDATE actuality SET image = "concours-couture.webp" WHERE id = 7;
+
+UPDATE actuality SET image = "cap-anvers.webp" WHERE id = 8;
+
+UPDATE actuality SET image = "verdier-cup.webp" WHERE id = 9;
+
+UPDATE actuality SET image = "charité.webp" WHERE id = 10;
