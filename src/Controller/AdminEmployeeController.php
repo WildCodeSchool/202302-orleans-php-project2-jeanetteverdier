@@ -23,6 +23,17 @@ class AdminEmployeeController extends AbstractController
         );
     }
 
+    public function delete(): void
+    {
+        if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+            $id = trim($_POST['id']);
+            $employeeManager = new EmployeeManager();
+            $employeeManager->delete((int)$id);
+
+            header('Location:/admin/notre-equipe');
+        }
+    }
+
     public function add()
     {
         $errors = $employee = [];
