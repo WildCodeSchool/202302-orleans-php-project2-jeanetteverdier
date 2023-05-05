@@ -57,6 +57,88 @@ article {
     margin-left: var(--spacing1);
 }
 
+/***** ACTUALITÉS *****/
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--spacing1);
+}
+
+.actu-image{
+    
+}
+
+.second-title{
+    margin: var(--spacing);
+}
+
+.grid .picto-program {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--secondary);
+    min-height: 70px;
+    min-width: 70px;
+}
+
+.grid .picto-program img {
+    width: 70%;
+}
+
+.grid .card {
+    /* width: clamp(320px, 90vw, 450px); */
+    background-color: var(--primary);
+}
+
+.card header {
+    display: flex;
+    align-self: flex-start;
+}
+
+.title-dernieresactus {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    max-height: 100px;
+}
+
+.title-dernieresactus h4 {
+    --typography-spacing-vertical: 0;
+    padding: 3px var(--spacing1);
+    color: var(--light);
+    font-size: var(--sizeText);
+    text-align: start;
+    overflow: auto;
+}
+
+.orange-rectangle {
+    width: 100px;
+    background-color: var(--secondary);
+    height: 5px;
+}
+
+.training-content p {
+    padding: var(--spacing1) var(--spacing2);
+    color: var(--light);
+    font-size: .7rem;
+}
+
+.training-content [role="button"] {
+    margin: 0 0 var(--spacing2) var(--spacing2);
+}
+
+MEDIA SCREEN @media screen and (max-width: 767px) {
+    .blue-rectangle {
+        width: 3px;
+    }
+
+    .grid {
+        flex-direction: column;
+        align-items: center;
+    }
+}
+
 @media screen and (max-width: 767px) {
     header.container.event {
         align-items: start;
@@ -78,7 +160,7 @@ article {
         height: 80vw;
     }
 
-    header > article {
+    header>article {
         position: relative;
         width: 100%;
     }

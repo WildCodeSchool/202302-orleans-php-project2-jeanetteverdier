@@ -10,15 +10,76 @@
         <img src="/assets/images/placeholder_event.webp" alt="photo de l'événement"></img>
     </div>
         <article clas="event-content">
-        <div class="titre">
-            <h3>
-                {{ events.title }}
-            </h3>
-        </div>
-        <p class="event-text"> {{ events.content }}
-        </p>
-    <a href="#" role="button">EN SAVOIR PLUS</a>
-    </article>
+            <div class="titre">
+                <h3>
+                    {{ events.title }}
+                </h3>
+            </div>
+            <p class="event-text"> {{ events.content }}
+            </p>
+            <a href="#" role="button">EN SAVOIR PLUS</a>
+        </article>
 </header>
+
+<main class="container">
+    <section>
+    {# TITRE DERNIERS ACTUS #}
+        <div class="second-title">
+          <div class="bloc-rectangle"></div>
+          <h4>Les dernières actus</h4>
+        </div>
+    {# CARDS #}
+        <div class="grid">
+          <div class="card">
+            <div class="actu-image">
+                <img src="/uploads/actuality/charité.webp"></img>
+            </div>
+            <header>
+              <div class="picto-program">
+                <img src="/assets/images/picto-success.svg" alt="Pictogramme actualités"/>
+              </div>
+              <div class="title-dernieresactus">
+                <h4>{{ events.title }}</h4>
+                <div class="orange-rectangle"></div>
+              </div>
+            </header>
+            <div class="training-content">
+              <p>{{ events.content }}</p>
+              <a href="#" role="button">Découvrir</a>
+            </div>
+          </div>
+          <div class="card">
+            <header>
+              <div class="picto-program">
+                <img src="/assets/images/picto-success.svg" alt="Pictogramme actualités"/>
+              </div>
+              <div class="title-dernieresactus">
+                <h4>BAC PRO Logistique Option A : Transport</h4>
+                <div class="orange-rectangle"></div>
+              </div>
+            </header>
+            <div class="training-content">
+              <p>{{ events.description }}</p>
+              <a href="#" role="button">Découvrir</a>
+            </div>
+          </div>
+          <div class="card">
+            <header>
+              <div class="picto-program">
+                <img src="/assets/images/picto-success.svg" alt="Pictogramme actualités"/>
+              </div>
+              <div class="title-dernieresactus">
+                <h4>BAC PRO Logistique Option A : Transport</h4>
+                <div class="orange-rectangle"></div>
+              </div>
+            </header>
+            <div class="training-content">
+              <p>{{ events.description }}</p>
+              <a href="#" role="button">Découvrir</a>
+            </div>
+          </div>
+        </div>
+      </section>
+</main>
 {% endblock %}
 
