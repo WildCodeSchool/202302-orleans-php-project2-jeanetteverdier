@@ -8,13 +8,6 @@
     position: relative;
 }
 
-main {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    z-index: var(--firstPlan);
-}
-
 .error {
     color: var(--errorColor);
 }
@@ -50,6 +43,8 @@ input, select {
     border-radius: var(--spacing);
     position: relative;
     z-index: var(--firstPlan);
+    width: 100%;
+    margin: auto;
 }
 
 .nameFlex {
