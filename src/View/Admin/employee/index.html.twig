@@ -39,10 +39,9 @@
 											{{ employee.firstname | lower }}</h2>
 									</div>
 									<h3>{{ employee.post | lower }}</h3>
-									<a href="notre-equipe/modifieEmployee?id={{ employee.id }}" role="button" class="buttonModifier">Modifier</a>
-									<form action="/admin/notre-equipe/delete" method="POST">
-										<input type="hidden" name="id" value="{{ employee.id }}">
-										<button class="buttonSupprimer">Supprimer</button>
+									<a href="/admin/notre-equipe/modifier?id={{ employee.id }}" role="button" class="buttonModifier">Modifier</a>
+									<form action="notre-equipe/supprimerEmployee?id={{ employee.id }}">
+									<button class="buttonSupprimer">Supprimer</button>
 									</form>
 								</div>
 							</div>

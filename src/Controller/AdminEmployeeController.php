@@ -87,4 +87,35 @@ class AdminEmployeeController extends AbstractController
 
         return $errors;
     }
+    public function edit(int $id)
+    {
+        $errors = [];
+
+        $workDepartement = new WorkDepartementsManager();
+        $departements = $workDepartement->selectAll();
+
+        $employeeManager = new EmployeeManager();
+        $employee = $employeeManager->selectOneById($id);
+
+        if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+            $employee = array_map('trim', $_POST);
+            $errors = $this->errors($employee, $departements);
+            $id = $_GET['id'];
+
+            if (empty($errors)) {
+                $employeeManager->updateEmployee($employee, $id);
+                header('Location: /admin/notre-equipe');
+                return null;
+            }
+        }
+
+        return $this->twig->render(
+            'Admin/employee/edit.html.twig',
+            [
+                'employee' => $employee,
+                'errors' => $errors,
+                'departements' => $departements
+            ]
+        );
+    }
 }
