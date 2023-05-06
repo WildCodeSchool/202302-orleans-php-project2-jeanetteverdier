@@ -1,30 +1,39 @@
-.container {
-    width: var(--clamp60);
-}
-
 main .myArticles {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
     gap: var(--spacing2);
     position: relative;
     align-self: center;
     z-index: var(--firstPlan);
 }
 
+.picurePerson {
+    height: 180px;
+}
+
 main article {
     display: flex;
     flex-direction: column;
-    align-items: center;
-    width: 250px;
-    height: 425px;
     padding: 0;
 }
 
 main .textPerson {
     display: flex;
     flex-direction: column;
-    align-items: center;
     justify-content: space-around;
+    position: relative;
+    padding: var(--spacing1);
+    width: 100%;
+}
+
+main .textPerson::before {
+    content: " ";
+    background: var(--primary);
+    width: 4px;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
 }
 
 main a {
@@ -48,43 +57,76 @@ main .buttonAdd{
 }
 
 main .textPerson h2 {
+    --typography-spacing-vertical: .2rem;
     font-size: 0.9rem;
     color: var(--dark);
-    margin: 0;
-    margin-top:  var(--spacing);
+    width: 100%;
+    min-height: 50px;
+    position: relative;
+}
+
+main .textPerson h2::after {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+
+    content: " ";
+    width: 50px;
+    height: 10px;
+    background-color: var(--secondary);
 }
 
 main .textPerson h3 {
     font-size: 0.7rem;
-    margin-bottom:  var(--spacing);
+    margin: var(--spacing) 0;
     color: var(--dark);
 }
 
-main .buttonModifier{
+.btn-employee {
     display: flex;
-    justify-content: center;
+    flex-direction: column;
     align-items: center;
+    margin-top: var(--spacing);
 }
 
 main .buttonSupprimer, .buttonModifier{
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 125px;
     height: 35px;
+    width: 5rem;
+    color: var(--light);
+    font-size: var(--sizeText);
 }
 
-@media screen and (min-width: 768px) and (max-width: 1023px) {
-    main .myArticles {
-        grid-template-columns: repeat(2, 1fr);
-    }
+main .buttonSupprimer {
+    color: var(--primary);
+    background-color: transparent;
+
 }
 
 @media screen and (max-width: 767px) {
-    main .myArticles {
-        grid-template-columns:  1fr;
-    }
-    .container {
+    main.container {
         width: var(--clamp90);
-     }
+    }
+}
+
+@media screen and (max-width: 593px) {
+    main .myArticles {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+        gap: var(--spacing2);
+        position: relative;
+        align-self: center;
+        z-index: var(--firstPlan);
+    }
+
+    .myArticles article  {
+        width: 300px;
+        margin: auto;
+    }
+
+    .picurePerson {
+        min-width: 40%;
+    }
 }

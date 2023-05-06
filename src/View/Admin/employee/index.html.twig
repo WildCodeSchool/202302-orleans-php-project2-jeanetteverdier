@@ -5,7 +5,8 @@
 	{{ parent() }}
 {% endblock %}
 
-{% block stylesheet %}<link rel="stylesheet" href="/assets/css/Admin/employee/employeeIndex.css">
+{% block stylesheet %}
+	<link rel="stylesheet" href="/assets/css/Admin/employee/employeeIndex.css">
 {% endblock %}
 
 {% block content %}
@@ -15,8 +16,8 @@
 			<div class="title-content">
 				<div class="bloc-square"></div>
 				<h3>
-					<span>Administration</span><br/>
-					de notre équipe</h3>
+					<span>Admin</span><br/>
+					notre équipe</h3>
 			</div>
 		</div>
 		<a href="notre-equipe/ajouter" role="button" class="buttonAdd">Ajouter</a>
@@ -32,17 +33,21 @@
 					{% if employee.name == workDepartement.name %}
 						<article>
 							<div class="myArticle">
-								<div class="picurePerson"><img src="/assets/images/professeursPhotos/{{ team.picture ?? "teacherByDefault.jpg"}}" alt="default"></div>
+								<div class="picurePerson">
+									<img src="/assets/images/professeursPhotos/{{ team.picture ?? " teacherbydefault.jpg"}}" alt="default">
+								</div>
 								<div class="textPerson">
 									<div class="namePerson">
 										<h2>{{ employee.lastname | upper }}
-											{{ employee.firstname | lower }}</h2>
+											{{ employee.firstname | capitalize }}</h2>
 									</div>
-									<h3>{{ employee.post | lower }}</h3>
-									<a href="/admin/notre-equipe/modifier?id={{ employee.id }}" role="button" class="buttonModifier">Modifier</a>
-									<form action="notre-equipe/supprimerEmployee?id={{ employee.id }}">
-									<button class="buttonSupprimer">Supprimer</button>
-									</form>
+									<h3>{{ employee.post | capitalize }}</h3>
+									<div class="btn-employee">
+										<a href="/admin/notre-equipe/modifier?id={{ employee.id }}" role="button" class="buttonModifier">Modifier</a>
+										<form action="notre-equipe/supprimerEmployee?id={{ employee.id }}">
+											<button class="buttonSupprimer">Supprimer</button>
+										</form>
+									</div>
 								</div>
 							</div>
 						</article>
