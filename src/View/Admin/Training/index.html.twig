@@ -25,7 +25,13 @@
 			</div>
 
 			<div class="add-bar">
-				<a href="#" role="button">Ajouter</a>
+				<a href="#" role="button" class="add-btn">
+					<svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewbox="0 0 24 24" fill="none" stroke="#ffffff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+						<line x1="12" y1="5" x2="12" y2="19"></line>
+						<line x1="5" y1="12" x2="19" y2="12"></line>
+					</svg>
+				</a>
+				<p>Ajouter une formation</p>
 			</div>
 
 			<div class="grid">
@@ -49,38 +55,51 @@
 									{{ training.stage_duration }}
 									mois
 								</p>
-								<h6>Description</h6>
-								<div class="content-overflow">
-									<p>
-										{{ training.description }}
-									</p>
+								<div class="skills">
+									<h6>Compétences</h5>
+									<ul>
+										{% for skill in skills %}
+											{% if skill.training_skill_name == training.name  %}
+												<li>{{ skill.skill_name }}</li>
+											{% endif %}
+										{% endfor %}
+									</ul>
 								</div>
-								<h6>Programme</h6>
-								<div class="content-overflow">
-									<p>
-										{{ training.description }}
-									</p>
-								</div>
-								<h6>Compétences</h5>
-								<ul>
-									{% for skill in skills %}
-										{% if skill.training_skill_name == training.name  %}
-											<li>{{ skill.skill_name }}</li>
-										{% endif %}
-									{% endfor %}
-								</ul>
-
-								<div class="btn-card">
-									<a href="#" role="button">Modifier</a>
-									<form action="admin/formations/supprimer?id={{ training.id }}" method="POST">
-										<button>Supprimer</button>
-									</form>
-								</div>
+								<div class="next-training">
+									<h6>Poursuite d'étude</h6>
+									<table>
+										<thead>
+											<tr>
+												<th>Niveau</th>
+												<th>Formation</th>
+												<th>Durée</th>
+											</tr>
+										</thead>
+										<tbody>
+											{% for nextTraining in nextTrainings %}
+												{% if nextTraining.training_name == training.name %}
+													<tr>
+														<td class="small-cell">{{ nextTraining.degree }}</td>
+														<td class="large-cell">{{ nextTraining.next_training_name }}</td>
+														<td class="small-cell">{{ nextTraining.duration }}
+															ans</td>
+													</tr>
+												{% endif %}
+											{% endfor %}
+										</tbody>
+									</tbody>
+								</table>
+							</div>
+							<div class="btn-card">
+								<a href="#" role="button">Modifier</a>
+								<form action="admin/formations/supprimer?id={{ training.id }}" method="POST">
+									<button>Supprimer</button>
+								</form>
 							</div>
 						</div>
 					</div>
-				{% endfor %}
-			</div>
-		</section>
-	</main>
-{% endblock %}
+				</div>
+			{% endfor %}
+		</div>
+	</section>
+</main>{% endblock %}
