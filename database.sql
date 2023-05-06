@@ -707,20 +707,20 @@ VALUES ("C'est la rentrée !", "Retrouvez toutes les informations concernant la 
 Un accueil central, situé à l'entrée de l'établissement, vous permettra de découvrir les formations et services dédiés à la vie étudiante."), 
 ("Calendrier des sorties scolaires", "Retrouvez toutes les informations concernant les sorties scolaires organisées pour chaque chaque classes. "),
 ("L'internat", "Dans cette rubrique retrouvez toutes les informations concernant l'internat."),
-("Meeting entreprise !", "Le  29 mai, de 10h à 11h30, aura lieu dans l'amphithéâtre, une conférence qui portera sur “l'avenir du travail”. Nous auront la chance de recevoir Mr MIZELE Loïc, un jeune entrepreneur Franco-Américain. "),
 ("Forum des métiers et de l'orientation !", "Le 24 mai, de 10h à 11h30, dans l'amphithéâtre, sera organisé un forum pour en savoir plus et s'informer sur les métiers, les formations et les secteurs d'activité de sa région."),
+("Cap à ANVERS !", "Le 14 juin, à 9h00, nos élèves de BAC pro Organisation de transport de marchandises font cap sur la Belgique afin de visiter le deuxième plus grand port d'Europe: le port d'Anvers."),
+("La charité avant tout !", "Chaque 2 ans, c'est de bon coeur que nos élèves du lycée se dévouent afin de réunir un maximum de fournitures scolaires qui seront ensuite distribuer à la WildCodeSchool du Soudan du Sud. "),
+("Meeting entreprise !", "Le  29 mai, de 10h à 11h30, aura lieu dans l'amphithéâtre, une conférence qui portera sur “l'avenir du travail”. Nous auront la chance de recevoir Mr MIZELE Loïc, un jeune entrepreneur Franco-Américain. "),
 ("La couture en folie !", "Le 26 mai, de 14h à 15h, le Méga concours de couture fait son retour.
 Nos élèves de CAP couture auront le plaisir de vous présenter leur créations, à travers un défilé administré par nos jurys Mme BALUSSAUD Stéphanie et Mme BRETEAU Aurore."),
-("Cap à ANVERS !", "Le 14 juin, à 9h00, nos élèves de BAC pro Organisation de transport de marchandises font cap sur la Belgique afin de visiter le deuxième plus grand port d'Europe: le port d'Anvers."), 
-("Verdier cup !", "Dans ce tournoi, prévu du juin au juin, chaque équipe devra s'affronter afin de remporter l'ultime coupe “Verdier”. Les vainqueurs auront le privilège d'aller assister à la finale de la coupe de France."),
-("La charité avant tout !", "Chaque 2 ans, c'est de bon coeur que nos élèves du lycée se dévouent afin de réunir un maximum de fournitures scolaires qui seront ensuite distribuer à la WildCodeSchool du Soudan du Sud. ");
+("Verdier cup !", "Dans ce tournoi, prévu du juin au juin, chaque équipe devra s'affronter afin de remporter l'ultime coupe “Verdier”. Les vainqueurs auront le privilège d'aller assister à la finale de la coupe de France.");
 
 UPDATE actuality
-SET image = "rentree-classe.webp"
+SET image = "rentrée.webp"
 WHERE id = 1;
 
 UPDATE actuality
-SET image = "Portes-ouverte.webp"
+SET image = "jportes-ouverte.webp"
 WHERE id = 2;
 
 UPDATE actuality
@@ -732,25 +732,25 @@ SET image = "internat.webp"
 WHERE id = 4;
 
 UPDATE actuality
-SET image = "meeting.webp"
+SET image = "Forum-metiers.webp"
 WHERE id = 5;
 
 UPDATE actuality
-SET image = "Forum-metiers.webp"
+SET image = "anverss.webp"
 WHERE id = 6;
 
 UPDATE actuality
-SET image = "concours-couture.webp"
+SET image = "charité.webp"
 WHERE id = 7;
 
 UPDATE actuality
-SET image = "voyage-anvers.webp"
+SET image = "meeting.webp"
 WHERE id = 8;
 
 UPDATE actuality
-SET image = "verdier-cup.webp"
+SET image = "concours-couture.webp"
 WHERE id = 9;
 
 UPDATE actuality
-SET image = "charité.webp"
+SET image = "jverdier-cup.webp"
 WHERE id = 10;
