@@ -1,0 +1,51 @@
+.container{
+    width: var(--clamp60);
+}
+
+div.section {
+    background-color: var(--backgroundCard);
+    box-shadow: var(--box-shadow);
+    color: var(--dark);
+    position: relative;
+    z-index: var(--firstPlan);
+}
+
+.text{
+    padding: var(--spacing2);
+    margin-bottom: var(--spacing2);
+    position: relative;
+    z-index: var(--firstPlan);
+}
+
+div.section::before {
+    content: " ";
+    background: var(--primary);
+    width: 4px;
+    height: 100%;
+    position: absolute;
+}
+
+.button:hover {
+    background-color: var(--light);
+    color: var(--primary);
+}
+
+.textSection{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--spacing1);
+}
+
+.notrelyceeImage{
+    margin-bottom: var(--spacing1);
+}
+
+@media screen and (max-width: 767px) {
+    .container{
+        width: var(--clamp90);
+    }
+    .textSection{
+        display:flex;
+        flex-direction: column;
+    }
+}

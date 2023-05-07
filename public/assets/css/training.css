@@ -1,4 +1,4 @@
-.presentation-content {
+.program-content {
     background: var(--lowlight);
     box-shadow: var(--box-shadow);
     backdrop-filter: blur(15px);
@@ -7,9 +7,18 @@
 .training-content {
     width: 100%;
     padding: 0;
+    backdrop-filter: none;
 }
 
-.presentation-content p {
+.training-content::before {
+    content: " ";
+    background: var(--primary);
+    width: 4px;
+    height: 100%;
+    position: absolute;
+}
+
+.program-content p {
     color: var(--dark);
     font-size: var(--sizeText);
     padding: var(--spacing1) var(--spacing2);
@@ -25,8 +34,83 @@
     height: 100%;
 }
 
+.training-content p {
+    padding: var(--spacing1) var(--spacing2);
+}
+
+/* SKILLS */
+
+.program-skills h5 {
+    --typography-spacing-vertical: .5rem;
+    margin-left: var(--spacing2);
+    font-size: 1rem;
+}
+
+.program-skills ul {
+    display: flex;
+    gap: .2rem;
+    margin-left: var(--spacing2);
+}
+
+.program-skills ul li {
+    list-style: none;
+    background: var(--secondary);
+    padding: 5px 20px;
+    border-radius: 30px;
+    font-size: .6rem;
+    margin-bottom: var(--spacing1);
+}
+
+/* CARDS */
+.grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: .5px;
+    position: relative;
+    z-index: var(--firstplan);
+}
+
+.card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--primary);
+}
+
+.picto-program {
+    min-width: 100px;
+    min-height: 100px;
+}
+
+.card h4 {
+    --typography-spacing-vertical: 1rem;
+    color: var(--light);
+    font-size: var(--fontTitle);
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    text-align: center;
+    padding-top: var(--spacing1);
+}
+
+.card p {
+    --typography-spacing-vertical: 0;
+    color: var(--light);
+}
+
+.card span {
+    font-size: 2.5rem;
+    padding-right: 3px;
+}
+
 @media screen and (max-width: 767px) {
     .blue-rectangle {
         width: 3px;
+    }
+}
+
+@media screen and (max-width: 576px) {
+    .grid {
+        grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
     }
 }
