@@ -1,7 +1,35 @@
 .radio-degree {
     display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: start;
     gap: var(--spacing1);
     margin-bottom: var(--spacing);
+}
+
+.radio-degree > div:nth-child(1) {
+    display: flex;
+    gap: var(--spacing1);
+}
+
+.add-bar {
+    --typography-spacing-vertical : 0;
+    display: flex;
+    align-items: center;
+    gap: var(--spacing);
+    
+    padding: var(--spacing) 0;
+    margin-bottom: var(--spacing1);
+}
+
+.add-btn {
+    border-radius: 50%;
+    padding: 0px 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 30px;
+    height: 30px;
 }
 
 .content {
@@ -70,24 +98,30 @@
 .form-box {
     width: 90%;
     margin: auto;
-    padding: var(--spacing1) 0 var(--spacing3) 0;
-}
-
-.radio-degree {
-    display: flex;
-    align-items: center;
+    padding: var(--spacing1) 0;
 }
 
 details[role="list"] summary:not([role]), input, textarea {
     border: 1px solid var(--primary-light);
     font-size: var(--sizeText);
     color: var(--grey);
+    height: auto;
+}
+
+fieldset:nth-child(2) > .form-box:nth-child(2) input, textarea {
+    margin-bottom: var(--spacing1);
 }
 
 label {
     color: black;
     margin-bottom: var(--spacing);
 }
+
+.add-bar > p {
+    font-size: var(--sizeText);
+    color: var(--primary);
+}
+
 
 .int-box {
     display: flex;
@@ -127,6 +161,11 @@ label {
 .content button:last-child {
     color: var(--primary);
     background-color: transparent;
+}
+
+.container > a:last-child {
+    display: block;
+    margin-top: var(--spacing1);
 }
 
 @media screen and (max-width: 767px) {

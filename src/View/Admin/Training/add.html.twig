@@ -38,126 +38,161 @@
 						</legend>
 						<div class="form-box">
 							<div class="radio-degree">
-								<label>
-									<input type="radio" id="degree" name="degree_name">
-									CAP
-								</label>
-								<label>
-									<input type="radio" id="degree" name="degree_name">
-									BAC
-								</label>
-
 								<div>
-									<label for="nb-students">Durée de la formation</label>
-									<input type="number" id="nb-students" name="nb_students" min="O" required value="{{ training.nb_students }}">
+									{% for degree in degrees %}
+										<label>
+											<input type="radio" id="degree" name="degree_name">
+											{{ degree.name }}
+										</label>
+									{% endfor %}
+								</div>
+								<div class="add-bar">
+									<a href="#" role="button" class="add-btn">
+										<svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" viewbox="0 0 24 24" fill="none" stroke="#ffffff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+											<line x1="12" y1="5" x2="12" y2="19"></line>
+											<line x1="5" y1="12" x2="19" y2="12"></line>
+										</svg>
+									</a>
+									<a href="#">Ajouter un niveau de formation</a>
 								</div>
 							</div>
-
-							<a href="#" role="button"></a>
-
 						</div>
 					</fieldset>
 
 					<fieldset>
 						<legend>
-							<p>Formation</p>
+							<p>Secteur d'activité</p>
 						</legend>
 						<div class="form-box">
-							<label for="name">Nom de la formation</label>
-							<input type="text" id="name" name="training_name" maxlength="255" required value="{{ training.name }}">
-
-							<div class="int-box">
-								<div>
-									<label for="nb-students">Durée de la formation</label>
-									<input type="number" id="nb-students" name="nb_students" min="O" required value="{{ training.nb_students }}">
-								</div>
-								<div>
-									<label for="success-rate">Taux de réussite</label>
-									<input type="number" id="success-rate" name="success_rate" min="O" required value="{{ training.success_rate }}">
-								</div>
-								<div>
-									<label for="stage-duration">Nombre d'élèves</label>
-									<input type="number" id="stage-duration" name="stage_duration" min="O" required value="{{ training.stage_duration }}">
-								</div>
-								<div>
-									<label for="stage-duration">Durée du stage</label>
-									<input type="number" id="stage-duration" name="stage_duration" min="O" required value="{{ training.stage_duration }}">
-								</div>
+							<details role="list">
+								<summary aria-haspopup="listbox">Sélectionnez le secteur d'activité</summary>
+								<ul role="listbox">
+									{% for sector in sectors %}
+										<li>
+											<label>
+												<input type="checkbox">
+												{{ sector.name }}
+											</label>
+										</li>
+									{% endfor %}
+								</ul>
+							</details>
+							<div class="add-bar">
+								<a href="#" role="button" class="add-btn">
+									<svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" viewbox="0 0 24 24" fill="none" stroke="#ffffff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+										<line x1="12" y1="5" x2="12" y2="19"></line>
+										<line x1="5" y1="12" x2="19" y2="12"></line>
+									</svg>
+								</a>
+								<a href="#">Ajouter un secteur d'activité</a>
 							</div>
-
-
-							<label for="description">Description</label>
-							<textarea id="description" name="description" placeholder="Décrivez la formation" value="{{ training.description }}"></textarea>
-
-							<label for="program">Programme</label>
-							<textarea id="program" name="program" placeholder="Décrivez le programme de la formation" value="{{ training.program }}"></textarea>
-
-							<details role="list">
-								<summary aria-haspopup="listbox">Sélectionner les compétences</summary>
-								<ul role="listbox">
-									<li>
-										<label>
-											<input type="radio" id="sector" name="sector_name">
-											BAC
-										</label>
-									</li>
-									<li>
-										<label>
-											<input type="radio" id="sector" name="sector_name">
-											BAC
-										</label>
-									</li>
-									<li>
-										<label>
-											<input type="radio" id="sector" name="sector_name">
-											BAC
-										</label>
-									</li>
-								</ul>
-							</details>
-							<label for="file">Sélectionnez un fichier :</label>
-							<input type="file" id="file" name="file">
-						</div>
-					</fieldset>
-
-					<fieldset>
-						<legend>
-							<p>Poursuite d'étude</p>
-						</legend>
-						<div class="form-box">
-							<p>Choix mutiple</p>
-							<details role="list">
-								<summary aria-haspopup="listbox">Sélectionner les formations</summary>
-								<ul role="listbox">
-									<li>
-										<label>
-											<input type="radio" id="sector" name="sector_name">
-											BAC
-										</label>
-									</li>
-									<li>
-										<label>
-											<input type="radio" id="sector" name="sector_name">
-											BAC
-										</label>
-									</li>
-									<li>
-										<label>
-											<input type="radio" id="sector" name="sector_name">
-											BAC
-										</label>
-									</li>
-								</ul>
-							</details>
 						</fieldset>
-						<div class="form-btn">
-							<button>Ajouter</button>
-							<button>Annuler</button>
-						</div>
-					</form>
+
+						<fieldset>
+							<legend>
+								<p>Formation</p>
+							</legend>
+							<div class="form-box">
+								<label for="name">Nom de la formation</label>
+								<input type="text" id="name" name="training_name" maxlength="255" required value="{{ training.name }}">
+
+								<div class="int-box">
+									<div>
+										<label for="nb_students">Nombre d'élèves</label>
+										<input type="number" id="nb_students" name="nb_students" min="O" required value="{{ training.nb_students }}">
+									</div>
+									<div>
+										<label for="success-rate">Taux de réussite</label>
+										<input type="number" id="success-rate" name="success_rate" min="O" required value="{{ training.success_rate }}">
+									</div>
+									<div>
+										<label for="stage-duration">Durée du stage</label>
+										<input type="number" id="stage-duration" name="stage_duration" min="O" required value="{{ training.stage_duration }}">
+									</div>
+								</div>
+
+
+								<label for="description">Description</label>
+								<textarea id="description" name="description" placeholder="Décrivez la formation" value="{{ training.description }}"></textarea>
+
+								<label for="program">Programme</label>
+								<textarea id="program" name="program" placeholder="Décrivez le programme de la formation" value="{{ training.program }}"></textarea>
+
+								<label for="file">Sélectionnez un fichier :</label>
+								<input type="file" id="file" name="file">
+							</div>
+						</fieldset>
+
+						<fieldset>
+							<legend>
+								<p>Compétences</p>
+							</legend>
+							<div class="form-box">
+								<div>
+									<details role="list">
+										<summary aria-haspopup="listbox">Sélectionnez les compétences</summary>
+										<ul role="listbox">
+											{% for skill in skills %}
+												<li>
+													<label>
+														<input type="checkbox">
+														{{ skill.name }}
+													</label>
+												</li>
+											{% endfor %}
+										</ul>
+									</details>
+								</div>
+								<div class="add-bar">
+									<a href="#" role="button" class="add-btn">
+										<svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" viewbox="0 0 24 24" fill="none" stroke="#ffffff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+											<line x1="12" y1="5" x2="12" y2="19"></line>
+											<line x1="5" y1="12" x2="19" y2="12"></line>
+										</svg>
+									</a>
+									<a href="#">Ajouter une compétence</a>
+								</div>
+
+							</div>
+						</fieldset>
+
+						<fieldset>
+							<legend>
+								<p>Poursuite d'étude</p>
+							</legend>
+							<div class="form-box">
+								<details role="list">
+									<summary aria-haspopup="listbox">Sélectionnez les formations</summary>
+									<ul role="listbox">
+										{% for nextTraining in nextTrainings %}
+											<li>
+												<label>
+													<input type="checkbox">
+													{{ nextTraining.name }}
+												</label>
+											</li>
+										{% endfor %}
+									</ul>
+								</details>
+								<div class="add-bar">
+									<a href="#" role="button" class="add-btn">
+										<svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" viewbox="0 0 24 24" fill="none" stroke="#ffffff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+											<line x1="12" y1="5" x2="12" y2="19"></line>
+											<line x1="5" y1="12" x2="19" y2="12"></line>
+										</svg>
+									</a>
+									<a href="#">Ajouter une formation</a>
+								</div>
+							</fieldset>
+
+							<div class="form-btn">
+								<button>Ajouter</button>
+								<button>Annuler</button>
+							</div>
+						</form>
+					</div>
 				</div>
-			</div>
-		</section>
-		<a href="/admin/formations">Retour</a>
-	</main>
-{% endblock %}
+			</section>
+			<a href="/admin/formations">Retour</a>
+		</main>
+	{% endblock %}

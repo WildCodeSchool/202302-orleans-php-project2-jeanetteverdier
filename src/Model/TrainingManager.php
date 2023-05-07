@@ -45,7 +45,7 @@ class TrainingManager extends AbstractManager
         return $statement->fetch();
     }
 
-    public function insert(array $training): void
+    public function insertTraining(array $training): void
     {
         $query = "INSERT INTO "
             . self::TABLE .
