@@ -27,9 +27,33 @@ class AdminTrainingController extends AbstractController
         );
     }
 
-    public function add(): string
+    private function validate(array $training): array
     {
         $errors = [];
+
+        if (empty($training['training_name'])) {
+            $errors[] = 'Le titre de la formation est obligatoire';
+        }
+        $maxLenght = 255;
+        if (mb_strlen($training['training_name']) > $maxLenght) {
+            $errors[] = 'Le titre de la formation doit faire moin de ' . $maxLenght;
+        }
+        if (empty($training['nb_students'])) {
+            $errors[] = 'Le nombre d\'étudiant est obligatoire';
+        }
+        if (empty($training['success_rate'])) {
+            $errors[] = 'Le taux de succès est obligatoire';
+        }
+        if (empty($training['stage_duration'])) {
+            $errors[] = 'La durée du stage est obligatoire';
+        }
+
+        return $errors;
+    }
+
+    public function add(): string
+    {
+        $errors = $training = [];
 
         $degreeManager = new DegreeManager();
         $skillManager = new SkillManager();
@@ -45,18 +69,7 @@ class AdminTrainingController extends AbstractController
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             $training = array_map('trim', $_POST);
 
-            if (empty($training['training_name'])) {
-                $errors[] = 'Le titre de la formation est obligatoire';
-            }
-            if (empty($training['nb_students'])) {
-                $errors[] = 'Le nombre d\'étudiant est obligatoire';
-            }
-            if (empty($training['success_rate'])) {
-                $errors[] = 'Le taux de succès est obligatoire';
-            }
-            if (empty($training['stage_duration'])) {
-                $errors[] = 'La durée du stage est obligatoire';
-            }
+            $errors = $this->validate($training);
 
             if (empty($errors)) {
                 $trainingManager = new TrainingManager();
@@ -70,6 +83,7 @@ class AdminTrainingController extends AbstractController
         return $this->twig->render(
             'Admin/Training/add.html.twig',
             [
+                'training' => $training,
                 'errors' => $errors,
                 'degrees' => $degrees,
                 'skills' => $skills,
