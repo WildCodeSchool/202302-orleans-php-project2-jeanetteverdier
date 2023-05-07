@@ -44,4 +44,22 @@ class TrainingManager extends AbstractManager
 
         return $statement->fetch();
     }
+
+    public function insert(array $training): void
+    {
+        $query = "INSERT INTO "
+            . self::TABLE .
+            " (`name`, `nb_students`, `success_rate`, `stage_duration`, `description`, `program`) VALUES 
+        (:name, :nb_students, :success_rate, :stage_duration, :description, :program);";
+        $statement = $this->pdo->prepare($query);
+
+        $statement->bindValue('name', $training['training_name']);
+        $statement->bindValue('nb_students', $training['nb_students']);
+        $statement->bindValue('success_rate', $training['success_rate']);
+        $statement->bindValue('stage_duration', $training['stage_duration']);
+        $statement->bindValue('description', $training['description']);
+        $statement->bindValue('program', $training['program']);
+
+        $statement->execute();
+    }
 }
