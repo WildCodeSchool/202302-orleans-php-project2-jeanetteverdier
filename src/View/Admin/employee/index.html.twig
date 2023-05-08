@@ -33,9 +33,9 @@
 					{% if employee.name == workDepartement.name %}
 						<article>
 							<div class="myArticle">
-								<div class="picurePerson">
-									<img src="/assets/images/professeursPhotos/{{ team.picture ?? " teacherbydefault.jpg"}}" alt="default">
-								</div>
+
+								<img class="picurePerson" src="{{ employee.picture ? '/uploads/employee/' ~ employee.picture : '/assets/images/professeursPhotos/teacherByDefault.jpg'}}" alt="default">
+
 								<div class="textPerson">
 									<div class="namePerson">
 										<h2>{{ employee.lastname | upper }}
@@ -48,6 +48,12 @@
 											<button class="buttonSupprimer">Supprimer</button>
 										</form>
 									</div>
+									<h3>{{ employee.post | lower }}</h3>
+									<a href="/admin/notre-equipe/modifier?id={{ employee.id }}" role="button" class="buttonModifier">Modifier</a>
+									<form action="/admin/notre-equipe/delete" method="POST">
+										<input type="hidden" name="id" value="{{ employee.id }}">
+										<button class="buttonSupprimer">Supprimer</button>
+									</form>
 								</div>
 							</div>
 						</article>
