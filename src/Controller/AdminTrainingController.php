@@ -34,12 +34,15 @@ class AdminTrainingController extends AbstractController
         if (empty($training['training_name'])) {
             $errors[] = 'Le titre de la formation est obligatoire';
         }
-        $maxLenght = 255;
-        if (mb_strlen($training['training_name']) > $maxLenght) {
-            $errors[] = 'Le titre de la formation doit faire moin de ' . $maxLenght;
+        $maxLentght = 255;
+        if (mb_strlen($training['training_name']) > $maxLentght) {
+            $errors[] = 'Le titre de la formation doit faire moin de ' . $maxLentght;
         }
         if (empty($training['nb_students'])) {
             $errors[] = 'Le nombre d\'étudiant est obligatoire';
+        }
+        if (is_numeric($training['success_rate']) && $training['success_rate'] < 0) {
+            $errors[] = 'Le taux de succès doit être positif';
         }
         if (empty($training['success_rate'])) {
             $errors[] = 'Le taux de succès est obligatoire';
@@ -50,6 +53,7 @@ class AdminTrainingController extends AbstractController
 
         return $errors;
     }
+
 
     public function add(): string
     {
