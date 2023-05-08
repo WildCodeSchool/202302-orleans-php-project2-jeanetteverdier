@@ -41,7 +41,7 @@ class AdminTrainingController extends AbstractController
         if (empty($training['nb_students'])) {
             $errors[] = 'Le nombre d\'étudiant est obligatoire';
         }
-        if (is_numeric($training['success_rate']) && $training['success_rate'] < 0) {
+        if (is_numeric($training['nb_students']) && $training['nb_students'] < 0) {
             $errors[] = 'Le taux de succès doit être positif';
         }
         if (empty($training['success_rate'])) {
