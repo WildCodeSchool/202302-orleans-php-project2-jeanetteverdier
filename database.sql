@@ -766,6 +766,173 @@ INSERT INTO
     `training_skill` (skill_id, training_id)
 VALUES (16, 3), (5, 3), (17, 3), (18, 3), (19, 3);
 
+-- ********** TABLE NEXT_TRAINING **********
+
+CREATE TABLE
+    `next_training` (
+        `id` INT NOT NULL PRIMARY KEY AUTO_INCREMENT,
+        `degree` VARCHAR(10) NOT NULL,
+        `name` VARCHAR(255) NOT NULL,
+        `duration` INT NOT NULL,
+        `description` TEXT,
+        `link` VARCHAR(255)
+    );
+
+CREATE TABLE
+    `training_next_training` (
+        `id` INT NOT NULL PRIMARY KEY AUTO_INCREMENT,
+        `training_id` INT NOT NULL,
+        `next_training_id` INT NOT NULL,
+        FOREIGN KEY (training_id) REFERENCES training(`id`),
+        FOREIGN KEY (next_training_id) REFERENCES next_training(`id`)
+    );
+
+INSERT INTO
+    `next_training` (degree, name, duration, link)
+VALUES (
+        "BAC PRO",
+        "Logistique",
+        3,
+        "https://www.onisep.fr/ressources/univers-formation/Formations/Lycees/bac-pro-logistique"
+    ), (
+        "BAC PRO",
+        "Commerce et de la vente option A : animation et gestion de l'espace commercial",
+        3,
+        "https://www.onisep.fr/ressources/univers-formation/Formations/Lycees/bac-pro-metiers-du-commerce-et-de-la-vente-option-a-animation-et-gestion-de-l-espace-commercial"
+    ), (
+        "BAC PRO",
+        "Métiers de la mode - Vêtement",
+        3,
+        "https://www.onisep.fr/ressources/univers-formation/Formations/Lycees/bac-pro-metiers-de-la-mode-vetements"
+    ), (
+        "BTS",
+        "Gestion de la PME",
+        2,
+        "https://www.onisep.fr/ressources/univers-formation/Formations/Post-bac/bts-gestion-de-la-pme"
+    ), (
+        "BTS",
+        "Support à l'action managériale",
+        2,
+        "https://www.onisep.fr/ressources/univers-formation/Formations/Post-bac/bts-support-a-l-action-manageriale"
+    ), (
+        "BTS",
+        "Comptabilité et gestion",
+        2,
+        "https://www.onisep.fr/ressources/univers-formation/Formations/Post-bac/bts-comptabilite-et-gestion"
+    ), (
+        "BTS",
+        "Gestion des transports et logistique associée (GTLA)",
+        2,
+        "https://www.onisep.fr/ressources/univers-formation/Formations/Post-bac/bts-gestion-des-transports-et-logistique-associee"
+    ), (
+        "BTS",
+        "Management commercial opérationnel",
+        2,
+        "https://www.onisep.fr/ressources/univers-formation/Formations/Post-bac/bts-management-commercial-operationnel"
+    ), (
+        "BTS",
+        "Négociation et digitalisation de la relation client",
+        2,
+        "https://www.onisep.fr/ressources/univers-formation/Formations/Post-bac/bts-negociation-et-digitalisation-de-la-relation-client"
+    ), (
+        "BTS",
+        "Tourisme",
+        2,
+        "https://www.onisep.fr/ressources/univers-formation/Formations/Post-bac/bts-tourisme"
+    );
+
+UPDATE `next_training`
+SET
+    description = "Ce bac pro se prépare en 3 ans après la classe de 3e. Les élèves entrent en 2de professionnelle Métiers de la gestion administrative, du transport et de la logistique pour préparer cette spécialité du bac pro.
+L'accès est différent pour les élèves en apprentissage qui entrent directement dans cette spécialité de bac pro sans passer par une 2de pro famille de métiers.
+Les élèves titulaires de certains CAP du même secteur peuvent également le préparer en 2 ans sous certaines conditions."
+WHERE id = 1;
+
+UPDATE `next_training`
+SET
+    description = "Ce bac pro se prépare en 3 ans après la classe de 3e. Les élèves entrent en 2de professionnelle métiers de la relation clientpour préparer cette spécialité du bac pro.
+L'accès est différent pour les élèves en apprentissage qui entrent directement dans cette spécialité de bac pro sans passer par une 2de pro famille de métiers.
+Les élèves titulaires de certains CAP du même secteur peuvent également préparer ce bac pro en 2 ans sous certaines conditions."
+WHERE id = 2;
+
+UPDATE `next_training`
+SET
+    description = "Ce bac pro se prépare en trois ans après la classe de troisième. Accès possible après un CAP du domaine des matériaux souples."
+WHERE id = 3;
+
+UPDATE `next_training`
+SET
+    description = "Le BTS gestion de la PME est accessible à tout titulaire d'un baccalauréat : bac pro, bac STMG, bac général. Accès sur dossier, voire tests et/ou entretien."
+WHERE id = 4;
+
+UPDATE `next_training`
+SET
+    description = "Ce bac pro se prépare en 3 ans après la classe de 3e. Les élèves entrent en 2de professionnelle Métiers de la gestion administrative, du transport et de la logistique pour préparer cette spécialité du bac pro.
+L'accès est différent pour les élèves en apprentissage qui entrent directement dans cette spécialité de bac pro sans passer par une 2de pro famille de métiers.
+Les élèves titulaires de certains CAP du même secteur peuvent également le préparer en 2 ans sous certaines conditions."
+WHERE id = 5;
+
+UPDATE `next_training`
+SET
+    description = "Le BTS support à l'action managériale est accessible à tout titulaire d'un baccalauréat : bac STMG, bac pro, bac général. Accès sur dossier, voire tests et/ou entretien."
+WHERE id = 6;
+
+UPDATE `next_training`
+SET
+    description = "Ce BTS est accessible à tout titulaire d'un baccalauréat : bac pro logistique, bac pro transport, bac STMG. Accès sur dossier, voire tests et/ou entretien."
+WHERE id = 7;
+
+UPDATE `next_training`
+SET
+    description = "Le BTS management commercial opérationnel est accessible à tout titulaire d'un baccalauréat : bac STMG, bac pro Métiers du commerce et de la vente, bac général. Accès sur dossier, voire tests et/ou entretien."
+WHERE id = 8;
+
+UPDATE `next_training`
+SET
+    description = "Le BTS négociation et digitalisation de la relation client est accessible à tout titulaire d'un baccalauréat : bac STMG, bac pro Métiers du commerce et de la vente, option A : animation et gestion de l'espace commercial, option B : prospection clientèle et valorisation de l'offre commerciale, bac général. Accès sur dossier, voire tests et/ou entretien."
+WHERE id = 9;
+
+UPDATE `next_training`
+SET
+    description = "Le BTS Tourisme est accessible à tout titulaire d'un baccalauréat : bac général et technologique, bac pro. Accès sur dossier, voire tests et/ou entretien."
+WHERE id = 10;
+
+INSERT INTO
+    `training_next_training` (training_id, next_training_id)
+VALUES (1, 1);
+
+INSERT INTO
+    `training_next_training` (training_id, next_training_id)
+VALUES (2, 2);
+
+INSERT INTO
+    `training_next_training` (training_id, next_training_id)
+VALUES (3, 3);
+
+INSERT INTO
+    `training_next_training` (training_id, next_training_id)
+VALUES (4, 4), (4, 5), (4, 6);
+
+INSERT INTO
+    `training_next_training` (training_id, next_training_id)
+VALUES (5, 7);
+
+INSERT INTO
+    `training_next_training` (training_id, next_training_id)
+VALUES (6, 7);
+
+INSERT INTO
+    `training_next_training` (training_id, next_training_id)
+VALUES (7, 8), (7, 9);
+
+INSERT INTO
+    `training_next_training` (training_id, next_training_id)
+VALUES (8, 8), (8, 9);
+
+INSERT INTO
+    `training_next_training` (training_id, next_training_id)
+VALUES (9, 10);
+
 -- ********** TABLE ACTUALITY **********
 
 CREATE TABLE
