@@ -23,4 +23,18 @@ class AdminTrainingController extends AbstractController
             ]
         );
     }
+
+
+
+    // public function delete(int $id): void
+    // {
+    //     if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+    //         $trainingManager = new TrainingManager();
+
+    //         $trainingId['id'] = $id;
+    //         $trainingManager->deleteTraining($trainingId['id']);
+
+    //         header('Location:/admin/formations');
+    //     }
+    // }
 }
