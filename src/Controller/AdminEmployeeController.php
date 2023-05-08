@@ -26,8 +26,16 @@ class AdminEmployeeController extends AbstractController
     public function delete(): void
     {
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-            $id = trim($_POST['id']);
+            $id = $_POST['id'];
             $employeeManager = new EmployeeManager();
+            $employee = $employeeManager->selectOneById($id);
+
+            if (
+                isset($employee['picture']) &&
+                file_exists(__DIR__ . '/../../public/uploads/employee/' . $employee['picture'])
+            ) {
+                unlink(__DIR__ . '/../../public/uploads/employee/' . $employee['picture']);
+            }
             $employeeManager->delete((int)$id);
 
             header('Location:/admin/notre-equipe');
@@ -47,17 +55,21 @@ class AdminEmployeeController extends AbstractController
             $errorsImage = $this->errorsImage();
 
             if (empty($errors) && empty($errorsImage)) {
-                $extension = pathinfo($_FILES['image']['name'], PATHINFO_EXTENSION);
-                $baseFilename = pathinfo($_FILES['image']['name'], PATHINFO_FILENAME);
+                $extension = pathinfo($_FILES['picture']['name'], PATHINFO_EXTENSION);
+                $baseFilename = pathinfo($_FILES['picture']['name'], PATHINFO_FILENAME);
 
                 $imageName = uniqid($baseFilename, more_entropy: true) . '.' . $extension;
 
-                $employee['image'] = $imageName;
+                $employee['picture'] = $imageName;
 
                 $employeeManager = new EmployeeManager();
                 $employee = $employeeManager->insertEmploye($employee);
 
-                move_uploaded_file($_FILES['image']['tmp_name'], __DIR__ . '/../../public/uploads/' . $imageName);
+                move_uploaded_file(
+                    $_FILES['picture']['tmp_name'],
+                    __DIR__ . '/../../public/uploads/employee/' . $imageName
+                );
+
 
                 header('Location:/admin/notre-equipe');
                 return null;
@@ -102,21 +114,21 @@ class AdminEmployeeController extends AbstractController
     public function errorsImage()
     {
         $errorsImage = [];
-        if ($_FILES['image']['error'] !== 0) {
+        if ($_FILES['picture']['error'] !== 0) {
             $errorsImage[] = 'Problème avec l\'upload, veillez réessayer';
         } else {
             $limitFilesSize = 2000000;
-            if ($_FILES['image']['size'] > $limitFilesSize) {
+            if ($_FILES['picture']['size'] > $limitFilesSize) {
                 $errorsImage[] = 'Le fichier doit faire moins de ' . $limitFilesSize  / 1000000 . 'Mo';
             }
-
             $authorizedMimes = ['image/jpeg', 'image/png', 'image/webp'];
-            if (!in_array(mime_content_type($_FILES['image']['tmp_name']), $authorizedMimes)) {
+            if (!in_array(mime_content_type($_FILES['picture']['tmp_name']), $authorizedMimes)) {
                 $errorsImage[] = 'Le type de fichier est incorrect. il doit ' . implode(',', $authorizedMimes);
             }
             return $errorsImage;
         }
     }
+
     public function edit(int $id)
     {
         $errors = $errorsImage = [];
@@ -132,9 +144,29 @@ class AdminEmployeeController extends AbstractController
             $errors = $this->errors($employee, $departements);
             $errorsImage = $this->errorsImage();
             $id = $_GET['id'];
-
             if (empty($errors) && empty($errorsImage)) {
+                $employe = $employeeManager->selectOneById($id);
+                if (
+                    isset($employe['picture']) &&
+                    file_exists(__DIR__ . '/../../public/uploads/employee/' . $employe['picture'])
+                ) {
+                    unlink(__DIR__ . '/../../public/uploads/employee/' . $employe['picture']);
+                }
+
+                $extension = pathinfo($_FILES['picture']['name'], PATHINFO_EXTENSION);
+                $baseFilename = pathinfo($_FILES['picture']['name'], PATHINFO_FILENAME);
+
+                $imageName = uniqid($baseFilename, more_entropy: true) . '.' . $extension;
+
+                $employee['picture'] = $imageName;
+
                 $employeeManager->updateEmployee($employee, $id);
+
+                move_uploaded_file(
+                    $_FILES['picture']['tmp_name'],
+                    __DIR__ . '/../../public/uploads/employee/' . $imageName
+                );
+
                 header('Location: /admin/notre-equipe');
                 return null;
             }
