@@ -1,0 +1,30 @@
+{% extends 'layout.html.twig' %}
+
+{% block title %}
+	Admin - Ajouter une Formation -
+	{{ parent() }}
+{% endblock %}
+
+{% block stylesheet %}
+	<link rel="stylesheet" href="/assets/css/Admin/training/admin-add-training.css">
+{% endblock %}
+
+{% block content %}
+	<main class="container">
+
+		<div class="background-line"></div>
+
+		<section>
+			<div class="main-title">
+				<div class="title-content">
+					<div class="bloc-square"></div>
+					<h3>
+						<span>Ajouter</span><br/>une formation
+					</h3>
+				</div>
+			</div>
+			{% include 'Components/_form-training.html.twig' %}
+		</section>
+		<a href="/admin/formations">Retour</a>
+	</main>
+{% endblock %}

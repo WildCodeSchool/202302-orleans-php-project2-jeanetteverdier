@@ -30,7 +30,7 @@
 					{% if employee.name == workDepartement.name %}
 						<article>
 							<div class="myArticle">
-								<div class="picurePerson"><img src="assets/images/professeursPhotos/{{ team.picture ?? " teacherByDefault.jpg/"}}" alt=" photo du personnel"></div>
+								<div class="picurePerson"><img src="{{ employee.picture ? '/uploads/employee/' ~ employee.picture : '/assets/images/professeursPhotos/teacherByDefault.jpg'}}" alt="default"></div>
 								<div class="textPerson">
 									<div class="blueLine"></div>
 									<div class="namePerson">
