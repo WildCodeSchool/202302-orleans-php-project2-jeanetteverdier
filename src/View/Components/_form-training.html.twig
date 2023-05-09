@@ -7,10 +7,12 @@
 </ul>
 <div class="content">
 	<form action="" method="POST">
+
 		<fieldset>
 			<legend>
 				<p>Niveau d'étude</p>
 			</legend>
+
 			<div class="form-box">
 				<div class="radio-degree">
 					<div>
@@ -21,6 +23,7 @@
 							</label>
 						{% endfor %}
 					</div>
+
 					<div class="add-bar">
 						<a href="#" role="button" class="add-btn">
 							<svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" viewbox="0 0 24 24" fill="none" stroke="#ffffff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
@@ -52,6 +55,7 @@
 						{% endfor %}
 					</ul>
 				</details>
+
 				<div class="add-bar">
 					<a href="#" role="button" class="add-btn">
 						<svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" viewbox="0 0 24 24" fill="none" stroke="#ffffff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
@@ -67,6 +71,7 @@
 				<legend>
 					<p>Formation</p>
 				</legend>
+
 				<div class="form-box">
 					<label for="name">Nom de la formation</label>
 					<input type="text" id="name" name="training_name" maxlength="255" required value="{{ training.training_name }}">
@@ -85,7 +90,6 @@
 							<input type="number" id="stage-duration" name="stage_duration" min="O" required value="{{ training.stage_duration }}">
 						</div>
 					</div>
-
 
 					<label for="description">Description</label>
 					<textarea id="description" name="description" placeholder="Décrivez la formation" value="{{ training.description }}"></textarea>
@@ -135,6 +139,7 @@
 				<legend>
 					<p>Poursuite d'étude</p>
 				</legend>
+
 				<div class="form-box">
 					<details role="list">
 						<summary aria-haspopup="listbox">Sélectionnez les formations</summary>
@@ -149,6 +154,7 @@
 							{% endfor %}
 						</ul>
 					</details>
+
 					<div class="add-bar">
 						<a href="#" role="button" class="add-btn">
 							<svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" viewbox="0 0 24 24" fill="none" stroke="#ffffff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
