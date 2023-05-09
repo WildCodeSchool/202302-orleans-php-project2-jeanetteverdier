@@ -21,7 +21,8 @@ main input{
 }
 
 main .error{
-    color:var(--errorColor)
+    color:var(--errorColor);
+    margin-bottom: var(--spacing1);
 }
 
 main select{
