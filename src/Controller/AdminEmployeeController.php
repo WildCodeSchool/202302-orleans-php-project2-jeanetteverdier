@@ -102,6 +102,15 @@ class AdminEmployeeController extends AbstractController
             $errors['post'] = "Le poste est obligatoire";
         }
 
+        $maxLength = 255;
+
+        if (mb_strlen($employee['firstname']) > $maxLength) {
+            $errors['firstnameLength'] = "Le prénom ne doit pas faire plus de " . $maxLength . " caractère.";
+        }
+        if (mb_strlen($employee['lastname']) > $maxLength) {
+            $errors['lastnameLength'] = "Le nom ne doit pas faire plus de " . $maxLength . " caractère.";
+        }
+
         $departementsId = array_column($departements, 'id');
 
         if (!in_array($employee['departementId'], $departementsId)) {
