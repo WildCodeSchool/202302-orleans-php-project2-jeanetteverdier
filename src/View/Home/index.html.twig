@@ -30,54 +30,27 @@
         </div>
     {# CARDS #}
         <div class="grid">
+        {# CARDS 1 #}
+        {% for lastActuality in lastActualities %}
           <div class="card">
             <div class="actu-image">
-                <img src="/uploads/actuality/charité.webp"></img>
+                <img src="/uploads/actuality/jverdier-cup.webp"></img>
             </div>
             <header>
               <div class="picto-program">
                 <img src="/assets/images/picto-success.svg" alt="Pictogramme actualités"/>
               </div>
               <div class="title-dernieresactus">
-                <h4>{{ events.title }}</h4>
+                <h4>{{ lastActuality.title }}</h4>
                 <div class="orange-rectangle"></div>
               </div>
             </header>
-            <div class="training-content">
-              <p>{{ events.content }}</p>
+            <div class="actu-content">
+              <p>{{ lastActuality.content }}</p>
               <a href="#" role="button">Découvrir</a>
             </div>
           </div>
-          <div class="card">
-            <header>
-              <div class="picto-program">
-                <img src="/assets/images/picto-success.svg" alt="Pictogramme actualités"/>
-              </div>
-              <div class="title-dernieresactus">
-                <h4>BAC PRO Logistique Option A : Transport</h4>
-                <div class="orange-rectangle"></div>
-              </div>
-            </header>
-            <div class="training-content">
-              <p>{{ events.description }}</p>
-              <a href="#" role="button">Découvrir</a>
-            </div>
-          </div>
-          <div class="card">
-            <header>
-              <div class="picto-program">
-                <img src="/assets/images/picto-success.svg" alt="Pictogramme actualités"/>
-              </div>
-              <div class="title-dernieresactus">
-                <h4>BAC PRO Logistique Option A : Transport</h4>
-                <div class="orange-rectangle"></div>
-              </div>
-            </header>
-            <div class="training-content">
-              <p>{{ events.description }}</p>
-              <a href="#" role="button">Découvrir</a>
-            </div>
-          </div>
+          {% endfor %}
         </div>
       </section>
 </main>

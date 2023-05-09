@@ -14,4 +14,11 @@ class EventManager extends AbstractManager
         $statement = $this->pdo->query($query);
         return $statement->fetch();
     }
+
+    public function selectLastActualities()
+    {
+        $query = "SELECT * FROM " . self::TABLE . " ORDER BY `id` DESC LIMIT 6";
+        $statement = $this->pdo->query($query);
+        return $statement->fetchAll();
+    }
 }
