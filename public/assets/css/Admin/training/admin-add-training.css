@@ -1,0 +1,175 @@
+.radio-degree {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: start;
+    gap: var(--spacing1);
+    margin-bottom: var(--spacing);
+}
+
+.radio-degree > div:nth-child(1) {
+    display: flex;
+    gap: var(--spacing1);
+}
+
+.add-bar {
+    --typography-spacing-vertical : 0;
+    display: flex;
+    align-items: center;
+    gap: var(--spacing);
+    
+    padding: var(--spacing) 0;
+    margin-bottom: var(--spacing1);
+}
+
+.add-btn {
+    border-radius: 50%;
+    padding: 0px 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 30px;
+    height: 30px;
+}
+
+.content {
+    width: 100%;
+    padding: 0;
+    backdrop-filter: blur(15px);
+    position: relative;
+    box-shadow: var(--box-shadow);
+}
+
+.content::before {
+    content: " ";
+    background: var(--primary);
+    width: 4px;
+    height: 100%;
+    position: absolute;
+}
+
+.content form {
+    width: 90%;
+    margin: auto;
+    padding: var(--spacing1) 0;
+}
+
+.content fieldset {
+    border: 2px solid var(--primary-light);
+    position: relative;
+}
+
+.content fieldset::after {
+    content: "";
+    display: block;
+    width: 100%;
+    height: 5px;
+    background-color: var(--primary-light);
+    position: absolute;
+    bottom: 0;
+}
+
+.content legend {
+
+    padding: var(--spacing1);
+    margin-left: var(--spacing1);
+    position: relative;
+}
+
+.content legend > p {
+    --typography-spacing-vertical: 0;
+    color: var(--dark);
+    font-size: 1.2rem;
+    font-weight: bold;
+    z-index: var(--firstPlan);
+}
+
+.content legend > p::after {
+    content: "";
+    display: block;
+    width: 50px;
+    height: 10px;
+    background-color: var(--secondary);
+    position: absolute;
+    bottom: 0;
+    z-index: -1;
+}
+
+.form-box {
+    width: 90%;
+    margin: auto;
+    padding: var(--spacing1) 0;
+}
+
+details[role="list"] summary:not([role]), input, textarea {
+    border: 1px solid var(--primary-light);
+    font-size: var(--sizeText);
+    color: var(--grey);
+    height: auto;
+}
+
+fieldset:nth-child(2) > .form-box:nth-child(2) input, textarea {
+    margin-bottom: var(--spacing1);
+}
+
+label {
+    color: black;
+    margin-bottom: var(--spacing);
+}
+
+.add-bar > p {
+    font-size: var(--sizeText);
+    color: var(--primary);
+}
+
+
+.int-box {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.int-box div:nth-child(4) {
+    justify-self: flex-end;
+}
+
+.form-box textarea {
+    resize: none;
+    height: 300px;
+    overflow: auto;
+    margin-bottom: var(--spacing1);
+}
+
+
+.form-box label:nth-child(9) {
+    margin-top: var(--spacing2);
+}
+
+.form-btn {
+    display: flex;
+    gap: var(--spacing1);
+}
+
+.content button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+    margin: var(--spacing2) 0;
+}
+
+.content button:last-child {
+    color: var(--primary);
+    background-color: transparent;
+}
+
+.container > a:last-child {
+    display: block;
+    margin-top: var(--spacing1);
+}
+
+@media screen and (max-width: 767px) {
+    .container {
+        width: var(--clamp90);
+    }
+}
