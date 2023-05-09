@@ -528,8 +528,8 @@ CREATE TABLE
         `nb_students` INT NOT NULL,
         `success_rate` INT NOT NULL,
         `stage_duration` INT NOT NULL,
-        `sector_id` INT NOT NULL,
-        `degree_id` INT NOT NULL,
+        `sector_id` INT,
+        `degree_id` INT,
         FOREIGN KEY (sector_id) REFERENCES sector(`id`),
         FOREIGN KEY (degree_id) REFERENCES degree(`id`)
     );
