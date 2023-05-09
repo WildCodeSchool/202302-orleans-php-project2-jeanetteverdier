@@ -8,6 +8,13 @@ class ActualityManager extends AbstractManager
 {
     public const TABLE = 'actuality';
 
+    public function selectAllActualities()
+    {
+        $query = "SELECT * FROM " . self::TABLE . " ORDER BY id DESC;";
+        $statement = $this->pdo->query($query);
+        return $statement->fetchAll();
+    }
+
     public function selectLastEvent()
     {
         $query = "SELECT * FROM " . self::TABLE . " ORDER BY id DESC LIMIT 1;";
