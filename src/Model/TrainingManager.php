@@ -58,14 +58,7 @@ class TrainingManager extends AbstractManager
         //     "training_next_training" => array("training_id", "next_training_id")
         // );
 
-        $query = "DELETE t, d, s, n, sk, ts, tnt
-        FROM training t
-        LEFT JOIN degree d ON t.degree_id = d.id
-        LEFT JOIN sector s ON t.sector_id = s.id
-        LEFT JOIN next_training n ON t.id = n.training_id
-        LEFT JOIN skill sk ON t.id = sk.id
-        LEFT JOIN training_skill ts ON t.id = ts.training_id
-        LEFT JOIN training_next_training tnt ON t.id = tnt.training_id
+        $query = "DELETE FROM training t
         WHERE t.id = :id";
 
         $statement = $this->pdo->prepare($query);

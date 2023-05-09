@@ -708,8 +708,8 @@ CREATE TABLE
         `id` INT NOT NULL PRIMARY KEY AUTO_INCREMENT,
         `training_id` INT NOT NULL,
         `skill_id` INT NOT NULL,
-        FOREIGN KEY (training_id) REFERENCES training(`id`),
-        FOREIGN KEY (skill_id) REFERENCES skill(`id`)
+        FOREIGN KEY (training_id) REFERENCES training(`id`) ON DELETE CASCADE,
+        FOREIGN KEY (skill_id) REFERENCES skill(`id`) ON DELETE CASCADE
     );
 
 -- COMPETENCE BAC AGORA
@@ -783,8 +783,8 @@ CREATE TABLE
         `id` INT NOT NULL PRIMARY KEY AUTO_INCREMENT,
         `training_id` INT NOT NULL,
         `next_training_id` INT NOT NULL,
-        FOREIGN KEY (training_id) REFERENCES training(`id`),
-        FOREIGN KEY (next_training_id) REFERENCES next_training(`id`)
+        FOREIGN KEY (training_id) REFERENCES training(`id`) ON DELETE CASCADE,
+        FOREIGN KEY (next_training_id) REFERENCES next_training(`id`) ON DELETE CASCADE
     );
 
 INSERT INTO
