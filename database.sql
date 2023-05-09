@@ -183,6 +183,55 @@ VALUES (
         'AESH-ULIS-prof.',
         'vs4.jpg',
         2
+    ),
+        (
+        'Corinne',
+        'BELLANGER',
+        'Agents techniques',
+        'ae7.jpg',
+        4
+    ),
+    (
+        'Marie-José',
+        'LIMA',
+        'Agents techniques',
+        'ae10.jpg',
+        4
+    ),
+    (
+        'Nathalie',
+        'BERRUET',
+        'Agents techniques',
+        'ae6.jpg',
+        4
+    ),
+    (
+        'Romain',
+        'DEMILLY',
+        'Resp.restauration',
+        'ae9.jpg',
+        4
+    ),
+    (
+        'Frédéric',
+        'THEO',
+        'Resp.maintenance',
+        'ae8.jpg',
+        4
+    ),
+    (
+        'Gaëlle',
+        'HABIJAN',
+        'Agents techniques',
+        'ae2.jpg',
+        4
+    ),
+    (
+        'Valérie',
+        'JULLY',
+        'Agents techniques',
+        'ae1.jpg',
+        4
     );
 
 INSERT INTO `employee` (
@@ -208,48 +257,6 @@ VALUES (
         'PAILLER',
         'Psy-EN',
         3
-    ),
-    (
-        'Corinne',
-        'BELLANGER',
-        'Agents techniques',
-        4
-    ),
-    (
-        'Marie-José',
-        'LIMA',
-        'Agents techniques',
-        4
-    ),
-    (
-        'Nathalie',
-        'BERRUET',
-        'Agents techniques',
-        4
-    ),
-    (
-        'Romain',
-        'DEMILLY',
-        'Resp.restauration',
-        4
-    ),
-    (
-        'Frédéric',
-        'THEO',
-        'Resp.maintenance',
-        4
-    ),
-    (
-        'Gaëlle',
-        'HABIJAN',
-        'Agents techniques',
-        4
-    ),
-    (
-        'Valérie',
-        'JULLY',
-        'Agents techniques',
-        4
     ),
     ('Caroline', 'CABON', 'CDI', 5),
     (
