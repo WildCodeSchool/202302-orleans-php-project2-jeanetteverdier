@@ -8,9 +8,16 @@ class HomeController extends AbstractController
 {
     public function index(): string
     {
-        $actualitytManager = new ActualityManager();
-        $actualities = $actualitytManager->selectLastEvent();
+        $eventManager = new ActualityManager();
+        $events = $eventManager->selectLastEvent();
+        $lastActualities = $eventManager->selectLastActualities();
 
-        return $this->twig->render('Home/index.html.twig', ['actualities' => $actualities]);
+        return $this->twig->render(
+            'Home/index.html.twig',
+            [
+                'events' => $events,
+                'lastActualities' => $lastActualities
+            ]
+        );
     }
 }
