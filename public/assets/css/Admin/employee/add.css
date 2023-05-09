@@ -41,6 +41,17 @@ main button{
     color: var(--primary);
 }
 
+.register{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.register:hover{
+    background-color: var(--secondary);
+    color: var(--light);
+}
+
 @media screen and (max-width: 767px) {
     .container {
         width: var(--clamp90);
