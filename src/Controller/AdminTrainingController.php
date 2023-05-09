@@ -34,9 +34,9 @@ class AdminTrainingController extends AbstractController
         if (empty($training['training_name'])) {
             $errors[] = 'Le titre de la formation est obligatoire';
         }
-        $maxLentght = 255;
-        if (mb_strlen($training['training_name']) > $maxLentght) {
-            $errors[] = 'Le titre de la formation doit faire moin de ' . $maxLentght;
+        $maxLength = 255;
+        if (mb_strlen($training['training_name']) > $maxLength) {
+            $errors[] = 'Le titre de la formation doit faire moin de ' . $maxLength;
         }
         if (empty($training['nb_students'])) {
             $errors[] = 'Le nombre d\'étudiant est obligatoire';
