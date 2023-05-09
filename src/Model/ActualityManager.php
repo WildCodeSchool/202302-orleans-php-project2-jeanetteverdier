@@ -4,7 +4,7 @@ namespace App\Model;
 
 use PDO;
 
-class EventManager extends AbstractManager
+class ActualityManager extends AbstractManager
 {
     public const TABLE = 'actuality';
 

@@ -2,13 +2,13 @@
 
 namespace App\Controller;
 
-use App\Model\EventManager;
+use App\Model\ActualityManager;
 
 class HomeController extends AbstractController
 {
     public function index(): string
     {
-        $eventManager = new EventManager();
+        $eventManager = new ActualityManager();
         $events = $eventManager->selectLastEvent();
         $lastActualities = $eventManager->selectLastActualities();
 
