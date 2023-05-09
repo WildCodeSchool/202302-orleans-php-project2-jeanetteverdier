@@ -105,10 +105,10 @@ class AdminEmployeeController extends AbstractController
         $maxLength = 255;
 
         if (mb_strlen($employee['firstname']) > $maxLength) {
-            $errors['firstnameLength'] = "Le prénom ne doit pas faire plus de " . $maxLength . " caractère.";
+            $errors['firstnameLength'] = "Le prénom ne doit pas faire plus de " . $maxLength . " caractères.";
         }
         if (mb_strlen($employee['lastname']) > $maxLength) {
-            $errors['lastnameLength'] = "Le nom ne doit pas faire plus de " . $maxLength . " caractère.";
+            $errors['lastnameLength'] = "Le nom ne doit pas faire plus de " . $maxLength . " caractères.";
         }
 
         $departementsId = array_column($departements, 'id');
