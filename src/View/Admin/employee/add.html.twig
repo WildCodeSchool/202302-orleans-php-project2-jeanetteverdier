@@ -32,6 +32,9 @@
 						{% if errors.lastname is not empty %}
 							{{ errors.lastname }}
 						{% endif %}
+						{% if errors.lastnameLength is not empty %}
+							{{ errors.lastnameLength }}
+						{% endif %}
 					</div>
 				</div>
 				<div>
@@ -40,6 +43,9 @@
 					<div class="error">
 						{% if errors.firstname is not empty %}
 							{{ errors.firstname }}
+						{% endif %}
+						{% if errors.firstnameLength is not empty %}
+							{{ errors.firstnameLength }}
 						{% endif %}
 					</div>
 				</div>
