@@ -44,8 +44,8 @@
 					<ul role="listbox">
 						{% for sector in sectors %}
 							<li>
-								<label>
-									<input type="checkbox">
+								<label for="sector_name">
+									<input type="radio" id="degree" name="sector_name">
 									{{ sector.name }}
 								</label>
 							</li>
