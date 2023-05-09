@@ -24,4 +24,5 @@ return [
     'admin/notre-equipe/ajouter' => ['AdminEmployeeController', 'add',],
     'admin/notre-equipe/modifier' => ['AdminEmployeeController', 'edit', ['id']],
     'admin/formations' => ['AdminTrainingController', 'index'],
+    'admin/formations/supprimer' => ['AdminTrainingController', 'delete', ['id']],
 ];

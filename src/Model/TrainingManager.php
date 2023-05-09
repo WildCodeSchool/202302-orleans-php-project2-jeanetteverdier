@@ -44,4 +44,14 @@ class TrainingManager extends AbstractManager
 
         return $statement->fetch();
     }
+
+    public function deleteTraining(int $id): void
+    {
+        $query = "DELETE FROM training t
+        WHERE t.id = :id";
+
+        $statement = $this->pdo->prepare($query);
+        $statement->bindValue('id', $id, \PDO::PARAM_INT);
+        $statement->execute();
+    }
 }
