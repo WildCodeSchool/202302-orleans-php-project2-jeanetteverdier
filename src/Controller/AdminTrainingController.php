@@ -95,5 +95,16 @@ class AdminTrainingController extends AbstractController
                 'sectors' => $sectors,
             ]
         );
+
+
+    public function delete(int $id): void
+    {
+        if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+            $trainingManager = new TrainingManager();
+
+            $trainingManager->delete($id);
+
+            header('Location:/admin/formations');
+        }
     }
 }
