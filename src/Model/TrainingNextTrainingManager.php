@@ -24,4 +24,20 @@ class TrainingNextTrainingManager extends AbstractManager
 
         return $statement->fetchAll();
     }
+
+    public function selectAdminAllNextTraining(): array
+    {
+        $query = "SELECT
+        t.name training_name,
+        nt.name AS next_training_name,
+        nt.degree,
+        nt.duration
+        FROM " . self::TABLE . " tst
+        JOIN " . NextTrainingManager::TABLE . " nt ON nt.id = tst.next_training_id
+        JOIN " . TrainingManager::TABLE . " t ON t.id = tst.next_training_id";
+
+        $statement = $this->pdo->query($query);
+
+        return $statement->fetchAll();
+    }
 }
