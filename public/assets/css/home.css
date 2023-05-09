@@ -57,11 +57,100 @@ article {
     margin-left: var(--spacing1);
 }
 
+/***** ACTUALITÉS *****/
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: var(--spacing1);
+}
+
+
+
+.actu-image>img {
+    height: 231px;
+    
+}
+
+.second-title{
+    margin: var(--spacing);
+}
+
+.grid .picto-program {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--secondary);
+    min-height: 70px;
+    min-width: 70px;
+}
+
+.grid .picto-program img {
+    width: 70%;
+}
+
+.grid .card {
+    background-color: var(--primary);
+}
+
+.card header {
+    display: flex;
+    align-self: flex-start;
+}
+
+.title-dernieresactus {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    max-height: 100px;
+}
+
+.title-dernieresactus h4 {
+    --typography-spacing-vertical: 0;
+    padding: 3px var(--spacing1);
+    color: var(--light);
+    font-size: var(--sizeText);
+    text-align: start;
+    overflow: auto;
+}
+
+.orange-rectangle {
+    width: 100px;
+    background-color: var(--secondary);
+    height: 5px;
+}
+
+.actu-content{
+    height: 50%;
+}
+
+.actu-content p {
+    padding: var(--spacing1);
+    margin: 0;
+    color: var(--light);
+    font-size: .7rem;
+}
+
+.actu-content [role="button"] {
+    margin: var(--spacing);
+    margin-left: var(--spacing2);
+}
+
 @media screen and (max-width: 767px) {
-    header.container.event {
-        align-items: start;
+    .container {
+        width: var(--clamp90);
     }
 
+    .blue-rectangle {
+        width: 3px;
+    }
+
+    header.container.event {
+        align-items: flex-start;
+    }
+}
+
+@media screen and (max-width: 767px) {
     .event-text {
         height: 85px;
     }
@@ -78,7 +167,7 @@ article {
         height: 80vw;
     }
 
-    header > article {
+    header>article {
         position: relative;
         width: 100%;
     }

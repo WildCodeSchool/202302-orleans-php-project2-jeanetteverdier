@@ -108,10 +108,6 @@ details[role="list"] summary:not([role]), input, textarea {
     height: auto;
 }
 
-fieldset:nth-child(2) > .form-box:nth-child(2) input, textarea {
-    margin-bottom: var(--spacing1);
-}
-
 label {
     color: black;
     margin-bottom: var(--spacing);
@@ -139,7 +135,6 @@ label {
     overflow: auto;
     margin-bottom: var(--spacing1);
 }
-
 
 .form-box label:nth-child(9) {
     margin-top: var(--spacing2);

@@ -183,6 +183,55 @@ VALUES (
         'AESH-ULIS-prof.',
         'vs4.jpg',
         2
+    ),
+        (
+        'Corinne',
+        'BELLANGER',
+        'Agents techniques',
+        'ae7.jpg',
+        4
+    ),
+    (
+        'Marie-José',
+        'LIMA',
+        'Agents techniques',
+        'ae10.jpg',
+        4
+    ),
+    (
+        'Nathalie',
+        'BERRUET',
+        'Agents techniques',
+        'ae6.jpg',
+        4
+    ),
+    (
+        'Romain',
+        'DEMILLY',
+        'Resp.restauration',
+        'ae9.jpg',
+        4
+    ),
+    (
+        'Frédéric',
+        'THEO',
+        'Resp.maintenance',
+        'ae8.jpg',
+        4
+    ),
+    (
+        'Gaëlle',
+        'HABIJAN',
+        'Agents techniques',
+        'ae2.jpg',
+        4
+    ),
+    (
+        'Valérie',
+        'JULLY',
+        'Agents techniques',
+        'ae1.jpg',
+        4
     );
 
 INSERT INTO `employee` (
@@ -208,48 +257,6 @@ VALUES (
         'PAILLER',
         'Psy-EN',
         3
-    ),
-    (
-        'Corinne',
-        'BELLANGER',
-        'Agents techniques',
-        4
-    ),
-    (
-        'Marie-José',
-        'LIMA',
-        'Agents techniques',
-        4
-    ),
-    (
-        'Nathalie',
-        'BERRUET',
-        'Agents techniques',
-        4
-    ),
-    (
-        'Romain',
-        'DEMILLY',
-        'Resp.restauration',
-        4
-    ),
-    (
-        'Frédéric',
-        'THEO',
-        'Resp.maintenance',
-        4
-    ),
-    (
-        'Gaëlle',
-        'HABIJAN',
-        'Agents techniques',
-        4
-    ),
-    (
-        'Valérie',
-        'JULLY',
-        'Agents techniques',
-        4
     ),
     ('Caroline', 'CABON', 'CDI', 5),
     (
@@ -1015,11 +1022,29 @@ Nos élèves de CAP couture auront le plaisir de vous présenter leur créations
         "La charité avant tout !",
         "Chaque 2 ans, c'est de bon coeur que nos élèves du lycée se dévouent afin de réunir un maximum de fournitures scolaires qui seront ensuite distribuer à la WildCodeSchool du Soudan du Sud. "
     );
+
+
+INSERT INTO 
+`actuality` (title, content)
+VALUES ("C'est la rentrée !", "Retrouvez toutes les informations concernant la rentrée des classes et de l'internat prévue le 3 Septembre 2023"),
+("Journée Porte ouverte", "Le samedi 10 mai 2023, le lycée vous ouvre ses portes de 9h à 17h !
+Un accueil central, situé à l'entrée de l'établissement, vous permettra de découvrir les formations et services dédiés à la vie étudiante."), 
+("Calendrier des sorties scolaires", "Retrouvez toutes les informations concernant les sorties scolaires organisées pour chaque chaque classes. "),
+("L'internat", "Dans cette rubrique retrouvez toutes les informations concernant l'internat."),
+("Forum des métiers et de l'orientation !", "Le 24 mai, de 10h à 11h30, dans l'amphithéâtre, sera organisé un forum pour en savoir plus et s'informer sur les métiers, les formations et les secteurs d'activité de sa région."),
+("Cap à ANVERS !", "Le 14 juin, à 9h00, nos élèves de BAC pro Organisation de transport de marchandises font cap sur la Belgique afin de visiter le deuxième plus grand port d'Europe: le port d'Anvers."),
+("La charité avant tout !", "Chaque 2 ans, c'est de bon coeur que nos élèves du lycée se dévouent afin de réunir un maximum de fournitures scolaires qui seront ensuite distribuer à la WildCodeSchool du Soudan du Sud. "),
+("Meeting entreprise !", "Le  29 mai, de 10h à 11h30, aura lieu dans l'amphithéâtre, une conférence qui portera sur “l'avenir du travail”. Nous auront la chance de recevoir Mr MIZELE Loïc, un jeune entrepreneur Franco-Américain. "),
+("La couture en folie !", "Le 26 mai, de 14h à 15h, le Méga concours de couture fait son retour.
+Nos élèves de CAP couture auront le plaisir de vous présenter leur créations, à travers un défilé administré par nos jurys Mme BALUSSAUD Stéphanie et Mme BRETEAU Aurore."),
+("Verdier cup !", "Dans ce tournoi, prévu du juin au juin, chaque équipe devra s'affronter afin de remporter l'ultime coupe “Verdier”. Les vainqueurs auront le privilège d'aller assister à la finale de la coupe de France.");
+
+
 UPDATE actuality
-SET image = "rentree-classe.webp"
+SET image = "rentrée.webp"
 WHERE id = 1;
 UPDATE actuality
-SET image = "Portes-ouverte.webp"
+SET image = "jportes-ouverte.webp"
 WHERE id = 2;
 UPDATE actuality
 SET image = "calendrier.webp"
@@ -1028,20 +1053,27 @@ UPDATE actuality
 SET image = "internat.webp"
 WHERE id = 4;
 UPDATE actuality
-SET image = "meeting.webp"
+SET image = "Forum-metiers.webp"
 WHERE id = 5;
 UPDATE actuality
-SET image = "Forum-metiers.webp"
+SET image = "anverss.webp"
 WHERE id = 6;
 UPDATE actuality
-SET image = "concours-couture.webp"
+SET image = "charité.webp"
 WHERE id = 7;
 UPDATE actuality
+
+SET image = "meeting.webp"
 SET image = "cap-anvers.webp"
+
 WHERE id = 8;
 UPDATE actuality
-SET image = "verdier-cup.webp"
+SET image = "concours-couture.webp"
 WHERE id = 9;
 UPDATE actuality
+
+SET image = "jverdier-cup.webp"
+WHERE id = 10;
+=======
 SET image = "charité.webp"
 WHERE id = 10;

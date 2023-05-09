@@ -27,25 +27,31 @@
 			<form method="post" class="form" enctype="multipart/form-data">
 				<div>
 					<label for="lastname">Nom</label>
-					<input type="text" name="lastname" id="lastname" value="{{ employee.lastname }}"/>
+					<input type="text" name="lastname" id="lastname" required value="{{ employee.lastname }}"/>
 					<div class="error">
 						{% if errors.lastname is not empty %}
 							{{ errors.lastname }}
+						{% endif %}
+						{% if errors.lastnameLength is not empty %}
+							{{ errors.lastnameLength }}
 						{% endif %}
 					</div>
 				</div>
 				<div>
 					<label for="firstname">Prénom</label>
-					<input type="text" name="firstname" id="firstname" value="{{ employee.firstname }}"/>
+					<input type="text" name="firstname" id="firstname" required value="{{ employee.firstname }}"/>
 					<div class="error">
 						{% if errors.firstname is not empty %}
 							{{ errors.firstname }}
+						{% endif %}
+						{% if errors.firstnameLength is not empty %}
+							{{ errors.firstnameLength }}
 						{% endif %}
 					</div>
 				</div>
 				<div>
 					<label for="post">Poste</label>
-					<input type="text" name="post" id="post" value="{{ employee.post }}"/>
+					<input type="text" name="post" id="post" required value="{{ employee.post }}"/>
 					<div class="error">
 						{% if errors.post is not empty %}
 							{{ errors.post }}
@@ -74,7 +80,7 @@
 						{% endfor %}
 					</div>
 				</div>
-				<button>Enregistrer</button>
+				<button class="register">Enregistrer</button>
 			</form>
 		</div>
 		<div class="return">
