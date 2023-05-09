@@ -95,6 +95,7 @@ class AdminTrainingController extends AbstractController
                 'sectors' => $sectors,
             ]
         );
+    }
 
 
     public function delete(int $id): void
