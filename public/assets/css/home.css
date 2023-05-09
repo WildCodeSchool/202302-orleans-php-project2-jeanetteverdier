@@ -90,7 +90,6 @@ article {
 }
 
 .grid .card {
-    /* width: clamp(320px, 90vw, 450px); */
     background-color: var(--primary);
 }
 
@@ -134,7 +133,6 @@ article {
 
 .actu-content [role="button"] {
     margin: var(--spacing);
-    /* padding: var(--spacing2); */
     margin-left: var(--spacing2);
 }
 
