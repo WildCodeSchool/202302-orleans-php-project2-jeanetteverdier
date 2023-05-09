@@ -52,6 +52,10 @@ main button{
     color: var(--light);
 }
 
+.file{
+    color: var(--light);
+}
+
 @media screen and (max-width: 767px) {
     .container {
         width: var(--clamp90);
