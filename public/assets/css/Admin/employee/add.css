@@ -21,7 +21,8 @@ main input{
 }
 
 main .error{
-    color:var(--errorColor)
+    color:var(--errorColor);
+    margin-bottom: var(--spacing1);
 }
 
 main select{
@@ -49,6 +50,10 @@ main button{
 
 .register:hover{
     background-color: var(--secondary);
+    color: var(--light);
+}
+
+.file{
     color: var(--light);
 }
 

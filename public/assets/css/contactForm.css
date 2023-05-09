@@ -10,6 +10,7 @@
 
 .error {
     color: var(--errorColor);
+    margin-bottom: var(--spacing1);
 }
 
 .form {
