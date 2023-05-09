@@ -47,17 +47,6 @@ class TrainingManager extends AbstractManager
 
     public function deleteTraining(int $id): void
     {
-        // $tables = array(
-        //     'training', 'degree', 'sector', 'next_training', 'skill',
-        //     'training_skill', 'training_next_training'
-        // );
-
-        // $foreignKeys = array(
-        //     "training" => array("degree_id", "sector_id"),
-        //     "training_skill" => array("training_id"),
-        //     "training_next_training" => array("training_id", "next_training_id")
-        // );
-
         $query = "DELETE FROM training t
         WHERE t.id = :id";
 
