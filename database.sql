@@ -134,39 +134,60 @@ INSERT INTO
         `firstname`,
         `lastname`,
         `post`,
+        `picture`,
         `work_departement_id`
     )
 VALUES (
         'Matthias',
         'CYPRIEN',
         'PROVISEUR',
+        'direction4.webp',
         1
     ), (
         'Oliver',
         'DREYFUS',
         'Proviseur-adjoint',
+        'direction3.webp',
         1
     ), (
         'Miréla',
         'DENYS',
         'Adjointe-gestionnaire',
+        'direction2.webp',
         1
     ), (
         'Chrystèle',
         'ADAM',
         'D.D.F.P.T.',
+        'direction6.webp',
         1
     ), (
         'Bochra',
         'MOUJIB',
         'Assistante de direction',
+        'direction5.webp',
         1
     ), (
         'Anyssa',
         'DJERA',
         'Secrétaire de gestion',
+        'direction1.webp',
         1
-    ), ('Laurent', 'DENIS', 'CPE', 2), (
+    ); 
+
+INSERT INTO
+    `employee` (
+        `firstname`,
+        `lastname`,
+        `post`,
+        `work_departement_id`
+    )
+VALUES (
+    'Laurent',
+    'DENIS',
+    'CPE', 
+    2
+    ), (
         'Alexandrine',
         'BEAUVAIS',
         'CPE',
