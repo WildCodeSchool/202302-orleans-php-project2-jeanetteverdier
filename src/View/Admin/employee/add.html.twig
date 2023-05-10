@@ -5,7 +5,12 @@
 	{{ parent() }}
 {% endblock %}
 
-{% block stylesheet %}<link rel="stylesheet" href="/assets/css/Admin/employee/add.css">
+{% block navbar %}
+	{% include 'Components/_admin-navbar.html.twig' %}
+{% endblock %}
+
+{% block stylesheet %}
+	<link rel="stylesheet" href="/assets/css/Admin/employee/add.css">
 {% endblock %}
 
 {% block content %}

@@ -1,0 +1,62 @@
+{% extends 'layout.html.twig' %}
+
+{% block stylesheet %}
+	<link rel="stylesheet" href="/assets/css/index-training.css">
+{% endblock %}
+
+{% block title %}Admin -
+	{{ parent() }}
+{% endblock %}
+
+{% block navbar %}
+	{% include 'Components/_admin-navbar.html.twig' %}
+{% endblock %}
+
+{% block content %}
+	<main class="container">
+
+		<div class="background-line"></div>
+
+		<section class="training">
+			<div class="main-title">
+				<div class="title-content">
+					<div class="bloc-square"></div>
+					<h3>
+						<span>Bienvenue</span><br/>sur la page Admin
+					</h3>
+				</div>
+			</div>
+		</section>
+
+		<article class="training-card p-1">
+			<div class="training-content">
+				<div class="blue-rectangle"></div>
+				<h4>
+					Notre équipe
+				</h4>
+				<div class="orange-rectangle"></div>
+				<p>Administrer l'équipe</p>
+				<a href="/admin/notre-equipe" role="button">Cliquez ici</a>
+			</div>
+			<div class="training-image">
+				<img src="/assets/images/teams.webp" alt="Photo de la formation"/>
+			</div>
+		</article>
+
+		<article class="training-card p-1">
+			<div class="training-content">
+				<div class="blue-rectangle"></div>
+				<h4>
+					Nos formations
+				</h4>
+				<div class="orange-rectangle"></div>
+				<p>Administrer les formations</p>
+				<a href="/admin/formations" role="button">Cliquez ici</a>
+			</div>
+			<div class="training-image">
+				<img src="/assets/images/trainings-admin.webp" alt="Photo de la formation"/>
+			</div>
+		</article>
+
+	</main>
+{% endblock %}
