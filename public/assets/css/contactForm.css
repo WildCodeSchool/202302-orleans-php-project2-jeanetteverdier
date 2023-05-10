@@ -36,7 +36,7 @@ input, select {
 
 .formPage {
     display: flex;
-    justify-content: space-around;
+    justify-content: space-between;
     background-color: var(--primary);
     color: var(--light);
     padding: var(--spacing3);
@@ -57,13 +57,7 @@ input, select {
     align-self: center;
     justify-self: center;
     margin-right: var(--spacing2);
-}
-
-.logoContact > svg {
-    height: clamp(100px, 20vw, 170px);
-    width: clamp(100px, 20vw, 170px);
-    fill: var(--light);
-
+    width: clamp(215px, 25vw, 500px);
 }
 
 textarea {
@@ -84,7 +78,12 @@ form button {
     .formPage {
         flex-direction: column;
         padding: var(--spacing3);
+    }
 
+    .logoContact {
+        align-self: center;
+        justify-self: center;
+        margin-right: var(--spacing2);
     }
 
     .nameFlex {
