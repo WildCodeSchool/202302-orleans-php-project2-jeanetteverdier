@@ -140,7 +140,47 @@ article {
     margin: var(--spacing) 15px var(--spacing1) 15px;
 }
 
+/***** FORMATIONS *****/
+
+.second-title{
+    padding-top: var(--spacing5);
+}
+
+.nos-formations>h2>span{
+    font-family: var(--fontTitle);
+    font-size: var(--sizeTitle);
+    color: var(--secondary);
+    font-weight: 500;
+}
+.nos-formations{
+    height: 30vw;
+    background-image: url(/assets/images/section-training.webp);
+    background-size: cover;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.nos-formations>h2 {
+    font-family: var(--fontTitle);
+    align-items: center;
+    border: 2px solid var(--light);
+    font-weight: 400;
+    font-size: 1.2rem;
+    color: var(--light);
+    padding: var(--spacing2) clamp(10px, 10vw, 100px);
+    margin-bottom: var(--spacing1);
+}
+[role="button"]{
+    margin: var(--spacing);
+}
+
 @media screen and (max-width: 767px) {
+    main .container{
+        width: var(--clamp90);
+    }
+    
     .container {
         width: var(--clamp90);
     }
