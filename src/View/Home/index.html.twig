@@ -23,50 +23,6 @@
 </header>
 
 <main class="container">
-    <section>
-    {# TITRE DERNIERS ACTUS #}
-        <div class="second-title">
-          <div class="bloc-rectangle"></div>
-          <h4>Les dernières actus</h4>
-        </div>
-    {# CARDS #}
-        <div class="grid">
-        {# CARDS 1 #}
-        {% for lastActuality in lastActualities %}
-          <div class="card">
-            <div class="actu-image">
-                <img src="/uploads/actuality/{{lastActuality.image}}"></img>
-            </div>
-            <header>
-              <div class="picto-program">
-                <img src="/assets/images/picto-success.svg" alt="Pictogramme actualités"/>
-              </div>
-              <div class="title-dernieresactus">
-                <h4>{{ lastActuality.title }}</h4>
-                <div class="orange-rectangle"></div>
-              </div>
-            </header>
-            <div class="actu-content">
-              <p>{{ lastActuality.content }}</p>
-              <a href="#" role="button">Découvrir</a>
-            </div>
-          </div>
-          {% endfor %}
-        </div>
-      </section>
-      <section>
-      <div class="second-title">
-        <div class="bloc-rectangle"></div>
-        <h4>Découvrez nos Formations</h4>
-      </div>
-      <div class="nos-formations">
-        <h2>NOS<br> <span>FORMATIONS</span><br> DU <span>CAP</span> AU <span>BAC PRO</span></h2>
-        <a href="/formations" role="button">Découvrir</a>
-      </div>
-      </section>
-</main>
-
-{% endblock %}
 	<section>
 		{# TITRE DERNIERS ACTUS #}
 		<div class="second-title">
@@ -97,6 +53,22 @@
 					</div>
 				</div>
 			{% endfor %}
+		</div>
+	</section>
+	<section>
+		<div class="second-title">
+			<div class="bloc-rectangle"></div>
+			<h4>Découvrez nos Formations</h4>
+		</div>
+		<div class="nos-formations">
+			<h2>NOS<br>
+				<span>FORMATIONS</span><br>
+				DU
+				<span>CAP</span>
+				AU
+				<span>BAC PRO</span>
+			</h2>
+			<a href="/formations" role="button">Découvrir</a>
 		</div>
 	</section>
 </main>{% endblock %}
