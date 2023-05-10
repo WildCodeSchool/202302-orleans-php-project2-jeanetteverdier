@@ -153,9 +153,10 @@ article {
     font-weight: 500;
 }
 .nos-formations{
-    height: 30vw;
+    height: 400px;
     background-image: url(/assets/images/section-training.webp);
     background-size: cover;
+    background-position: center;
     display: flex;
     align-items: center;
     justify-content: center;
