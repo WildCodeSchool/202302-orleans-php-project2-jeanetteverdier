@@ -36,7 +36,7 @@
 			{% for lastActuality in lastActualities %}
 				<div class="card">
 					<div class="actu-image">
-						<img src="{{ training.image ? '/uploads/actuality/' ~ lastActuality.image : 'assets/images/default_placeholder.jpg'}}" alt="Photo actualité"/>
+						<img src="{{ lastActuality.image ? '/uploads/' ~ lastActuality.image : 'assets/images/default_placeholder.jpg'}}" alt="Photo actualité"/>
 					</div>
 					<header>
 						<div class="picto-program">

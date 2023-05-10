@@ -93,7 +93,6 @@ VALUES ('Direction'),
     ('Agents techniques'),
     ('Coordinations Dispositifs'),
     ('Personnels enseignants');
-
 INSERT INTO `employee` (
         `firstname`,
         `lastname`,
@@ -953,123 +952,56 @@ CREATE TABLE `actuality`(
     `content` TEXT,
     `image` VARCHAR(255)
 );
-INSERT INTO `actuality` (title, content)
+INSERT INTO `actuality` (title, content, image)
 VALUES (
         "C'est la rentrée !",
-        "Retrouvez toutes les informations concernant la rentrée des classes et de l'internat prévue le 3 Septembre 2023"
+        "Retrouvez toutes les informations concernant la rentrée des classes et de l'internat prévue le 3 Septembre 2023",
+        "rentrée.webp"
     ),
     (
         "Journée Porte ouverte",
         "Le samedi 10 mai 2023, le lycée vous ouvre ses portes de 9h à 17h !
-Un accueil central, situé à l'entrée de l'établissement, vous permettra de découvrir les formations et services dédiés à la vie étudiante."
+Un accueil central, situé à l'entrée de l'établissement, vous permettra de découvrir les formations et services dédiés à la vie étudiante.",
+        "jportes-ouverte.webp"
     ),
     (
         "Calendrier des sorties scolaires",
-        "Retrouvez toutes les informations concernant les sorties scolaires organisées pour chaque chaque classes. "
+        "Retrouvez toutes les informations concernant les sorties scolaires organisées pour chaque chaque classes. ",
+        "calendrier.webp"
     ),
     (
         "L'internat",
-        "Dans cette rubrique retrouvez toutes les informations concernant l'internat."
+        "Dans cette rubrique retrouvez toutes les informations concernant l'internat.",
+        "internat.webp"
     ),
     (
         "Meeting entreprise !",
-        "Le  29 mai, de 10h à 11h30, aura lieu dans l'amphithéâtre, une conférence qui portera sur “l'avenir du travail”. Nous auront la chance de recevoir Mr MIZELE Loïc, un jeune entrepreneur Franco-Américain. "
+        "Le  29 mai, de 10h à 11h30, aura lieu dans l'amphithéâtre, une conférence qui portera sur “l'avenir du travail”. Nous auront la chance de recevoir Mr MIZELE Loïc, un jeune entrepreneur Franco-Américain. ",
+        "meeting.webp"
     ),
     (
         "Forum des métiers et de l'orientation !",
-        "Le 24 mai, de 10h à 11h30, dans l'amphithéâtre, sera organisé un forum pour en savoir plus et s'informer sur les métiers, les formations et les secteurs d'activité de sa région."
+        "Le 24 mai, de 10h à 11h30, dans l'amphithéâtre, sera organisé un forum pour en savoir plus et s'informer sur les métiers, les formations et les secteurs d'activité de sa région.",
+        "Forum-metiers.webp"
     ),
     (
         "La couture en folie !",
         "Le 26 mai, de 14h à 15h, le Méga concours de couture fait son retour.
-Nos élèves de CAP couture auront le plaisir de vous présenter leur créations, à travers un défilé administré par nos jurys Mme BALUSSAUD Stéphanie et Mme BRETEAU Aurore."
+Nos élèves de CAP couture auront le plaisir de vous présenter leur créations, à travers un défilé administré par nos jurys Mme BALUSSAUD Stéphanie et Mme BRETEAU Aurore.",
+        "concours-couture.webp"
     ),
     (
         "Cap à ANVERS !",
-        "Le 14 juin, à 9h00, nos élèves de BAC pro Organisation de transport de marchandises font cap sur la Belgique afin de visiter le deuxième plus grand port d'Europe: le port d'Anvers."
+        "Le 14 juin, à 9h00, nos élèves de BAC pro Organisation de transport de marchandises font cap sur la Belgique afin de visiter le deuxième plus grand port d'Europe: le port d'Anvers.",
+        "anverss.webp"
     ),
     (
         "Verdier cup !",
-        "Dans ce tournoi, prévu du juin au juin, chaque équipe devra s'affronter afin de remporter l'ultime coupe “Verdier”. Les vainqueurs auront le privilège d'aller assister à la finale de la coupe de France."
+        "Dans ce tournoi, prévu du juin au juin, chaque équipe devra s'affronter afin de remporter l'ultime coupe “Verdier”. Les vainqueurs auront le privilège d'aller assister à la finale de la coupe de France.",
+        "jverdier-cup.webp"
     ),
     (
         "La charité avant tout !",
-        "Chaque 2 ans, c'est de bon coeur que nos élèves du lycée se dévouent afin de réunir un maximum de fournitures scolaires qui seront ensuite distribuer à la WildCodeSchool du Soudan du Sud. "
+        "Chaque 2 ans, c'est de bon coeur que nos élèves du lycée se dévouent afin de réunir un maximum de fournitures scolaires qui seront ensuite distribuer à la WildCodeSchool du Soudan du Sud. ",
+        "charite.webp"
     );
-INSERT INTO `actuality` (title, content)
-VALUES (
-        "C'est la rentrée !",
-        "Retrouvez toutes les informations concernant la rentrée des classes et de l'internat prévue le 3 Septembre 2023"
-    ),
-    (
-        "Journée Porte ouverte",
-        "Le samedi 10 mai 2023, le lycée vous ouvre ses portes de 9h à 17h !
-Un accueil central, situé à l'entrée de l'établissement, vous permettra de découvrir les formations et services dédiés à la vie étudiante."
-    ),
-    (
-        "Calendrier des sorties scolaires",
-        "Retrouvez toutes les informations concernant les sorties scolaires organisées pour chaque chaque classes. "
-    ),
-    (
-        "L'internat",
-        "Dans cette rubrique retrouvez toutes les informations concernant l'internat."
-    ),
-    (
-        "Forum des métiers et de l'orientation !",
-        "Le 24 mai, de 10h à 11h30, dans l'amphithéâtre, sera organisé un forum pour en savoir plus et s'informer sur les métiers, les formations et les secteurs d'activité de sa région."
-    ),
-    (
-        "Cap à ANVERS !",
-        "Le 14 juin, à 9h00, nos élèves de BAC pro Organisation de transport de marchandises font cap sur la Belgique afin de visiter le deuxième plus grand port d'Europe: le port d'Anvers."
-    ),
-    (
-        "La charité avant tout !",
-        "Chaque 2 ans, c'est de bon coeur que nos élèves du lycée se dévouent afin de réunir un maximum de fournitures scolaires qui seront ensuite distribuer à la WildCodeSchool du Soudan du Sud. "
-    ),
-    (
-        "Meeting entreprise !",
-        "Le  29 mai, de 10h à 11h30, aura lieu dans l'amphithéâtre, une conférence qui portera sur “l'avenir du travail”. Nous auront la chance de recevoir Mr MIZELE Loïc, un jeune entrepreneur Franco-Américain. "
-    ),
-    (
-        "La couture en folie !",
-        "Le 26 mai, de 14h à 15h, le Méga concours de couture fait son retour.
-Nos élèves de CAP couture auront le plaisir de vous présenter leur créations, à travers un défilé administré par nos jurys Mme BALUSSAUD Stéphanie et Mme BRETEAU Aurore."
-    ),
-    (
-        "Verdier cup !",
-        "Dans ce tournoi, prévu du juin au juin, chaque équipe devra s'affronter afin de remporter l'ultime coupe “Verdier”. Les vainqueurs auront le privilège d'aller assister à la finale de la coupe de France."
-    );
-UPDATE actuality
-SET image = "rentrée.webp"
-WHERE id = 1;
-UPDATE actuality
-SET image = "jportes-ouverte.webp"
-WHERE id = 2;
-UPDATE actuality
-SET image = "calendrier.webp"
-WHERE id = 3;
-UPDATE actuality
-SET image = "internat.webp"
-WHERE id = 4;
-UPDATE actuality
-SET image = "Forum-metiers.webp"
-WHERE id = 5;
-UPDATE actuality
-SET image = "anverss.webp"
-WHERE id = 6;
-UPDATE actuality
-SET image = "charité.webp"
-WHERE id = 7;
-UPDATE actuality
-SET image = "meeting.webp"
-SET image = "cap-anvers.webp"
-WHERE id = 8;
-UPDATE actuality
-SET image = "concours-couture.webp"
-WHERE id = 9;
-UPDATE actuality
-SET image = "jverdier-cup.webp"
-WHERE id = 10;
-== == == =
-SET image = "charité.webp"
-WHERE id = 10;
