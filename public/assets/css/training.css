@@ -148,6 +148,7 @@ ul li p {
     padding: 3px var(--spacing1);
     text-align: start;
     overflow: auto;
+    scrollbar-width: none;
 }
 
 .orange-rectangle {
@@ -179,6 +180,8 @@ ul li p {
     width: 80%;
     margin: auto;
     overflow: auto;
+    scrollbar-width: thin;
+    scrollbar-color: var(--primary-light) var(--primary);
 }
 
 .training-content [role="button"] {

@@ -32,9 +32,9 @@ class AdminEmployeeController extends AbstractController
 
             if (
                 isset($employee['picture']) &&
-                file_exists(__DIR__ . '/../../public/uploads/employee/' . $employee['picture'])
+                file_exists(__DIR__ . '/../../public/uploads/' . $employee['picture'])
             ) {
-                unlink(__DIR__ . '/../../public/uploads/employee/' . $employee['picture']);
+                unlink(__DIR__ . '/../../public/uploads/' . $employee['picture']);
             }
             $employeeManager->delete((int)$id);
 
@@ -67,7 +67,7 @@ class AdminEmployeeController extends AbstractController
 
                 move_uploaded_file(
                     $_FILES['picture']['tmp_name'],
-                    __DIR__ . '/../../public/uploads/employee/' . $imageName
+                    __DIR__ . '/../../public/uploads/' . $imageName
                 );
 
 
@@ -148,9 +148,9 @@ class AdminEmployeeController extends AbstractController
                 $employe = $employeeManager->selectOneById($id);
                 if (
                     isset($employe['picture']) &&
-                    file_exists(__DIR__ . '/../../public/uploads/employee/' . $employe['picture'])
+                    file_exists(__DIR__ . '/../../public/uploads/' . $employe['picture'])
                 ) {
-                    unlink(__DIR__ . '/../../public/uploads/employee/' . $employe['picture']);
+                    unlink(__DIR__ . '/../../public/uploads/' . $employe['picture']);
                 }
 
                 $extension = pathinfo($_FILES['picture']['name'], PATHINFO_EXTENSION);
@@ -164,7 +164,7 @@ class AdminEmployeeController extends AbstractController
 
                 move_uploaded_file(
                     $_FILES['picture']['tmp_name'],
-                    __DIR__ . '/../../public/uploads/employee/' . $imageName
+                    __DIR__ . '/../../public/uploads/' . $imageName
                 );
 
                 header('Location: /admin/notre-equipe');

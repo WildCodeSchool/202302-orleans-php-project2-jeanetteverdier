@@ -34,7 +34,7 @@ class TrainingNextTrainingManager extends AbstractManager
         nt.duration
         FROM " . self::TABLE . " tst
         JOIN " . NextTrainingManager::TABLE . " nt ON nt.id = tst.next_training_id
-        JOIN " . TrainingManager::TABLE . " t ON t.id = tst.next_training_id";
+        JOIN " . TrainingManager::TABLE . " t ON t.id = tst.training_id";
 
         $statement = $this->pdo->query($query);
 
