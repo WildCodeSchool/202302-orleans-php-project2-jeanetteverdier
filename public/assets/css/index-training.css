@@ -114,6 +114,10 @@
     flex-direction: row-reverse;
 }
 
+.p-1 {
+    margin-bottom: var(--spacing1);
+}
+
 @media screen and (max-width: 767px) {
     main.container {
         width: var(--clamp90);

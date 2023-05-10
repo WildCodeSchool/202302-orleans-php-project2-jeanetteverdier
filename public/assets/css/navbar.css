@@ -185,10 +185,12 @@ nav ul li a:hover {
     width: 20px;
 }
 
-.btn-login p {
-    font-size: 16px;
+.btn-login p, .btn-login a {
+    font-size: 14px;
     margin-bottom: 0;
-} 
+    color: var(--light);
+    text-decoration: none;
+}
 
 /** MEDIA QUERIES **/
 
