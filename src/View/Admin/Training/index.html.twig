@@ -9,6 +9,10 @@
 	<link rel="stylesheet" href="/assets/css/Admin/training/admin-training.css">
 {% endblock %}
 
+{% block navbar %}
+	{% include 'Components/_admin-navbar.html.twig' %}
+{% endblock %}
+
 {% block content %}
 	<main class="container">
 
@@ -38,7 +42,7 @@
 				{% for training in trainings %}
 					<div class="admin-card">
 						<div class="admin-img">
-							<img src="{{ training.image ? '/uploads/training/' ~ training.image : 'assets/images/default_placeholder.jpg'}}" alt="Photo de la formation"/>
+							<img src="{{ training.image ? '/uploads/' ~ training.image : 'assets/images/default_placeholder.jpg'}}" alt="Photo de la formation"/>
 						</div>
 						<div class="content">
 							<div>
