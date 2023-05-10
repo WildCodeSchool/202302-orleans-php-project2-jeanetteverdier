@@ -146,6 +146,7 @@ article {
     font-family: var(--fontTitle);
     font-size: var(--sizeTitle);
     color: var(--secondary);
+    font-weight: 500;
 }
 .nos-formations{
     height: 30vw;
@@ -158,19 +159,24 @@ article {
 }
 
 .nos-formations>h2 {
+    font-family: var(--fontTitle);
     align-items: center;
     border: 2px solid var(--light);
     font-weight: 400;
     font-size: 1.2rem;
     color: var(--light);
-    padding: var(--spacing2);
+    padding: var(--spacing2) clamp(10px, 10vw, 100px);
+    margin-bottom: var(--spacing1);
 }
 [role="button"]{
     margin: var(--spacing);
-    margin-left: var(--spacing2);
 }
 
 @media screen and (max-width: 767px) {
+    main .container{
+        width: var(--clamp90);
+    }
+    
     .blue-rectangle {
         width: 3px;
     }
