@@ -40,6 +40,10 @@
 
 /* SKILLS */
 
+.program-skills {
+    margin-bottom: var(--spacing);
+}
+
 .program-skills h5 {
     --typography-spacing-vertical: .5rem;
     margin-left: var(--spacing2);
@@ -50,6 +54,7 @@
     display: flex;
     gap: .2rem;
     margin-left: var(--spacing2);
+    flex-wrap: wrap;
 }
 
 .program-skills ul li {
@@ -58,7 +63,6 @@
     padding: 5px 20px;
     border-radius: 30px;
     font-size: .6rem;
-    margin-bottom: var(--spacing1);
 }
 
 ul li p {
