@@ -34,7 +34,7 @@
         {% for lastActuality in lastActualities %}
           <div class="card">
             <div class="actu-image">
-                <img src="/uploads/actuality/jverdier-cup.webp"></img>
+                <img src="/uploads/actuality/{{lastActuality.image}}"></img>
             </div>
             <header>
               <div class="picto-program">
@@ -53,5 +53,16 @@
           {% endfor %}
         </div>
       </section>
+      <section>
+      <div class="second-title">
+        <div class="bloc-rectangle"></div>
+        <h4>Découvrez nos Formations</h4>
+      </div>
+      <div class="nos-formations">
+        <h2>NOS<br> <span>FORMATIONS</span><br> DU <span>CAP</span> AU <span>BAC PRO</span></h2>
+        <a href="#" role="button">Découvrir</a>
+      </div>
+      </section>
 </main>
+
 {% endblock %}
