@@ -49,6 +49,8 @@ article {
     padding: 0 var(--spacing1);
     height: 99px;
     overflow: auto;
+    scrollbar-width: thin;
+    scrollbar-color: var(--primary-light) var(--primary);
 }
 
 [role="button"] {
@@ -65,11 +67,8 @@ article {
     gap: var(--spacing1);
 }
 
-
-
 .actu-image>img {
-    height: 231px;
-    
+    height: 230px;
 }
 
 .second-title{
@@ -111,7 +110,9 @@ article {
     color: var(--light);
     font-size: var(--sizeText);
     text-align: start;
+    height: 60px;
     overflow: auto;
+    scrollbar-width: none;
 }
 
 .orange-rectangle {
@@ -120,20 +121,23 @@ article {
     height: 5px;
 }
 
-.actu-content{
-    height: 50%;
-}
-
 .actu-content p {
     padding: var(--spacing1);
-    margin: 0;
+    margin: auto;
+    margin-top: var(--spacing1);
+    margin-bottom: var(--spacing);
     color: var(--light);
     font-size: .7rem;
+    height: 150px;
+    width: 90%;
+    border: 2px solid var(--primary-light);
+    overflow: auto;
+    scrollbar-width: thin;
+    scrollbar-color: var(--primary-light) var(--primary);
 }
 
 .actu-content [role="button"] {
-    margin: var(--spacing);
-    margin-left: var(--spacing2);
+    margin: var(--spacing) 15px var(--spacing1) 15px;
 }
 
 @media screen and (max-width: 767px) {
